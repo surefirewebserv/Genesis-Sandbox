@@ -1,0 +1,635 @@
+/*
+    Theme Name: Sandbox Child Theme
+	Description: Sample is a two or three column child theme created for the Genesis Framework.
+    Author: Sure Fire Web Services Inc.
+    Author URI: http://surefirewebservices.com/
+ 
+    Template: genesis
+    Template Version: 1.8
+ 
+	License: GNU General Public License v2.0 (or later)
+	License URI: http://www.opensource.org/licenses/gpl-license.php
+*/
+
+/* Table of Contents
+
+* Import Fonts
+* Hyperlinks
+* Body
+* Wrap
+* Header
+* Image Header - Partial Width
+* Header / Primary / Secondary Navigation
+* Inner
+* Breadcrumb
+* Content-Sidebar Wrap
+* Content
+* Featured Post Grid
+* Headlines
+* Ordered / Unordered Lists
+* Post Info
+* Post Meta
+* Author Box
+* Post Icons
+* Images
+* Primary / Secondary Sidebars
+* Form Buttons
+* Search Form
+* eNews & Updates Widget
+* Calendar Widget
+* Footer Widgets
+* Footer
+
+*/
+
+@import url(main.css);
+
+/* Import Fonts
+------------------------------------------------------------ */
+
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
+
+/* Hyperlinks
+------------------------------------------------------------ */
+
+a,
+a:visited {
+	color: #0d72c7;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* Body
+------------------------------------------------------------ */
+
+body {
+
+}
+
+/* Wrap
+------------------------------------------------------------ */
+
+.wrap {
+	background-color: #fff;
+	margin: 0 auto;
+	width: 960px;
+	padding: 0;
+	overflow:hidden;
+}
+
+
+/* Header
+------------------------------------------------------------ */
+
+#header {
+	
+}
+
+#title-area {
+	float: left;
+	overflow: hidden;
+	padding: 17px 0 0;
+	width: 400px;
+}
+
+#title {
+	font-family: 'Oswald', arial, serif;
+	font-size: 36px;
+	line-height: 1.25;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+#title a,
+#title a:hover {
+	color: #333;
+	padding: 0 0 0 20px;
+	text-decoration: none;
+}
+
+#description {
+	font-size: 14px;
+	padding: 0 0 0 20px;
+}
+
+#header .widget-area {
+	float: right;
+	padding: 25px 20px 0 0;
+	width: 510px;
+}
+
+
+/* Image Header - Partial Width
+------------------------------------------------------------ */
+
+.header-image #title a {
+	background-image: url();
+}
+
+.header-image #description {
+	display: block;
+	overflow: hidden;
+}
+
+/* Header / Primary / Secondary Navigation
+------------------------------------------------------------ */
+
+#header .menu {
+}
+
+.menu-primary {
+}
+
+.menu-secondary {
+}
+
+.menu-primary a,
+.menu-secondary a,
+#header .menu a {
+}
+
+/* Menu Hover and current page */
+.menu-primary li a:active,.menu-primary li a:hover,.menu-primary .current_page_item a,.menu-primary .current-cat a,.menu-primary .current-menu-item a,
+.menu-secondary li a:active,.menu-secondary li a:hover,.menu-secondary .current_page_item a,.menu-secondary .current-cat a,.menu-secondary .current-menu-item a,
+#header .menu li a:active,#header .menu li a:hover,#header .menu .current_page_item a,#header .menu .current-cat a,#header .menu .current-menu-item a {
+	color: #333;
+}
+
+/*Sub Menu Drop Down link*/
+.menu-primary li li a,.menu-primary li li a:link,.menu-primary li li a:visited,.menu-secondary li li a,
+.menu-secondary li li a:link,.menu-secondary li li a:visited,
+#header .menu li li a,#header .menu li li a:link,#header .menu li li a:visited {
+	background: none;
+	background-color: #fff;
+	border-top: none;
+	color: #333;
+	font-size: 12px;
+	padding: 9px 10px 8px;
+	width: 138px;
+}
+
+/*Sub Menu Drop Down Hoveer */
+.menu-primary li li a:active,.menu-primary li li a:hover,
+.menu-secondary li li a:active,.menu-secondary li li a:hover,
+#header .menu li li a:active,#header .menu li li a:hover {
+	color: #333;
+}
+
+/* Plus Sign Image */
+.menu li a .sf-sub-indicator,
+.menu li li a .sf-sub-indicator,
+.menu li li li a .sf-sub-indicator {
+	background: url(images/icon-plus.png) no-repeat;
+	height: 16px;
+	position: absolute;
+	right: 8px;
+	text-indent: -9999px;
+	top: 10px;
+	width: 16px;
+}
+
+
+/* Inner
+------------------------------------------------------------ */
+
+#inner {
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 20px;
+}
+
+
+/* Breadcrumb
+------------------------------------------------------------ */
+
+.breadcrumb {
+	font-size: 14px;
+}
+
+
+/* Content-Sidebar Wrap
+------------------------------------------------------------ */
+
+#content-sidebar-wrap {
+	width: 750px;
+}
+
+/* Content
+------------------------------------------------------------ */
+
+#content {
+	padding: 10px 20px;
+	width: 410px;
+}
+
+.content-sidebar #content,
+.sidebar-content #content {
+	width: 580px;
+}
+
+.full-width-content #content {
+	width: 880px;
+}
+
+.post {
+	margin: 0 0 40px;
+}
+
+.entry-content {
+	overflow: hidden;
+}
+
+.entry-content p {
+	margin: 0 0 25px;
+}
+
+blockquote {
+	background: url(images/blockquote.png) no-repeat;
+	border: none;
+	margin: 5px 5px 20px;
+	padding: 25px 30px 5px 70px;
+}
+
+blockquote p {
+	color: #999;
+	font-style: italic;
+}
+
+p.subscribe-to-comments {
+	padding: 20px 0 10px;
+}
+
+.clear {
+	clear: both;
+}
+
+.clear-line {
+	border-bottom: 1px solid #ddd;
+	clear: both;
+	margin: 0 0 25px;
+}
+
+
+/* Featured Post Grid
+------------------------------------------------------------ */
+
+.genesis-grid-even {
+}
+
+.genesis-grid-odd {
+}
+
+
+/* Headlines
+------------------------------------------------------------ */
+
+h1,
+h2,
+h2 a,
+h2 a:visited,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Oswald', arial, serif;
+	line-height: 1.25;
+	margin: 0 0 10px;
+}
+
+h1 {
+	font-size: 30px;
+}
+
+.taxonomy-description h1 {
+	margin: 0;
+}
+
+h2,
+h2 a,
+h2 a:visited {
+	font-size: 28px;
+}
+
+h2 a,
+h2 a:visited {
+	color: #333;
+	font-family: 'Oswald', arial, serif;
+}
+
+h2 a:hover {
+	color: #0d72c7;
+	text-decoration: none;
+}
+
+.widget-area h2,
+.widget-area h2 a {
+	font-size: 14px;
+	margin: 0 0 5px;
+}
+
+h3 {
+	font-size: 24px;
+}
+
+h4 {
+	font-size: 20px;
+}
+
+.taxonomy-description h1,
+.widget-area h4 {
+	font-size: 14px;
+	padding: 9px 10px 8px;
+}
+
+.widget-area h4 a {
+	color: #333;
+	text-decoration: none;
+}
+
+#footer-widgets h4 {
+	background: none;
+	border: none;
+	padding: 0;
+}
+
+h5 {
+	font-size: 18px;
+}
+
+
+/* Ordered / Unordered Lists
+------------------------------------------------------------ */
+
+.entry-content ol,
+.entry-content ul {
+	
+}
+
+.archive-page ul li,
+.entry-content ul li {
+	list-style-type: square;
+}
+
+.entry-content ol li {
+
+}
+
+/* Post Info
+------------------------------------------------------------ */
+
+.post-info {
+	font-size: 14px;
+	margin: -5px 0 15px;
+}
+
+
+/* Post Meta
+------------------------------------------------------------ */
+
+.post-meta {
+	border-top: 1px solid #ddd;
+	clear: both;
+	font-size: 14px;
+	padding: 5px 0 0;
+}
+
+
+/* Author Box
+------------------------------------------------------------ */
+
+.author-box {
+	background-color: #f5f5f5;
+}
+
+.author-box p {
+	font-size: 14px;
+}
+
+
+/* Post Icons
+------------------------------------------------------------ */
+
+.post-comments,
+.tags {
+	background: url(images/icon-dot.png) no-repeat left;
+	margin: 0 0 0 3px;
+	padding: 0 0 0 10px;
+}
+
+
+/* Images
+------------------------------------------------------------ */
+
+.avatar,
+.featuredpage img,
+.featuredpost img,
+.post-image {
+	background-color: #f5f5f5;
+	border: 1px solid #ddd;
+	padding: 4px;
+}
+
+.author-box .avatar {
+	background-color: #fff;
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+.post-image {
+	margin: 0 10px 10px 0;
+}
+
+.comment-list li .avatar {
+	background-color: #fff;
+	float: right;
+	margin: 5px 0 0 10px;
+}
+
+
+/* Primary / Secondary Sidebars
+------------------------------------------------------------ */
+
+.sidebar .widget {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	margin: 0 0 15px;
+	padding: 0 0 15px;
+}
+
+.sidebar.widget-area ul li,
+#footer-widgets .widget-area ul li {
+	border-bottom: 1px solid #ddd;
+	list-style-type: none;
+	margin: 0 0 7px;
+	padding: 0 0 5px;
+	word-wrap: break-word;
+}
+
+/* Form Buttons
+------------------------------------------------------------ */
+
+input[type="button"],
+input[type="submit"] {
+	background: url(images/gradient.png) 0 0;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	line-height: 19px;
+	padding: 5px 7px;
+	text-decoration: none;
+}
+
+input:hover[type="button"],
+input:hover[type="submit"] {
+	background: url(images/gradient.png) 0 -33px;
+	text-decoration: none;
+}
+
+
+/* Search Form
+------------------------------------------------------------ */
+
+#header .searchform {
+	float: right;
+	padding: 12px 0 0;
+}
+
+.sidebar .searchform {
+	
+}
+
+/* eNews and Update Widget
+------------------------------------------------------------ */
+
+.enews p {
+
+}
+
+.enews #subscribe {
+
+}
+
+.enews #subbox {
+	width: 75%;
+}
+
+
+/* Calendar Widget
+------------------------------------------------------------ */
+
+#wp-calendar {
+}
+
+#wp-calendar caption {
+	font-size: 12px;
+	font-style: italic;
+	padding: 2px 5px 0 0;
+	text-align: right;
+}
+
+#wp-calendar thead {
+	background-color: #f5f5f5;
+	font-weight: bold;
+	margin: 10px 0 0;
+}
+
+#wp-calendar td {
+	background-color: #f5f5f5;
+	padding: 2px;
+	text-align: center;
+}
+
+
+/* Footer Widgets
+------------------------------------------------------------ */
+
+#footer-widgets {
+	clear: both;
+	font-size: 14px;
+	margin: 0 auto;
+	overflow: hidden;
+	width: 100%;
+}
+
+#footer-widgets .wrap {
+}
+
+#footer-widgets .widget {
+	background: none;
+	border: none;
+	margin: 0 0 15px;
+	padding: 0;
+}
+
+#footer-widgets .textwidget {
+
+}
+
+#footer-widgets p {
+	font-size: inherit;
+	margin: 0 0 10px;
+}
+
+#footer-widgets ul {
+}
+
+#footer-widgets ul li {
+}
+
+.footer-widgets-1 {
+	float: left;
+	margin: 0 30px 0 0;
+	width: 31%;
+	clear: both;
+	padding-left: 0;
+}
+
+.footer-widgets-2 {
+	float: left;
+	width: 31%;
+}
+
+.footer-widgets-3 {
+	float: right;
+	width: 31%;
+}
+
+
+/* Footer
+------------------------------------------------------------ */
+
+#footer {
+	border-top: 1px solid #ddd;
+}
+
+#footer .wrap {
+	padding: 10px 15px;
+}
+
+#footer p {
+	font-size: inherit;
+}
+
+#footer a,
+#footer a:visited {
+	color: #333;
+}
+
+#footer a:hover {
+	color: #0d72c7;
+	text-decoration: none;
+}
+
+#footer .gototop {
+	width: 31%;
+}
+
+#footer .creds {
+	text-align: right;
+	width: 65%;
+}
+
+@import url(responsive.css);
