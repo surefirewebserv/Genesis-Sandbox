@@ -4,25 +4,31 @@
    Add or include to WordPress functions file
 --------------------------------------------------------------------------------------- */
 
-add_action('genesis_title', 'link_twitter_bootstrap');
+add_action('wp_enqueue_scripts', 'link_twitter_bootstrap');
+
 function link_twitter_bootstrap() {
-	echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
-	echo '<link href="'. CHILD_URL . '/lib/css/bootstrap.css" rel="stylesheet">'."\r";
-	echo '<link href="'. CHILD_URL . '/lib/css/bootstrap-responsive.css" rel="stylesheet">'."\r";
-	echo '<link href="'. CHILD_URL . '/lib/css/docs.css" rel="stylesheet">'."\r";
-	echo '<link href="'. CHILD_URL . '/lib/js/google-code-prettify/prettify.css" rel="stylesheet">'."\r";
-	
-	?>
-		<style type="text/css">
-			body {
-			padding-top: 60px;
-			padding-bottom: 40px;
-			}
-		</style>
-		<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-	<?php
+  wp_enqueue_style( 'bootstrap', CHILD_URL . '/lib/css/bootstrap.css');
+  wp_enqueue_style( 'responsive', CHILD_URL . '/lib/css/bootstrap-responsive.css');
+  wp_enqueue_style( 'docs', CHILD_URL . '/lib/css/docs.css');
+  wp_enqueue_style( 'prettify', CHILD_URL . '/lib/js/google-code-prettify/prettify.css');
+}
+
+/** Add IE conditional html5 shim to header */
+add_action( 'wp_enqueue_scripts', 'wps_enqueue_lt_ie9' );
+function wps_enqueue_lt_ie9() {
+    global $is_IE;
+
+    // Return early, if not IE
+    if ( ! $is_IE ) return;
+
+    // Include the file, if needed
+    if ( ! function_exists( 'wp_check_browser_version' ) )
+        include_once( ABSPATH . 'wp-admin/includes/dashboard.php' );
+
+    // IE version conditional enqueue
+    $response = wp_check_browser_version();
+    if ( 0 > version_compare( intval( $response['version'] ) , 9 ) )
+        wp_enqueue_script( 'wps-html5shiv', 'http://html5shim.googlecode.com/svn/trunk/html5.js', array(), 'pre3.6', false );
 }
 
 remove_action('genesis_after_header', 'genesis_do_nav');

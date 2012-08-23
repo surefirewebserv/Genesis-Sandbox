@@ -12,6 +12,8 @@ function add_viewport_meta_tag() {
     echo '<meta name="viewport" content="width=device-width, initial-scale=1.0"/>';
 }
 
+
+
 /** Add new image sizes **/
 add_image_size('post-thumb', 225, 160, TRUE);
 
