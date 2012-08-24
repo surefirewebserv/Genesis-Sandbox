@@ -61,12 +61,6 @@
 
 */
 
-/* Import Fonts
------------------------------------------------------------- */
-
-@import url(http://fonts.googleapis.com/css?family=Oswald);
-
-
 /* Defaults
 ------------------------------------------------------------ */
 
@@ -125,6 +119,18 @@ ul {
 ol li {
 	list-style-type: decimal;
 }
+
+.clearfix:before,  
+.clearfix:after {  
+    content: " ";  
+    display: table;  
+}  
+.clearfix:after {  
+    clear: both;  
+}  
+.clearfix {  
+    *zoom: 1;  
+} 
 
 
 /* Hyperlinks
