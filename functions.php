@@ -15,7 +15,7 @@ function add_viewport_meta_tag() {
 //Responsive Nav
 add_filter( 'genesis_do_nav', 'override_do_nav', 10, 3 );
 function override_do_nav($nav_output, $nav, $args) {
-$pullmenu = '<a href="#" id="pull">Menu </a>';
+$pullmenu = '<a href="#" id="pull" class="closed">Menu</a>';
 	
     //$args['menu_class'] .= ' nav-responsive'; 
 

@@ -143,6 +143,8 @@
 }
 
 @media only screen and (max-width : 480px) {  
+    
+   
     .nav-responsive {  
         border-bottom: 0;  
     }  
