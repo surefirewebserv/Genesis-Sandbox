@@ -43,6 +43,7 @@
 */
 
 @import url(main.css);
+@import url(responsive.css);
 
 /* Import Fonts
 ------------------------------------------------------------ */
@@ -76,7 +77,7 @@ body {
 .wrap {
 	background-color: #fff;
 	margin: 0 auto;
-	width: 960px;
+	width: 1140px;
 	padding: 0;
 	overflow:hidden;
 }
@@ -193,13 +194,15 @@ body {
 }
 
 
+
+
 /* Inner
 ------------------------------------------------------------ */
 
 #inner {
-	margin: 0 auto;
+	margin: 10px auto;
 	overflow: hidden;
-	padding: 20px;
+		
 }
 
 
@@ -215,24 +218,27 @@ body {
 ------------------------------------------------------------ */
 
 #content-sidebar-wrap {
-	width: 750px;
+	padding: 10px;
+	-moz-box-sizing:    border-box;
+	   -webkit-box-sizing: border-box;
+	   -ms-box-sizing:     border-box;
+	    box-sizing:        border-box;
+	
 }
 
 /* Content
 ------------------------------------------------------------ */
 
 #content {
-	padding: 10px 20px;
-	width: 410px;
 }
 
 .content-sidebar #content,
 .sidebar-content #content {
-	width: 580px;
+	
 }
 
 .full-width-content #content {
-	width: 880px;
+	width: 100%;
 }
 
 .post {
@@ -453,6 +459,11 @@ h5 {
 /* Primary / Secondary Sidebars
 ------------------------------------------------------------ */
 
+.sidebar {
+	margin-right: 10px;
+}
+
+
 .sidebar .widget {
 	background-color: #fff;
 	border: 1px solid #ddd;
@@ -555,6 +566,10 @@ input:hover[type="submit"] {
 }
 
 #footer-widgets .wrap {
+-moz-box-sizing:    border-box;
+   -webkit-box-sizing: border-box;
+   -ms-box-sizing:     border-box;
+    box-sizing:        border-box;
 }
 
 #footer-widgets .widget {
@@ -607,6 +622,10 @@ input:hover[type="submit"] {
 
 #footer .wrap {
 	padding: 10px 15px;
+	-moz-box-sizing:    border-box;
+	   -webkit-box-sizing: border-box;
+	   -ms-box-sizing:     border-box;
+	    box-sizing:        border-box;
 }
 
 #footer p {
@@ -631,4 +650,3 @@ input:hover[type="submit"] {
 	text-align: right;
 	width: 65%;
 }
-
