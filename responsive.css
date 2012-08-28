@@ -231,13 +231,25 @@ img {
 	}
 	
 
-	.row .onecol, .row .twocol, .row .threecol, .row .fourcol, .row .fivecol, .row .sixcol, .row .sevencol, .row .eightcol, .row .ninecol, .row .tencol, .row .elevencol, .row .twelvecol {
+	.wrap .onecol,
+	.wrap .twocol, 
+	.wrap .threecol, 
+	.wrap .fourcol, 
+	.wrap .fivecol, 
+	.wrap .sixcol, 
+	.wrap .sevencol, 
+	.wrap .eightcol, 
+	.wrap .ninecol, 
+	.wrap .tencol, 
+	.wrap .elevencol, 
+	.wrap .twelvecol {
 	width: auto;
 	float: none;
 	margin-left: 0px;
 	margin-right: 0px;
 	padding-left: 20px;
 	padding-right: 20px;
+	padding-bottom: 20px;
 	}
 	
 		
@@ -250,49 +262,6 @@ img {
 	.menu li li a .sf-sub-indicator,
 		.menu li li li a .sf-sub-indicator {
 			background: url(images/icon-plus-white.png) right no-repeat;
-		}
-	
-		.menu-primary li li a,
-		.menu-primary li li a:link,
-		.menu-primary li li a:visited,
-		.menu-secondary li li a,
-		.menu-secondary li li a:link,
-		.menu-secondary li li a:visited,
-		#header .menu li li a,
-		#header .menu li li a:link,
-		#header .menu li li a:visited {
-			background: none;
-			color: #fff;
-			padding: 7px 3%;
-			width: 94%;
-		}
-	
-		.menu-primary li ul,
-		.menu-secondary li ul,
-		#header .menu li ul {
-			background: #333;
-			clear: both;
-			margin: 0;
-			padding: 0;
-			position: inherit;
-		}
-	
-		.menu-primary li ul ul,
-		.menu-secondary li ul ul,
-		#header .menu li ul ul {
-			background: #666;
-		}
-	
-		.menu-primary li ul ul ul,
-		.menu-secondary li ul ul ul,
-		#header .menu li ul ul ul {
-			background: #999;
-		}
-	
-		.menu-primary li ul ul,
-		.menu-secondary li ul ul,
-		#header .menu li ul ul {
-			margin: 0;
 		}
 		
 		#footer .gototop,
