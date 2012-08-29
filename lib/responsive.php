@@ -42,6 +42,6 @@ add_action( 'wp_enqueue_scripts', 'wps_child_script' );
  */
 function wps_child_script() {
 	$suffix = ( WP_DEBUG || WP_SCRIPT_DEBUG ) ? '-min.js' : '.js';
-	wp_enqueue_script( 'responsive-nav', get_stylesheet_directory_uri() . '/lib/js/responsive-nav' . $suffix, array( 'jquery' ) , '1.0.0', true );
+	wp_enqueue_script( 'responsive-nav', get_stylesheet_directory_uri() . '/lib/js/responsive-nav' . $suffix, array( 'jquery' ) , '1.0.0' );
 	wp_enqueue_style( 'responsive', CHILD_URL . '/responsive.css');
 }
