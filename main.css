@@ -136,16 +136,6 @@ ol li {
 /* Hyperlinks
 ------------------------------------------------------------ */
 
-a,
-a:visited {
-	color: #0d72c7;
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
 a img {
 	border: none;
 }
@@ -158,15 +148,7 @@ body {
 
 }
 
-::-moz-selection {
-	background-color: #0d72c7;
-	color: #fff;
-}
 
-::selection {
-	background-color: #0d72c7;
-	color: #fff;
-}
 
 
 /* Wrap
@@ -177,7 +159,6 @@ body {
 }
 
 .wrap {
-	background-color: #fff;
 	margin: 0 auto;
 	width: 1140px;
 	padding: 0;

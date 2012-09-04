@@ -1,11 +1,11 @@
 /*
     Theme Name: Sandbox Child Theme
-	Description: Sample is a two or three column child theme created for the Genesis Framework.
+	Description: Sandbox theme is an 1140 responsive grid child theme created for the Genesis Framework.
     Author: Sure Fire Web Services Inc.
     Author URI: http://surefirewebservices.com/
  
     Template: genesis
-    Template Version: 1.8
+    Template Version: 0.8
  
 	License: GNU General Public License v2.0 (or later)
 	License URI: http://www.opensource.org/licenses/gpl-license.php
@@ -63,11 +63,21 @@ a:hover {
 	text-decoration: underline;
 }
 
+
 /* Body
 ------------------------------------------------------------ */
 
 body {
+}
 
+::-moz-selection {
+	background-color: #0d72c7;
+	color: #fff;
+}
+
+::selection {
+	background-color: #0d72c7;
+	color: #fff;
 }
 
 /* Wrap

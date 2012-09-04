@@ -2,6 +2,7 @@
 /** Start the engine */
 require_once( get_template_directory() . '/lib/init.php' );
 require_once( 'lib/responsive.php');
+include("lib/update_notifier.php");
 
 /** Child theme (do not remove) */
 define( 'CHILD_THEME_NAME', 'Sample Child Theme' );
