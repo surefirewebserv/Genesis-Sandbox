@@ -9,11 +9,26 @@ function update_notifier_menu() {
 	$my_theme = wp_get_theme(); // Get theme data from style.css (current version is what we want)
 	
 	if(version_compare($my_theme->Version, $xml->latest) == -1) {
-		add_dashboard_page( $my_theme->Name . 'Theme Updates',$my_theme->Name . 'New Updates', 'administrator','genesis-sandbox-theme-updates', update_notifier);
+		add_dashboard_page( $my_theme->Name . 'Theme Updates',$my_theme->Name . '<span class="update-plugins count-1"><span class="update-count">New Updates</span></span>', 'administrator','genesis-sandbox-theme-updates', update_notifier);
 	}
 }  
 
 add_action('admin_menu', 'update_notifier_menu');
+
+add_action('admin_notices','theme_new_ver');
+function theme_new_ver() {
+$xml = get_latest_theme_version(5); // This tells the function to cache the remote call for 21600 seconds (6 hours)
+$my_theme = wp_get_theme(); // Get theme data from style.css (current version is what we want)
+
+if(version_compare($my_theme->Version, $xml->latest) == -1) {
+	
+	 ?>
+	<div class="update-nag"><strong>There is a new version of the Sandbox Child Theme available.</strong> <a href="index.php?page=genesis-sandbox-theme-updates">Update Now!</a></div>
+	<?php }
+
+		
+}
+
 
 function update_notifier() { 
 	$xml = get_latest_theme_version(21600); // This tells the function to cache the remote call for 21600 seconds (6 hours)
@@ -23,7 +38,7 @@ function update_notifier() {
 	?>
 	
 	<style>
-		.update-nag {display: none;}
+		.update-nag {display: block;}
 		#instructions {max-width: 800px;}
 		h3.title {margin: 30px 0 0 0; padding: 30px 0 0 0; border-top: 1px solid #ddd;}
 	</style>
@@ -39,7 +54,7 @@ function update_notifier() {
         <div id="instructions" style="max-width: 800px;">
             <h3>Update Download and Instructions</h3>
             <p><strong>Please note:</strong> make a <strong>backup</strong> of the Theme inside your WordPress installation folder <strong><?php echo get_stylesheet_directory(); ?></strong></p>
-            <p>To update the Theme, <a href="https://github.com/surefirewebserv/Genesis-Sandbox/tree/Responsive" target="_blank">download the latest version</a> from GitHub.</p>
+            <p>To update the Theme, <a href="http://genesissandbox.com/documents/2012/09/genesis-sandbox.zip" target="_blank">download the latest version</a>.</p>
             <p>Extract the zip's contents, look for the extracted theme folder, and after you have all the new files upload them using FTP to the <strong>/wp-content/themes/<?php echo strtolower($my_theme->Name); ?>/</strong> folder overwriting the old ones (this is why it's important to backup any changes you've made to the theme files).</p>
             <p>If you didn't make any changes to the theme files, you are free to overwrite them with the new ones without the risk of losing theme settings, pages, posts, etc, and backwards compatibility is guaranteed.</p>
             
