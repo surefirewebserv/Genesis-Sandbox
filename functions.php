@@ -4,10 +4,15 @@ require_once( get_template_directory() . '/lib/init.php' );
 require_once( 'lib/responsive.php');//Adds Responsive
 require_once( 'lib/tb_styles.php');//Adds Twitter Bootstrap Styles
 
-/** Child theme (do not remove) */
-define( 'CHILD_THEME_NAME', 'Sample Child Theme' );
-define( 'CHILD_THEME_URL', 'http://www.studiopress.com/themes/genesis' );
-
+/** Customize the footer credits */
+add_filter('genesis_footer_creds_text', 'custom_footer_creds_text');
+function custom_footer_creds_text() {
+	echo '<div class="creds"><p>';
+	echo 'Copyright &copy; ';
+	echo date('Y');
+	echo ' &middot; Built on the <a href="http://www.surefirewebservices.com/go/genesis" title="Genesis Framework">Genesis Framework</a> using the <a href="http://genesissandbox.com">Genesis SandBox Theme</a>';
+	echo '</p></div>';
+}
 /** Add Viewport meta tag for mobile browsers */
 add_action( 'genesis_meta', 'add_viewport_meta_tag' );
 function add_viewport_meta_tag() {
