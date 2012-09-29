@@ -1,18 +1,12 @@
 <?php
 /** Start the engine */
 require_once( get_template_directory() . '/lib/init.php' );
-require_once( 'lib/responsive.php');//Adds Responsive
-require_once( 'lib/tb_styles.php');//Adds Twitter Bootstrap Styles
+require_once( CHILD_DIR . '/lib/gs_register_scripts.php');//Loads Required Scripts
+require_once( CHILD_DIR . '/lib/gs_function_options.php');//Loads Required Scripts
 
-/** Customize the footer credits */
-add_filter('genesis_footer_creds_text', 'custom_footer_creds_text');
-function custom_footer_creds_text() {
-	echo '<div class="creds"><p>';
-	echo 'Copyright &copy; ';
-	echo date('Y');
-	echo ' &middot; Built on the <a href="http://www.surefirewebservices.com/go/genesis" title="Genesis Framework">Genesis Framework</a> using the <a href="http://genesissandbox.com">Genesis SandBox Theme</a>';
-	echo '</p></div>';
-}
+
+
+
 /** Add Viewport meta tag for mobile browsers */
 add_action( 'genesis_meta', 'add_viewport_meta_tag' );
 function add_viewport_meta_tag() {
@@ -22,14 +16,6 @@ function add_viewport_meta_tag() {
 /** Add new image sizes **/
 add_image_size('post-thumb', 225, 160, TRUE);
 
-/** Support Wrapper for Header */
-add_theme_support( 'genesis-structural-wraps', array( 'header','nav','subnav', 'inner', 'footer-widgets', 'footer') );
-
-/** Add support for custom background */
-add_theme_support( 'custom-background' );
-
-/** Add support for custom header */
-add_theme_support( 'genesis-custom-header', array( 'width' => 960, 'height' => 100 ) );
 
 /** Edit read more link */
 						
@@ -53,4 +39,3 @@ function wpi_image_content_filter($content){
 }
 
 /** Add support for 3-column footer widgets */
-add_theme_support( 'genesis-footer-widgets', 3 );
