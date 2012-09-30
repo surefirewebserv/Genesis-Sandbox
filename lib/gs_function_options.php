@@ -57,4 +57,19 @@ if ($gs_theme_support_functions['four']) {
 	$gs_footer_widgets = of_get_option('gs_footer_widgets', 'none' );
 	add_theme_support( 'genesis-footer-widgets', $gs_footer_widgets );    
 }
+
+if (of_get_option('gs_google_fonts_check')) {
+	
+	add_action( 'wp_enqueue_scripts', 'gs_load_google_fonts' );
+	function gs_load_google_fonts() {
+	$gs_google_fonts_font = of_get_option('gs_google_fonts_font', 'none');
+	    wp_enqueue_style( 
+	        'google-fonts', 
+	        'http://fonts.googleapis.com/css?family='. $gs_google_fonts_font, 
+	        array(), 
+	        PARENT_THEME_VERSION 
+	     );
+	}    
+}
+
 //END ?>

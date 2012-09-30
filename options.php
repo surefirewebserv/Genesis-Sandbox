@@ -72,6 +72,8 @@ function optionsframework_options() {
 		'footer-widgets' => '1',		
 		'footer' => '1'
 	);
+	
+	
 
 	/* Pull all the categories into an array
 	$options_categories = array();
@@ -173,6 +175,20 @@ function optionsframework_options() {
 				'class' => 'mini hidden clear',
 				'type' => 'text');
 	
+	$options[] = array(
+		'name' => __('Add Google Fonts', 'options_framework_theme'),
+		'desc' => __('Add the google font function via the themes panel.', 'options_framework_theme'),
+		'id' => 'gs_google_fonts_check',
+		'std' => '1',
+		'type' => 'checkbox');
+		
+		$options[] = array(
+			'desc' => __('Manually add the google fonts you would like to use for the website.  Make sure to use the google fonts format, i.e. Open+Sans:400,700|Merriweather:400,700.', 'options_framework_theme'),
+			'id' => 'gs_google_fonts_font',
+			'class' => 'hidden',
+			'std' => 'Open+Sans:400,700|Merriweather:400,700',
+			'type' => 'text');
+		
 	return $options;
 }
 
@@ -191,6 +207,7 @@ jQuery(document).ready(function($) {
 	$('#section-gs_footer_widgets').insertAfter('#genesis_sandbox-gs_theme_support_functions-four + label');
 	$('#section-gs_structural_wraps').insertAfter('#genesis_sandbox-gs_theme_support_functions-three + label');
 	$('#section-gs_header_width, #section-gs_header_height').insertAfter('#genesis_sandbox-gs_theme_support_functions-one + label');
+	$('#section-gs_google_fonts_font').insertAfter('#gs_google_fonts_check + label');
 
 	$('#gs_footer_creds_check').click(function() {
   		$('#section-gs_footer_creds_editor').fadeToggle(400);
@@ -207,6 +224,10 @@ jQuery(document).ready(function($) {
 	$('#genesis_sandbox-gs_theme_support_functions-four').click(function() {
 			$('#section-gs_footer_widgets').fadeToggle(400);
 	});
+	
+	$('#gs_google_fonts_check').click(function() {
+			$('#section-gs_google_fonts_font').fadeToggle(400);
+	});
 
 	if ($('#gs_footer_creds_check:checked').val() !== undefined) {
 		$('#section-gs_footer_creds_editor').show();
@@ -222,6 +243,10 @@ jQuery(document).ready(function($) {
 	
 	if ($('#genesis_sandbox-gs_theme_support_functions-four:checked').val() !== undefined) {
 		$('#section-gs_footer_widgets').show();
+	}
+	
+	if ($('#gs_google_fonts_check:checked').val() !== undefined) {
+		$('#section-gs_google_fonts_font').show();
 	}
 
 });

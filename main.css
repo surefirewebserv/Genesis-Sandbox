@@ -158,11 +158,9 @@ a img {
 }
 
 #title {
-	font-family: 'Oswald', arial, serif;
 	font-size: 36px;
 	line-height: 1.25;
 	margin: 0;
-	text-transform: uppercase;
 }
 
 #title a,

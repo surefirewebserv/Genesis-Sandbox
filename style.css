@@ -45,12 +45,6 @@
 
 @import url(main.css);
 
-/* Import Fonts
------------------------------------------------------------- */
-
-@import url(http://fonts.googleapis.com/css?family=Oswald);
-
-
 /* Hyperlinks
 ------------------------------------------------------------ */
 
@@ -108,11 +102,10 @@ body {
 }
 
 #title {
-	font-family: 'Oswald', arial, serif;
+	font-family: 'Open Sans', arial, serif;
 	font-size: 36px;
 	line-height: 1.25;
 	margin: 0;
-	text-transform: uppercase;
 }
 
 #title a,
@@ -308,7 +301,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Oswald', arial, serif;
+	font-family: 'Open Sans', arial, serif;
 	line-height: 1.25;
 	margin: 0 0 10px;
 }
@@ -330,7 +323,7 @@ h2 a:visited {
 h2 a,
 h2 a:visited {
 	color: #333;
-	font-family: 'Oswald', arial, serif;
+	font-family: 'Open Sans', arial, serif;
 }
 
 h2 a:hover {
