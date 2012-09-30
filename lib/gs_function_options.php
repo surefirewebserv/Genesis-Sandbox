@@ -49,7 +49,7 @@ if ($gs_theme_support_functions['two']) {
 } 
 
 if ($gs_theme_support_functions['three']) {
-	$gs_structural_wrap = of_get_option('gs_structural_wraps', 'none' );
+	$gs_structural_wrap = of_get_option('gs_structural_wraps', $gs_structural_wraps_defaults );
 	add_theme_support( 'genesis-structural-wraps', array_keys($gs_structural_wrap, 1));    
 }
 
