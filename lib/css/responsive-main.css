@@ -152,6 +152,8 @@ img {
 		#header .widget-area,
 		#sidebar-alt,
 		#title-area,
+		.genesis-grid-even,
+		.genesis-grid-odd,
 		#wrap {
 			width: 100%;
 			float: none;
