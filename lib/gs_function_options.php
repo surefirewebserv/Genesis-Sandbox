@@ -49,8 +49,9 @@ if ($gs_theme_support_functions['two']) {
 } 
 
 if ($gs_theme_support_functions['three']) {
+$gs_structural_wraps_defaults = array('header' => '1','nav' => '1','subnav' => '1',	'inner' => '1',	'footer-widgets' => '1','footer' => '1');
 	$gs_structural_wrap = of_get_option('gs_structural_wraps', $gs_structural_wraps_defaults );
-	add_theme_support( 'genesis-structural-wraps', array_keys($gs_structural_wrap, 1));    
+	add_theme_support( 'genesis-structural-wraps', array_keys($gs_structural_wrap, 1)); 
 }
 
 if ($gs_theme_support_functions['four']) {
