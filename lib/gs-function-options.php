@@ -3,7 +3,7 @@
  * Loads the Options Panel
  */
  
-if ( !function_exists( 'optionsframework_init' ) ) {
+if ( ! function_exists( 'optionsframework_init' ) ) {
 	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_stylesheet_directory_uri() . '/lib/options/' );
 	require_once dirname( __FILE__ ) . '/options/options-framework.php';
 }
@@ -101,7 +101,7 @@ if ( of_get_option( 'gs_footer_creds_check' ) ) {
 
 $gs_theme_support_functions = of_get_option( 'gs_theme_support_functions', 'none' );
 if ( $gs_theme_support_functions['one'] ) {
-   $gs_head_width = of_get_option( 'gs_header_width' );
+   $gs_head_width  = of_get_option( 'gs_header_width' );
    $gs_head_height = of_get_option( 'gs_header_height' );
     
    add_theme_support( 'genesis-custom-header', array( 'width' => $gs_head_width, 'height' => $gs_head_height ) );
@@ -134,8 +134,8 @@ if ( $gs_theme_support_functions['two'] ) {
  */
 
 if ( $gs_theme_support_functions['three'] ) {
-$gs_structural_wraps_defaults = array( 'header' => '1', 'nav' => '1', 'subnav' => '1', 'inner' => '1', 'footer-widgets' => '1', 'footer' => '1' );
-	$gs_structural_wrap = of_get_option( 'gs_structural_wraps', $gs_structural_wraps_defaults );
+	$gs_structural_wraps_defaults = array( 'header' => '1', 'nav' => '1', 'subnav' => '1', 'inner' => '1', 'footer-widgets' => '1', 'footer' => '1' );
+	$gs_structural_wrap           = of_get_option( 'gs_structural_wraps', $gs_structural_wraps_defaults );
 	add_theme_support( 'genesis-structural-wraps', array_keys($gs_structural_wrap, 1 ) ); 
 }
 
