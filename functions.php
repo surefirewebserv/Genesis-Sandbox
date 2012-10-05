@@ -1,8 +1,8 @@
 <?php
 /** Start the engine */
 require_once( get_template_directory() . '/lib/init.php' );
-require_once( CHILD_DIR . '/lib/gs_register_scripts.php');//Loads Required Scripts
-require_once( CHILD_DIR . '/lib/gs_function_options.php');//Loads Required Scripts
+require_once( CHILD_DIR . '/lib/gs-register-scripts.php');//Loads Required Scripts
+require_once( CHILD_DIR . '/lib/gs-function-options.php');//Loads Theme Options
 
 
 
@@ -37,5 +37,3 @@ function wpi_image_content_filter($content){
     }
     return $content;
 }
-
-/** Add support for 3-column footer widgets */
