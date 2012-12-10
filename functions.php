@@ -46,7 +46,7 @@ function gs_theme_setup() {
 	add_theme_support(
 		'genesis-custom-header',
 		array(
-			'width' => 960, 
+			'width' => 1152, 
 			'height' => 60, 
 			'textcolor' => 'ffffff', 
 			'admin_header_callback' => 'wps_admin_style' 
@@ -201,10 +201,11 @@ function gs_scripts() {
 	// Styles
 	wp_register_style( 'responsive-main-css', get_stylesheet_directory_uri() . '/lib/css/responsive-main' . $css_suffix, array(), '1.0.0' );
 	wp_enqueue_style( 'responsive-css', get_stylesheet_directory_uri() . '/responsive.css', array( 'responsive-main-css' ), array(), '1.0.0' );
-	//wp_enqueue_style( 'tb_styles', get_stylesheet_directory_uri() . '/lib/css/tb_styles' . $css_suffix, array(), '1.0.0' );
+	wp_enqueue_style( 'tb-styles', get_stylesheet_directory_uri() . '/lib/css/tb-styles' . $css_suffix, array(), '1.0.0' );
 	
 	// Scripts
-	wp_enqueue_script( 'common_scripts', get_stylesheet_directory_uri() . '/lib/js/common_scripts' . $js_suffix, array( 'jquery' ) , '1.0.0' );
+	wp_enqueue_script( 'common-scripts', get_stylesheet_directory_uri() . '/lib/js/common-scripts' . $js_suffix, array( 'jquery' ) , '1.0.0' );
+	wp_enqueue_script( 'collapse', get_stylesheet_directory_uri() . '/lib/js/collapse' . $js_suffix, array( 'jquery' ) , '1.0.0' );
 	
 	// Localize Script
 	/*
