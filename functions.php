@@ -1,5 +1,6 @@
 <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 /**
  * Custom amendments for the theme.
@@ -146,6 +147,9 @@ function gs_register_sidebars() {
 =======
 /** Start the engine */
 >>>>>>> parent of df465ef... Refactor functions.php
+=======
+/** Start the engine */
+>>>>>>> parent of df465ef... Refactor functions.php
 require_once( get_template_directory() . '/lib/init.php' );
 require_once( CHILD_DIR . '/lib/gs-register-scripts.php');//Loads Required Scripts
 require_once( CHILD_DIR . '/lib/gs-function-options.php');//Loads Theme Options
@@ -159,6 +163,7 @@ function add_viewport_meta_tag() {
     echo '<meta name="viewport" content="width=device-width, initial-scale=1.0"/>';
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 /**
  * Register a custom admin callback to display the custom header preview with the
@@ -203,6 +208,8 @@ function gs_scripts() {
 	*/
 }
 =======
+=======
+>>>>>>> parent of df465ef... Refactor functions.php
 /** Add new image sizes **/
 add_image_size('post-thumb', 225, 160, TRUE);
 
@@ -226,5 +233,9 @@ function wpi_image_content_filter($content){
       $content = preg_replace("/<img[^>]+>/i", "", $content);
     }
     return $content;
+<<<<<<< HEAD
+}
+>>>>>>> parent of df465ef... Refactor functions.php
+=======
 }
 >>>>>>> parent of df465ef... Refactor functions.php
