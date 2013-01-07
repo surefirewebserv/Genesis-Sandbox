@@ -5,7 +5,7 @@
  * @category   Genesis_Sandbox
  * @package    Functions
  * @subpackage HTML5
- * @author     Travis Smith, for Surefire Themes
+ * @author     Travis Smith
  * @license    http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
  * @link       http://wpsmith.net/
  * @since      1.1.0
