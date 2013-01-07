@@ -25,13 +25,13 @@ if ( ! defined( 'ABSPATH' ) ) exit( 'Cheatin&#8217; uh?' );
    03 Theme Setup
    04 Register Extra Sidebars
    05 Load Genesis
-   05 Excerpt/Content Limit/Content Read More
-   06 Genesis Custom Header Admin Style
+   06 Excerpt/Content Limit/Content Read More
    07 Genesis Custom Header Admin Style
-   08 Scripts
-   09 Navigation
-   10 Contact Methods
-   11 Custom Footer
+   08 Genesis Custom Header Admin Style
+   09 Scripts
+   10 Navigation
+   11 Contact Methods
+   12 Custom Footer
 */
 
 /**
@@ -81,24 +81,24 @@ function gs_theme_setup() {
 	   01 Content Width
 	   02 Structural Wraps
 	   03 Post Info/Meta
-	   03 Post Formats
-	   04 Images
-	   05 Custom Background
-	   06 Genesis Custom Header
-	   07 Footer Widgets
-	   08 Genesis Menus
-	   09 Top Navigation
-	   10 Custom Footer
-	   11 Responsiveness
-	   12 Scripts
-	   13 Editor Style
-	   14 Remove Sidebars
-	   15 Set Default Layout
-	   16 Remove Unused Page Layouts
-	   17 Excerpt/Content Limit/Content Read More
-	   18 Genesis Readme Support
-	   19 Genesis Edit Link
-	   20 Unused Contact Methods
+	   04 Post Formats
+	   05 Images
+	   06 Custom Background
+	   07 Genesis Custom Header
+	   08 Footer Widgets
+	   09 Genesis Menus
+	   10 Top Navigation
+	   11 Custom Footer
+	   12 Responsiveness
+	   13 Scripts
+	   14 Editor Style
+	   15 Remove Sidebars
+	   16 Set Default Layout
+	   17 Remove Unused Page Layouts
+	   18 Excerpt/Content Limit/Content Read More
+	   19 Genesis Readme Support
+	   20 Genesis Edit Link
+	   21 Unused Contact Methods
 	*/
 
 	/** 

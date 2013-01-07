@@ -12,21 +12,40 @@ The Free Version of the Genesis Sandbox provides developers with a base theme fo
 ### Functions File (functions.php)
 This file contains the bulk of the heavy lifting for the child theme. In this file, you will find the following:
 
-1. Content Width
-2. Structural Wraps
-3. Featured Image
-4. Genesis Custom Header
-5. Footer Widgets
-6. Top/Footer Navigation
-7. Customized Footer
-8. Genesis Responsive
+1. Initialize Sandbox
+2. Customize Genesis Sidebar Defaults
+3. Theme Setup
+   1. Content Width
+   2. Structural Wraps
+   3. Post Info/Meta
+   4. Post Formats
+   5. Images
+   6. Custom Background
+   7. Genesis Custom Header
+   8. Footer Widgets
+   9. Genesis Menus
+   10. Top Navigation
+   11. Custom Footer
+   12. Responsiveness
+   13. Scripts
+   14. Editor Style
+   15. Remove Sidebars
+   16. Set Default Layout
+   17. Remove Unused Page Layouts
+   18. Excerpt/Content Limit/Content Read More
+   19. Genesis Readme Support
+   20. Genesis Edit Link
+   21. Unused Contact Methods
+
+4. Register Extra Sidebars
+5. Load Genesis
+6. Excerpt/Content Limit/Content Read More
+7. Genesis Custom Header Admin Style
+8. Genesis Custom Header Admin Style
 9. Scripts
-10. Editor Style
-11. Add/Remove Sidebars
-12. Remove Unused Layouts
-13. Customize More Links
-14. Remove Edit Link
-15. Remove Unused Contact Methods
+10. Navigation
+11. Contact Methods
+12. Custom Footer
 
 ### Initialization File (init.php)
 This file contains the necessary components to dynamically create the necessary constants for the child theme based on changes made in style.css, so that you make the change once, it is made across the site. Constants created are as follows: Data: CHILD_SETTINGS_FIELD (Text Domain with '-settings' added), CHILD_DOMAIN (Text Domain), CHILD_THEME_VERSION (Version), CHILD_THEME_NAME (Theme Name), CHILD_THEME_URL (Theme URI), CHILD_DEVELOPER (Author), and CHILD_DEVELOPER_URL (Author URI).
@@ -42,10 +61,13 @@ If you or your client uses WordPresss SEO or All-in-One SEO (or another SEO plug
 ### Plugins Folder
 This folder is great for delivering themes to clients, an alternative to mu-plugins, and ensuring clients cannot break themes/sites. So plugins.php is the configuration file that contains some examples for you to use. Please see [TGMPA site](http://tgmpluginactivation.com/) for more information. The plugins folder (/lib/plugins/plugins/) is for packaging any private, propriety plugins for the site (e.g., core functionality plugins, etc.).
 
-### Alternative Files (functions-alt.php, init-alt.php, gs-functions-alt.php)
+### Alternative Files (alt folder: functions-alt.php, init-alt.php, gs-functions-alt.php)
 When I am developing a non-commercialized child theme or a site for a client, I push all functions out of functions.php which enables me to quickly see what the client has done versus what I have done. This makes it easier for me to manage my client, my client's expectations, etc. enabling me to know when something was my fault and when something was their fault. I highly recommend this approach because as we know, our clients never mess anything up and "It just happened."
 
 In essence, the setup function from functions.php is pushed to init.php, and the other functions are pushed to gs-functions.php resulting in the functions-alt.php. This provides a clean slate for the client to do whatever they'd like to their own product. To use this alternative setup, you will need to remove the original functions (e.g., delete functions.php, init.php, and gs-functions.php) and rename the alt functions to the original names (e.g., functions-alt.php -> functions.php, init-alt.php -> init.php, and gs-functions-alt.php -> gs-functions.php). If you do not wish to use these, please delete the *-alt.php files.
+
+### HTML5 File
+This file contains the way to make Genesis 1.9 HTML5 by changing the doctype, header, nav and footer sections to HTML5 tags. It also contains code for HTML5Shiv and Modernizer if you so choose to enable those features as well.
 
 ### Snippets File
 This file contains the most popular Genesis snippets for copy and paste use. 
