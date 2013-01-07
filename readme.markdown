@@ -11,6 +11,7 @@ The Free Version of the Genesis Sandbox provides developers with a base theme fo
 
 ### Functions File (functions.php)
 This file contains the bulk of the heavy lifting for the child theme. In this file, you will find the following:
+
 1. Content Width
 2. Structural Wraps
 3. Featured Image
@@ -48,6 +49,7 @@ In essence, the setup function from functions.php is pushed to init.php, and the
 
 ### Snippets File
 This file contains the most popular Genesis snippets for copy and paste use. 
+
 1. Layout
 2. Favicon
 3. Remove Genesis in-post metaboxes
