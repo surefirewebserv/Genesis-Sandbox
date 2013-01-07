@@ -81,37 +81,106 @@ function gs_remove_function( $function ) {
 /**
  * Add navigation menu to the top.
  *
- * @since 1.1.0
+ * @since 1.0.0
  */
 function gs_navigation( $location, $args ) {
 	if ( ! has_nav_menu( $location ) )
 		return;
 
 	$defaults = array(
-		'theme_location'  => $location,
-		'container_id'    => $location . '-nav',
-		'container_class' => 'menu',
+		'theme_location' => $location,
+		'container_id'   => $location . '-nav',
+		'menu_class'     => 'genesis-nav-menu menu menu-' . $location,
+		'echo'           => false,
 	);
 	
 	$args = wp_parse_args( $args, $defaults );
-
-	return wp_nav_menu( $args );
+	$nav = wp_nav_menu( $args );
+	
+	$nav_output = sprintf(
+		'<div id="%1$s">%3$s%2$s%4$s</div>', 
+		$location . '-nav', 
+		$nav, 
+		genesis_structural_wrap( 'nav', 'open', 0 ), 
+		genesis_structural_wrap( 'nav', 'close', 0 ) 
+	);
+		
+	return $nav_output;
 }
 
 add_action( 'after_setup_theme', 'gs_responsive', 5 );
 /**
- * Utilize the dormant Genesis 2.0.0 Responsive Functions.
+ * Create Responsive Functions.
+ * Genesis 2.0 will have something different yet similiar.
  */
 function gs_responsive() {
 
-	if ( current_theme_supports( 'genesis-responsive' ) ) {
-		add_action( 'wp_head', 'genesis_responsive_viewport' );
-		add_action( 'wp_enqueue_scripts', 'genesis_enqueue_responsive_stylesheet' );
+	if ( current_theme_supports( 'gs-responsive' ) ) {
+		//add_action( 'wp_head', 'genesis_responsive_viewport' );
+		
+		/** Roll our own due to genesis_responsive_viewport() possible changes */
+		add_action( 'wp_head', 'gs_responsive_viewport' );
+		add_action( 'wp_enqueue_scripts', 'gs_enqueue_responsive_stylesheet' );
 	}
 }
 
 /**
- * Utilize the dormant Genesis 2.0.0 Responsive Functions.
+ * If child theme supports responsive, look for and enqueue responsive.css.
+ *
+ * File (responsive.css) can be located either in the root theme directory, or in a /css subdirectory.
+ *
+ * @since 1.9.0
+ */
+function gs_enqueue_responsive_stylesheet() {
+
+	$stylesheet = genesis_get_theme_support_arg( 'gs-responsive', 'css' );
+
+	if ( ! $stylesheet )
+		return;
+
+	$handle = defined( 'CHILD_THEME_NAME' ) && CHILD_THEME_NAME ? sanitize_title( CHILD_THEME_NAME, 'child-theme' ) . '-responsive' : 'child-theme-responsive';
+
+	if ( file_exists( $stylesheet['dir'] ) ) {
+		$version = defined( 'CHILD_THEME_VERSION' ) && CHILD_THEME_VERSION ? CHILD_THEME_VERSION : PARENT_THEME_VERSION;
+		$deps    = defined( 'CHILD_THEME_NAME' ) && CHILD_THEME_NAME ? sanitize_title_with_dashes( CHILD_THEME_NAME ) : 'child-theme';
+		wp_enqueue_style( $handle, $stylesheet['src'], array( $deps ), $version );
+		return;
+	}
+
+}
+
+add_action( 'wp_head', 'gs_responsive_viewport' );
+/**
+ * Checks to see if the child theme supports Genesis responsive CSS viewport tag. If so, it echos it.
+ *
+ * @since 1.9.0
+ */
+function gs_responsive_viewport() {
+
+	if ( true === $viewport = genesis_get_theme_support_arg( 'gs-responsive', 'viewport' ) )
+		echo '<meta name="viewport" content="width=device-width, initial-scale=1.0"/>';
+	elseif ( $viewport = genesis_get_theme_support_arg( 'gs-responsive', 'viewport' ) )
+		echo $viewport;
+
+}
+
+add_action( 'wp_head', 'gs_responsive_viewport' );
+/**
+ * Checks to see if the child theme supports Genesis responsive CSS viewport tag. If so, it echos it.
+ *
+ * @since 1.9.0
+ */
+function gs_responsive_viewport() {
+
+	if ( true === $viewport = genesis_get_theme_support_arg( 'gs-responsive', 'viewport' ) )
+		echo '<meta name="viewport" content="width=device-width, initial-scale=1.0"/>';
+	elseif ( $viewport = genesis_get_theme_support_arg( 'gs-responsive', 'viewport' ) )
+		echo $viewport;
+
+}
+
+/**
+ * Creates proper script/style suffix based on WP_DEBUG or SCRIPT_DEBUG.
  *
  * @see wp_default_scripts() for min/dev pattern.
  *
@@ -121,6 +190,7 @@ function gs_responsive() {
  * @param string $dev Development abbreviation. Default = ''.
  */
 function gs_script_suffix( $script, $suffix = 'js', $min = '.min', $dev = '' ) {
+	// Suffix Sanitization
 	if ( 'js' != $suffix && 'css' != $suffix )
 		$suffix = 'js';
 
@@ -148,7 +218,7 @@ function gs_theme_files_to_edit() {
 		/** Do not change anything if we are in the Genesis theme */
 		if ( $theme->Name == CHILD_THEME_NAME ) {
 			/** Remove files */
-			foreach ( array( 'functions-alt.php', 'lib/init-alt.php', 'lib/init.php' ) as $f )
+			foreach ( array( 'lib/init.php', 'alt/functions-alt.php', 'alt/gs-functions-alt.php', 'alt/init-alt.php', 'alt/init.php', 'languages/index.php', ) as $f )
 				unset( $allowed_files[ $f ] );
 		}
 	}
@@ -174,6 +244,101 @@ function gs_unregister_post_type( $post_type, $slug = '' ){
             $slug = ( !$slug ) ? 'edit.php?post_type=' . $post_type : $slug;
             remove_menu_page( $slug );
 	}
+}
+
+remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
+add_action( 'genesis_before_footer', 'gs_footer_widget_areas' );
+/**
+ * Echos the markup necessary to facilitate the footer widget areas.
+ *
+ * Checks for a numerical parameter given when adding theme support - if none is
+ * found, then the function returns early.
+ *
+ * Adds column classes based on number of footer widgets registered.
+ *
+ * @uses gs_column_class() Gets column class name for footer widgets 2-6.
+ *
+ * @since 1.1.0
+ *
+ * @return null Returns early if number of widget areas could not be determined,
+ * or nothing is added to the first widget area
+ */
+function gs_footer_widget_areas() {
+
+	$footer_widgets = get_theme_support( 'genesis-footer-widgets' );
+
+	if ( ! $footer_widgets || ! isset( $footer_widgets[0] ) || ! is_numeric( $footer_widgets[0] ) )
+		return;
+
+	$footer_widgets = (int) $footer_widgets[0];
+
+	/**
+	 * Check to see if first widget area has widgets. If not,
+	 * do nothing. No need to check all footer widget areas.
+	 */
+	if ( ! is_active_sidebar( 'footer-1' ) )
+		return;
+
+	$output  = '';
+	$counter = 1;
+
+	while ( $counter <= $footer_widgets ) {
+		/** Darn you, WordPress! Gotta output buffer. */
+		ob_start();
+		dynamic_sidebar( 'footer-' . $counter );
+		$widgets = ob_get_clean();
+		
+		/** Dynamically create column classes. */
+		$class = 1 == (int) $counter ? 'first ' : '';
+		$class .= gs_column_class( $footer_widgets );
+		
+		$output .= sprintf( '<div class="footer-widgets-%1$d widget-area %2$s">%3$s</div>', $counter, $class, $widgets );
+
+		$counter++;
+	}
+
+	echo apply_filters( 'genesis_footer_widget_areas', sprintf( '<div id="footer-widgets" class="footer-widgets gs-footer-widgets-%4$s">%2$s%1$s%3$s</div>', $output, genesis_structural_wrap( 'footer-widgets', 'open', 0 ), genesis_structural_wrap( 'footer-widgets', 'close', 0 ), $footer_widgets ) );
+
+}
+
+/**
+ * Gets the column class for 2-6 footer widgets.
+ *
+ * @since 1.1.0
+ *
+ * @return string Column class name.
+ */
+function gs_column_class( $i ) {
+	switch ( $i ) {
+		case 1:
+			return '';
+		case 2:
+			return 'one-half';
+		case 3:
+			return 'one-third';
+		case 4:
+			return 'one-fourth';
+		case 5:
+			return 'one-fifth';
+		case 6:
+			return 'one-sixth';
+		default:
+			return '';
+	}
+}
+
+/**
+ * Instantiate Pretty Photo
+ *
+ * @param array $args Future Development
+ */
+function gs_init_pretty_photo( $args = array() ) { ?>
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+    $("a[rel^='prettyPhoto']").prettyPhoto();
+  });
+</script>
+<?php
 }
 
 /** 
@@ -253,8 +418,6 @@ function gs_register_scripts() {
 	 * @link http://twitter.github.com/bootstrap/
 	 */
 	wp_register_style( 'gs-twitter-bootstrap', CHILD_CSS . '/' . gs_script_suffix( 'bootstrap', 'css' ), array(), '1.0.0' );
-	// Twitter Bootstrap Responsive may conflict with your child theme
-	//wp_register_style( 'gs-twitter-bootstrap-responsive', CHILD_CSS . '/' . gs_script_suffix( 'bootstrap-responsive', 'css' ), array( 'gs-twitter-bootstrap' ), '1.0.0' );
 	wp_register_style( 'gs-twitter-bootstrap-cdn', '//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css', array(), '2.2.2' );
 	
 	// Twitter Bootstrap CSS (Font Awesome version)
@@ -302,7 +465,7 @@ function gs_enqueue_scripts() {
 	// See gs_register_scripts() for examples.
 	
 	// Styles
-	//wp_enqueue_style( 'gs-twitter-bootstrap' );
+	wp_enqueue_style( 'gs-twitter-bootstrap' );
 	//wp_enqueue_style( 'gs-twitter-bootstrap-font-awesome' );
 	//wp_enqueue_style( 'gs-font-awesome' );
 	//wp_enqueue_style( 'gs-pretty-photo' );
@@ -325,21 +488,6 @@ function gs_enqueue_scripts() {
 	// wp_localize_script( REGISTERED-HANDLE, OBJECT_NAME, OBJECT_DATA );
 	wp_localize_script( 'gs-common-scripts', 'gs', $l10n_args );
 	*/
-}
-
-/**
- * Add navigation menu to the top.
- *
- * @since 1.1.0
- * @uses gs_navigation() Sandbox Navigation Helper Function.
- */
-function gs_top_navigation() {
-	
-	$top_menu_args = array(
-		'echo' => true,
-	);
-	
-	gs_navigation( 'top', $top_menu_args );
 }
 
 /**
@@ -417,61 +565,4 @@ function gs_add_settings() {
 	global $_gs_settings;
 	
 	$_gs_settings = new Genesis_Sandbox_Settings;	 	
-}
-
-add_action( 'genesis_after_sidebar_widget_area', 'gs_bottom_sidebars' );
-/** 
- * Add two sidebars underneath the primary sidebar
- */
-function gs_bottom_sidebars() {
-	foreach ( array( 'sidebar-bottom-left', 'sidebar-bottom-right', ) as $area ) {
-		genesis_widget_area(
-			'home', 
-			array( 
-				'before' => '<div id="' . $area . '" class="sidebar-widget widget-area">', 
-				'after'  => '</div><!-- end #' . $area . '-->',
-			) 
-		);
-		
-	}
-}
-
-/**
- * 04 Register Extra Sidebars (widget areas)
- * Edit the $sidebars array to create the initial desired sidebars.
- * This is to be used with genesis_widget_area() on the front end.
- *
- * @uses genesis_register_sidebar() Genesis helper function to register WP sidebars.
- */
-function gs_register_sidebars() {
-	$sidebars = array(
-		array(
-			'id'			=> 'home-top',
-			'name'			=> __( 'Home Top', CHILD_DOMAIN ),
-			'description'	=> __( 'This is the top homepage section.', CHILD_DOMAIN ),
-		),
-		array(
-			'id'			=> 'home-left',
-			'name'			=> __( 'Home Left', CHILD_DOMAIN ),
-			'description'	=> __( 'This is the homepage left section.', CHILD_DOMAIN ),
-		),
-		array(
-			'id'			=> 'home-right',
-			'name'			=> __( 'Home Right', CHILD_DOMAIN ),
-			'description'	=> __( 'This is the homepage right section.', CHILD_DOMAIN ),
-		),
-		array(
-			'id'			=> 'home-bottom',
-			'name'			=> __( 'Home Bottom', CHILD_DOMAIN ),
-			'description'	=> __( 'This is the homepage right section.', CHILD_DOMAIN ),
-		),
-		array(
-			'id'			=> 'portfolio',
-			'name'			=> __( 'Portfolio', CHILD_DOMAIN ),
-			'description'	=> __( 'This is the portfolio page template', CHILD_DOMAIN ),
-		),
-	);
-	
-	foreach ( $sidebars as $sidebar )
-		genesis_register_sidebar( $sidebar );
 }

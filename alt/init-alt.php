@@ -50,6 +50,7 @@ function gs_register_sidebar_defaults( $defaults ) {
 	);
 }
 
+
 add_action( 'genesis_setup', 'gs_theme_setup', 15 );
 /**
  * 03 Theme Setup
@@ -65,24 +66,24 @@ function gs_theme_setup() {
 	   01 Content Width
 	   02 Structural Wraps
 	   03 Post Info/Meta
-	   03 Post Formats
-	   04 Images
-	   05 Custom Background
-	   06 Genesis Custom Header
-	   07 Footer Widgets
-	   08 Genesis Menus
-	   09 Top Navigation
-	   10 Custom Footer
-	   11 Responsiveness
-	   12 Scripts
-	   13 Editor Style
-	   14 Remove Sidebars
-	   15 Set Default Layout
-	   16 Remove Unused Page Layouts
-	   17 Excerpt/Content Limit/Content Read More
-	   18 Genesis Readme Support
-	   19 Genesis Edit Link
-	   20 Unused Contact Methods
+	   04 Post Formats
+	   05 Images
+	   06 Custom Background
+	   07 Genesis Custom Header
+	   08 Footer Widgets
+	   09 Genesis Menus
+	   10 Top Navigation
+	   11 Custom Footer
+	   12 Responsiveness
+	   13 Scripts
+	   14 Editor Style
+	   15 Remove Sidebars
+	   16 Set Default Layout
+	   17 Remove Unused Page Layouts
+	   18 Excerpt/Content Limit/Content Read More
+	   19 Genesis Readme Support
+	   20 Genesis Edit Link
+	   21 Unused Contact Methods
 	*/
 
 	/** 
@@ -202,12 +203,14 @@ function gs_theme_setup() {
 		array(
 			'primary'   => __( 'Primary Navigation Menu', CHILD_DOMAIN ), 
 			'secondary' => __( 'Secondary Navigation Menu', CHILD_DOMAIN ),
-			'top'       => __( 'Top Navigation Menu', CHILD_DOMAIN ),
 			'footer'    => __( 'Footer Navigation Menu', CHILD_DOMAIN ),
 			'mobile'    => __( 'Mobile Navigation Menu', CHILD_DOMAIN ),
 		)
 	);
+	
+	/** Simple Menu Registration */
 	//add_theme_support( 'genesis-menus', array( 'primary' => 'Primary Navigation Menu' ) );
+	
 	/** Remove Genesis Menus */
 	//remove_theme_support( 'genesis-menus' );
 	
@@ -217,11 +220,7 @@ function gs_theme_setup() {
 	 * Below are two functions (add_action()) that will add a top
 	 * navigation menu either before #wrap or inside the #wrap.
 	 */
-	/** Add Top Navigation Before #wrap */
-	//add_action( 'genesis_before', 'gs_top_navigation', 5 );
 	
-	/** Add Top Navigation Inside #wrap */
-	add_action( 'genesis_before_header', 'gs_top_navigation', 5 );
 	
 	/** Add Mobile Navigation Inside #wrap */
 	add_action( 'genesis_before_header', 'gs_mobile_navigation', 5 );
@@ -234,6 +233,7 @@ function gs_theme_setup() {
 	
 	/**
 	 * 11 Genesis Sandbox Responsive
+	 * Roll own responsive functions
 	 * @uses gs_script_suffix() Adds proper CSS/JS suffix based on WP_DEBUG or WP_SCRIPT_DEBUG.
 	 */
 	add_theme_support(
@@ -337,7 +337,7 @@ function gs_theme_setup() {
 }
 
 /**
- * 03 Register Extra Sidebars (widget areas)
+ * 04 Register Extra Sidebars (widget areas)
  * Edit the $sidebars array to create the initial desired sidebars.
  * This is to be used with genesis_widget_area() on the front end.
  *
@@ -345,16 +345,6 @@ function gs_theme_setup() {
  */
 function gs_register_sidebars() {
 	$sidebars = array(
-		array(
-			'id'			=> 'sidebar-bottom-left',
-			'name'			=> __( 'Sidebar Bottom Left', CHILD_DOMAIN ),
-			'description'	=> __( 'This is the bottom left sidebar.', CHILD_DOMAIN ),
-		),
-		array(
-			'id'			=> 'sidebar-bottom-right',
-			'name'			=> __( 'Sidebar Bottom Right', CHILD_DOMAIN ),
-			'description'	=> __( 'This is the bottom right sidebar.', CHILD_DOMAIN ),
-		),
 		array(
 			'id'			=> 'home-top',
 			'name'			=> __( 'Home Top', CHILD_DOMAIN ),
@@ -368,6 +358,11 @@ function gs_register_sidebars() {
 		array(
 			'id'			=> 'home-right',
 			'name'			=> __( 'Home Right', CHILD_DOMAIN ),
+			'description'	=> __( 'This is the homepage right section.', CHILD_DOMAIN ),
+		),
+		array(
+			'id'			=> 'home-bottom',
+			'name'			=> __( 'Home Bottom', CHILD_DOMAIN ),
 			'description'	=> __( 'This is the homepage right section.', CHILD_DOMAIN ),
 		),
 		array(
