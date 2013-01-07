@@ -6,7 +6,7 @@
  * @category   Genesis_Sandbox
  * @package    Admin
  * @subpackage Inpost-Metaboxes
- * @author     Travis Smith, for Surefire Themes
+ * @author     Travis Smith
  * @license    http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
  * @link       http://wpsmith.net/
  * @since      1.1.0

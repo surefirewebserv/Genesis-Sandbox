@@ -4,7 +4,7 @@
  * Custom amendments for the theme.
  *
  * @category   Genesis_Sandbox
- * @author     Travis Smith, for Surefire Themes
+ * @author     Travis Smith
  * @license    http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
  * @link       http://wpsmith.net/
  * @since      1.1.0

@@ -1,12 +1,12 @@
 <?php 
 
 /**
- * Add footer scripts when another SEO plugin is active.
+ * Functions.
  *
  * @category   Genesis_Sandbox
  * @package    Functions
  * @subpackage Functions
- * @author     Travis Smith, for Surefire Themes
+ * @author     Travis Smith
  * @license    http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
  * @link       http://wpsmith.net/
  * @since      1.0.0
