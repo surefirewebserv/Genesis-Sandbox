@@ -66,6 +66,13 @@ When I am developing a non-commercialized child theme or a site for a client, I 
 
 In essence, the setup function from functions.php is pushed to init.php, and the other functions are pushed to gs-functions.php resulting in the functions-alt.php. This provides a clean slate for the client to do whatever they'd like to their own product. To use this alternative setup, you will need to remove the original functions (e.g., delete functions.php, init.php, and gs-functions.php) and rename the alt functions to the original names (e.g., functions-alt.php -> functions.php, init-alt.php -> init.php, and gs-functions-alt.php -> gs-functions.php). If you do not wish to use these, please delete the *-alt.php files.
 
+### Included Libraries
+This child theme will include popular libraries such as:
+1. Twitter Bootstrap 2.2.2
+2. Font Awesome 3.0
+3. Pretty Photo 3.1.4
+4. Modernizer 2.6.3
+
 ### HTML5 File
 This file contains the way to make Genesis 1.9 HTML5 by changing the doctype, header, nav and footer sections to HTML5 tags. It also contains code for HTML5Shiv and Modernizer if you so choose to enable those features as well.
 
