@@ -44,10 +44,8 @@
 	12 Forms & Buttons
 		- Gravity Forms
 	13 Images & Captions
-	14 Media Queries
-		- max-width: 1024px
-		- max-width: 768px
-		- max-width: 480px
+	14 Footer Nav
+	15 Mobile Nav
 
 */
 
@@ -1104,7 +1102,7 @@ textarea {
 
 button,
 input[type="button"],
-input[type="submit"]
+input[type="submit"],
 {
 	background-color: #1e1e1e;
 	border: none;
@@ -1117,8 +1115,7 @@ input[type="submit"]
 
 button:hover,
 input:hover[type="button"],
-input:hover[type="submit"] 
-{
+input:hover[type="submit"] {
 	background-color: #ff2a00;
 }
 
@@ -1236,7 +1233,7 @@ p.wp-caption-text {
 .gallery-caption {
 }
 
-/* FOOTER NAV */
+/* 14 FOOTER NAV */
 #footer #footer-nav .wrap {
 	border: none;
 	padding: 0;
@@ -1251,7 +1248,7 @@ p.wp-caption-text {
 	padding: 0rem .75rem;
 }
 
-/* MOBILE STYLES  */
+/* 15 MOBILE STYLES  */
 
 #mobile-nav, #mobile-nav ul {
 	display: none;
