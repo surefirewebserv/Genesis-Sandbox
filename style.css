@@ -517,7 +517,7 @@ blockquote {
 }
 
 blockquote::before {
-	content: "â€œ";
+	content: "\201C";
 	display: block;
 	height: 0;
 	left: -20px;
@@ -1104,7 +1104,7 @@ textarea {
 
 button,
 input[type="button"],
-input[type="submit"],
+input[type="submit"]
 {
 	background-color: #1e1e1e;
 	border: none;
@@ -1117,7 +1117,8 @@ input[type="submit"],
 
 button:hover,
 input:hover[type="button"],
-input:hover[type="submit"] {
+input:hover[type="submit"] 
+{
 	background-color: #ff2a00;
 }
 
