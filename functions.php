@@ -191,12 +191,12 @@ function gs_theme_setup() {
 	add_theme_support(
 		'genesis-custom-header',
 		array(
-			'header_image'          => CHILD_URL . '/images/header.png',
-			'width'                 => 1152, 
-			'height'                => 60, 
+			'header_image'          => '%s/images/logo.png',
+			'width'                 => 350, 
+			'height'                => 100, 
 			'textcolor'             => 'blank', // replace with Hex colors
 			// Optional as Genesis has its own header_callback & admin_header_callback but samples provided in gs-functions.php for customizations
-			//'header_callback'       => 'gs_header_style',
+			'header_callback'       => 'gs_header_style',
 			//'admin_header_callback' => 'gs_admin_style', 
 		)
 	);
@@ -434,9 +434,6 @@ function gs_read_more_link( $link ) {
  * based on user input.
  */
 function gs_header_style() {
-	/** If no options set, don't waste the output. Do nothing. */
-	if ( HEADER_TEXTCOLOR == get_header_textcolor() && HEADER_IMAGE == get_header_image() )
-		return;
 
 	/** Header image CSS */
 	$output = sprintf( '#title-area { background: url(%s) #0a84c9 no-repeat; }', esc_url( get_header_image() ) );
