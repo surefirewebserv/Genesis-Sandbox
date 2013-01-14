@@ -125,8 +125,8 @@ function gs_theme_setup() {
 			'subnav', 
 			'mobile-menu', 
 			'inner', 
-			'sidebar', 
-			'sidebar-alt', 
+			//'sidebar', 
+			//'sidebar-alt', 
 			'footer-widgets', 
 			'footer', 
 		)
