@@ -343,6 +343,10 @@ h2 a:visited,
 /* 04a - Structure ----------- */
 
 #wrap {
+	width: 100%;
+}
+
+.wrap {
 	margin: 0 auto;
 	max-width: 1152px;
 }
