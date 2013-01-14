@@ -19,7 +19,7 @@ add_action( 'get_header', 'gs_home_helper' );
  */
 function gs_home_helper() {
 
-        if ( is_active_sidebar( 'home' ) || is_active_sidebar( 'home-left' ) || is_active_sidebar( 'home-right' ) || is_active_sidebar( 'home-bottom' ) ) {
+        if ( is_active_sidebar( 'home-top' ) || is_active_sidebar( 'home-left' ) || is_active_sidebar( 'home-right' ) || is_active_sidebar( 'home-bottom' ) ) {
 
                 remove_action( 'genesis_loop', 'genesis_do_loop' );
                 add_action( 'genesis_loop', 'gs_home_widgets' );
