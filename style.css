@@ -1106,7 +1106,7 @@ textarea {
 
 button,
 input[type="button"],
-input[type="submit"],
+input[type="submit"]
 {
 	background-color: #1e1e1e;
 	border: none;
