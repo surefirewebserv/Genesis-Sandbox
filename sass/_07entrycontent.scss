@@ -1,0 +1,62 @@
+.entry-content p {
+	margin-bottom: 26px;
+	@include rem(margin-bottom, 26);
+}
+
+/* Blockquotes */
+
+	blockquote {
+		padding: 24px 64px;
+		padding: cr(24) cr(64);
+	}
+
+	blockquote::before {
+		content: "“";
+		display: block;
+		height: 0;
+		left: -20px;
+		position: relative;
+		top: -10px;
+	}
+
+	blockquote::before,
+	blockquote p,
+	 {
+		color: shade($light, 50%);
+	}
+
+	blockquote::before {
+		font-size: 32px;
+		@include rem(font-size, 32);
+		@include grCustomLineHeight(32);
+	}
+
+
+/* Lists */
+
+	.entry-content ol,
+	.entry-content ul {
+		margin-bottom: 26px;
+		@include rem(margin-bottom, 26);
+	}
+
+	.entry-content ol li,
+	.entry-content ul li {
+		line-height: 1.625;
+		margin-left: 40px;
+		@include rem(margin-left, 40);
+	}
+
+	.entry-content ol li {
+		list-style-type: decimal;
+	}
+
+	.entry-content ul li {
+		list-style-type: disc;
+	}
+
+	.entry-content ol ol,
+	.entry-content ul ul {
+		margin-bottom: 0;
+	}
+

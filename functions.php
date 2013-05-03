@@ -99,6 +99,7 @@ function gs_theme_setup() {
 	   19 Genesis Readme Support
 	   20 Genesis Edit Link
 	   21 Unused Contact Methods
+	   22 Unregister SuperFish
 	*/
 
 	/** 
@@ -187,7 +188,7 @@ function gs_theme_setup() {
 	/**
 	 * 06 Custom Header
 	 * Add support for custom header
-	 */
+	 *
 	add_theme_support(
 		'genesis-custom-header',
 		array(
@@ -199,7 +200,7 @@ function gs_theme_setup() {
 			'header_callback'       => 'gs_header_style',
 			//'admin_header_callback' => 'gs_admin_style', 
 		)
-	);
+	); */
 
 	/**
 	 * 07 Footer Widgets
@@ -349,6 +350,16 @@ function gs_theme_setup() {
 		remove_action( 'show_user_profile', $field );
 		remove_action( 'edit_user_profile', $field );
 	}
+
+	/**
+	 * 21 Unregister SuperFish
+	 */
+	
+	add_action( 'wp_enqueue_scripts', 'gs_unregister_superfish' );
+	function gs_unregister_superfish() {
+		wp_deregister_script( 'superfish' );
+		wp_deregister_script( 'superfish-args' );
+	}
 }
 
 /**
@@ -432,26 +443,26 @@ function gs_read_more_link( $link ) {
  *
  * It outputs special CSS to the document head, modifying the look of the header
  * based on user input.
- */
+ *
 function gs_header_style() {
 
-	/** Header image CSS */
+	// Header image CSS 
 	$output = sprintf( '#title-area { background: url(%s) #0a84c9 no-repeat; }', esc_url( get_header_image() ) );
 
-	/** Header text color CSS, if showing text */
+	// Header text color CSS, if showing text
 	if ( 'blank' != get_header_textcolor() )
 		$output .= sprintf( '#title a, #title a:hover, #description { color: #%s; }', esc_html( get_header_textcolor() ) );
 
 	printf( '<style type="text/css">%s</style>', $output );
 
-}
+} */
 
 /**
  * Register a custom admin callback to display the custom header preview with the
  * same style as is shown on the front end.
  *
  * @see genesis_custom_header_admin_style() For comparison & the default genesis-custom-background admin callback function.
- */
+ *
 function gs_admin_style() {
 
 	$headimg = sprintf( '.appearance_page_custom-header #headimg { background: url(%s) no-repeat; font-family: Georgia, Times, serif; min-height: %spx; text-align: center; text-shadow: #666 1px 1px; }', get_header_image(), HEADER_IMAGE_HEIGHT );
@@ -460,7 +471,7 @@ function gs_admin_style() {
 
 	printf( '<style type="text/css">%1$s %2$s %3$s</style>', $headimg, $h1, $desc );
 	
-}
+}*/
 
 /*
 08 Scripts

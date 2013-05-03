@@ -1,0 +1,76 @@
+/* Headings */
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	.entry-title a {
+		line-height: 1.2;
+		margin-bottom: 16px;
+		@include rem(margin-bottom, 16);
+		font-family: $googleFont, $googleFontType;
+		font-weight: 700;
+	}
+
+	
+
+	h1,
+	.entry-title,
+	.entry-title a {
+		@include sfFontSize(32);
+	}
+
+	/* Title Class for SEO / No Overuse of H Tags */
+	.title,
+	h2 {
+		@include sfFontSize(28);
+	}
+
+	h2 a,
+	h2 a:visited {
+		color: $color-extra;
+		&:hover { color: shade($color-cta, 30%); }
+	}
+
+
+	h3 {
+		@include sfFontSize(24);
+	}
+
+	h4,
+	.archive-title,
+	.taxonomy-description h1,
+	.widgettitle {
+		@include sfFontSize(20);
+	}
+
+	h4.widgettitle a {
+		color:$color-cta;
+	}
+
+	h5 {
+		@include sfFontSize(18);
+	}
+
+	h6,
+	.author-box h1,
+	.sidebar h2 a {
+		@include sfFontSize(14);
+	}
+
+	.author-box h1 {
+		margin: 0;
+		line-height: 1.5;
+	}
+
+	.taxonomy-description h1 {
+		margin-bottom: 4px;
+		@include rem(margin-bottom, 4);
+	}
+
+	.archive-title {
+		margin-bottom: 24px;
+		@include rem(margin-bottom, 24);
+	}

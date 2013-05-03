@@ -1,0 +1,168 @@
+//
+// Golden Ratio Typography
+// --------------------------------------------------
+
+
+// Golden Ratio Math
+//
+// Let's do some math so we can build beautiful typography and vertical rhythm.
+// For any magic to happen, set the $ContentWidth variable on _variables.scss
+// to match your content box width (normally this is 640px, 740px, etc...).
+//
+// Many thanks to Chris Pearson's scary math skills http://t.co/KoeUoEWrNS
+// and his Golden Ratio Calculator http://t.co/6MyXPtRrlu
+//
+// @author Greg Rickaby
+// @since 1.0
+// @requires $ContentWidth
+// ----------------------------------
+$phi: (1 + sqrt(5)) / 2; // 1.61803398874989 or "The Golden Ratio"
+$xoo: 1 / (2 * $phi);
+$yoo: sqrt($contentWidth) / $phi; // Line-height
+$zoo: $phi - $xoo * (1 - ($contentWidth / $yoo));
+
+
+// Title Size
+//
+// Calculated title size based on $ContentWidth.
+//
+// @author Greg Rickaby
+// @since 1.0
+//
+// Usage: @include grHeadlineSize();
+// --------------------------------
+@function calcTitleSize() {
+  $foo: calcFontSize() * pow($phi, 1.5);
+    @return round($foo);
+}
+
+@mixin grHeadlineSize() {
+  font-size: calcTitleSize() + px;
+  font-size: (calcTitleSize() / calcFontSize()) + rem;
+  line-height: calcTitleSize() / $yoo;
+}
+
+
+// Headline Size
+//
+// Calculated headline size based on $contentWidth.
+//
+// @author Greg Rickaby
+// @since 1.0
+//
+// Usage: @include grTitleSize
+// --------------------------------
+@function calcHeadlineSize() {
+  $foo: calcFontSize() * pow($phi, 1);
+    @return round($foo);
+}
+
+@mixin grTitleSize() {
+  font-size: calcHeadlineSize() + px;
+  font-size: (calcHeadlineSize() / calcFontSize()) + rem;
+  line-height: calcHeadlineSize() / $yoo;
+}
+
+
+// Sub-headline Size
+//
+// Caclulated sub-headline size based on $contentWidth.
+//
+// @author Greg Rickaby
+// @since 1.0
+//
+// Usage: @include grSubHeadlineSize();
+// --------------------------------
+@function calcSubHeadlineSize() {
+  $foo: calcFontSize() * sqrt($phi);
+    @return round($foo);
+}
+
+@mixin grSubHeadlineSize() {
+  font-size: calcSubHeadlineSize() + px;
+  font-size: (calcSubHeadlineSize() / calcFontSize()) + rem;
+  line-height: calcSubHeadlineSize() / $yoo;
+}
+
+
+// Font Size
+//
+// Calculated font size based on $contentWidth.
+//
+// @author Greg Rickaby
+// @since 1.0
+//
+// Usage: @include grFontSize();
+// --------------------------------
+@function calcFontSize() {
+  $foo: sqrt($contentWidth) / $phi;
+    @return round($foo);
+}
+
+@mixin grFontSize() {
+  font-size: calcFontSize() + px;
+  font-size: (calcFontSize() / calcFontSize()) + rem;
+}
+
+
+// Secondary Text
+//
+// Calculated secondary text size based on $contentWidth.
+//
+// @author Greg Rickaby
+// @since 1.0
+//
+// Usage: @include grSecondaryText();
+// --------------------------------
+@function calcSecondaryText() {
+  $foo: calcFontSize() * (1 / sqrt($phi));
+    @return round($foo);
+}
+
+@mixin grSecondaryText() {
+  font-size: calcSecondaryText() + px;
+  font-size: (calcSecondaryText() / calcFontSize()) + rem;
+  line-height: calcSecondaryText() / $yoo;
+}
+
+
+// Default Line Height
+//
+// Calculate default line-height based on $contentWidth.
+//
+// @author Greg Rickaby
+// @since 1.0
+//
+// Usage: @include grBaseLineHeight();
+// --------------------------------
+@function calcBaseLineHeight() {
+  $foobar: sqrt($contentWidth) / $phi;
+  $foo: calcFontSize() * ($phi - $xoo * (1 - ($contentWidth / pow(calcFontSize() * $phi, 2))));
+  $fo: $foo / $foobar;
+    @return $fo;
+}
+
+@mixin grBaseLineHeight() {
+  line-height: calcBaseLineHeight();
+}
+
+
+// Custom Line Height
+//
+// Calculate a Golden Ratio line-height based on a custom
+// value specified by you.
+//
+// @author Greg Rickaby
+// @since 1.0
+//
+// Usage: @include grCustomLineHeight(26);
+// --------------------------------
+@function calcCustomLineHeight($target) {
+  $foobar: sqrt($contentWidth) / $phi;
+  $foo: $target / $foobar;
+    @return $foo;
+}
+
+@mixin grCustomLineHeight($target) {
+  line-height: calcCustomLineHeight($target);
+}

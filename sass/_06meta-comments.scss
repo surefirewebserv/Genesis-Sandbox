@@ -1,0 +1,117 @@
+
+/* Post Info and Meta */
+
+	.post-info,
+	.post-meta {
+		clear: both;
+		line-height: 1.5;
+		color: shade($light,70%);
+		@include grFontSize();
+	}
+
+	.post-info {
+		margin-bottom: 24px;
+		@include rem(margin-bottom, 24);
+	}
+
+	.post-meta {
+		border-top: 1px solid #ccc;
+		padding-top: 24px;
+		@include rem(padding-top, 24);
+	}
+
+	.post-comments {
+		background: url(images/post-comments.png) no-repeat center left;
+		margin-left: 16px;
+		@include rem(margin-left, 16);
+		padding-left: 20px;
+		@include rem(margin-left, 20);
+		color: $textColor;
+	}
+
+	.categories,
+	.tags {
+		display: block;
+	}
+
+	.date {
+		color: $dark;
+	}
+
+
+/* Comments */
+
+	#comments,
+	#respond {
+		line-height: 1.5;
+		overflow: hidden;
+	}
+
+	.ping-list,
+	#comments {
+		margin-bottom: 48px;
+		@include rem(margin-bottom, 48);
+	}
+
+	#author,
+	#email,
+	#url {
+		width: 50%;
+	}
+
+	.commentmetadata,
+	#author,
+	#email,
+	#url {
+		margin-bottom: 12px;
+		@include rem(margin-bottom, 12);
+	}
+
+	#comment {
+		margin: 12px 0;
+		margin: cr(12) 0;
+	}
+
+	label {
+		margin-left: 12px;
+		@include rem(margin-left, 12);
+	}
+
+	.comment-list li,
+	.ping-list li {
+		list-style-type: none;
+		margin-top: 24px;
+		@include rem(margin-top, 24);
+		padding: 32px;
+		@include rem(padding, 32);
+	}
+
+	.comment-list li ul li {
+		margin-right: -32px;
+		@include rem(margin-right, 32);
+	}
+
+	.comment-header {
+		overflow: hidden;
+	}
+
+	.comment {
+		background-color: shade($light,20%);
+		border: 2px solid $light;
+		border-right: none;
+	}
+
+	.comment-content p {
+		margin-bottom: 24px;
+		@include rem(margin-bottom, 24);
+	}
+
+	.bypostauthor {
+	}
+
+	#comments .navigation {
+		margin-top: 32px;
+		@include rem(margin-top, 32);
+	}
+
+

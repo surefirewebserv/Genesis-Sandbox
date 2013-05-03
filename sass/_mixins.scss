@@ -1,0 +1,67 @@
+//
+// Mixins
+// --------------------------------------------------
+
+
+// Re-write Font Size via Variable
+//
+// Generate font size rem & px fallback from 
+// $baseFontSize. Enter the desired font size based
+// on pixels in numerical form.
+//
+// @author Greg Rickaby
+// @since 1.0
+//
+// Usage: @include fontSize(16);
+// ----------------------------------
+@mixin fontSize($target) {
+  font-size: ($target * 1) + px;
+  font-size: ($target / $baseFontSize) + rem;
+}
+
+// Re-write Font Size via Golden Ratio
+//
+// Generate font size rem & px fallback from 
+// calcFontSize(). Enter the desired font size based
+// on pixels in numerical form.
+//
+// @author Greg Rickaby
+// @since 1.0
+//
+// Usage: @include grFontSize(24);
+// ----------------------------------
+@mixin sfFontSize($target) {
+  font-size: ($target * 1) + px;
+  font-size: ($target / calcFontSize()) + rem;
+}
+
+
+// Calculate REM values
+//
+// This accepts long hand and short hand values and
+// will automatically generate a REM based on the
+// Golden Ratio value of calcFontSize();.
+//
+// @author Greg Rickaby
+// @since 1.0
+//
+// Longhand Usage: @include rem(font-size, 24);
+// Longhand Usage: @include rem(padding-top, 24);
+// Shorthand Usage: padding: cr(24) 0 cr(24) 0;
+// Shorthand Usage: margin: 0 cr(5) cr(5);
+// ----------------------------------
+
+// Longhand decloration
+@function calc-rem($target, $context: calcFontSize()) {
+  @return $target / $context * 1rem;
+}
+
+// Shorthand redeclaration of the above
+@function cr($target, $context: calcFontSize()) {
+  @return calc-rem($target, $context);
+}
+
+// rem: Calculate the rem unit, and return both pixels and rems to support older (non-rem supporting) browsers
+@mixin rem($property, $value, $context: calcFontSize()) {
+  #{$property}: cr($value, $context);
+}

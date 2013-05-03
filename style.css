@@ -1,102 +1,109 @@
 /*
-	Theme Name: Genesis Sandbox Free
-	Theme URI: http://genesissandbox.com/
-	Description: Default Genesis Child Theme.
-	Author: Travis Smith & Jonathan Perez
-	Author URI: http://genesissandbox.com/
-	Version: 1.1.0
-	Text Domain: gs
-	Tags: black, white, red, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fixed-width, custom-background, custom-header, custom-menu, editor-style, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
-
-	Template: genesis
-	Template Version: 1.9.0
-
-	License: GNU General Public License v3.0 (or later)
-	License URI: http://opensource.org/licenses/gpl-license.php
+    Theme Name: Genesis Sandbox
+    Description: This is a start kit for to devevelop your own themes for the Genesis Framework
+    Author: Jonathan Perez
+    Author URI: http://www.surefirewebservices.com/
+ 
+    Version: 1.9
+ 
+    Template: genesis
+    Template Version: 1.9
+ 
+    License: GPL-2.0+
+    License URI: http://www.opensource.org/licenses/gpl-license.php 
 */
-
 /* Table of Contents
 
-	01 Import Fonts
-	02 Defaults
-	03 Typography
-		- Font Color
-		- Font Family
-		- Font Size
-		- Font Miscellaneous
-	04 Layout
-		- Structure
-		- 1152px CSS Grid
-		- Header
-		- Main Content
-		- Post Info & Meta
-		- Column Classes
-		- Miscellaneous
-	05 Menus
-		- Primary Navigation Extras
-	06 Headings
-	07 Lists
-	08 Post Navigation
-	09 Comments
-	10 Sidebars
-	11 Footer
-		- Footer Widgets
-	12 Forms & Buttons
-		- Gravity Forms
-	13 Images & Captions
-	14 Footer Nav
-	15 Mobile Nav
-
+    01 Import Fonts
+    02 Base Styles 
+        Defaults
+        Wraps
+        Containers and Columns
+        Entry Content Structure
+        Headings and Titles
+  -- Layout --  
+    03 Header
+    04 Navigation
+       Primary Navigation Extras
+       Pagination
+    05 Meta and Comments
+        Post Info and Meta
+        Comments
+    06 Post Content Styles
+        Block Quotes
+        Lists
+    07 SideBar
+    08 SideBar Alt
+    09 Footer
+        Footer Widgets
+        Footer Navigation
+  -- Modules --
+    10 Forms and Buttons
+    11 Images and Captions
+    12 Author Box / Bread Crumbs / Sticky
+    13 Widgets/Plugins
+        eNews
+        Gravity Forms
 */
-
-
 /*
 01 Import Fonts
 ---------------------------------------------------------------------------------------------------- */
-
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
-
+@import url(//fonts.googleapis.com/css?family=Arimo|Varela);
 
 /*
-02 Defaults
+02 Base Styles
 ---------------------------------------------------------------------------------------------------- */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote,
-a, abbr, acronym, address, big, cite,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-input, menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	border: 0;
-	margin: 0;
-	padding: 0;
-	vertical-align: baseline;
+html, body, div, span, applet, object, iframe, h1, h2,
+h3, h4, h5, h6, p, blockquote, a, abbr, acronym, address,
+big, cite, del, dfn, em, img, ins, kbd, q, s, samp, small,
+strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt,
+dd, ol, ul, li, fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td, article, aside, canvas, details,
+embed, figure, figcaption, footer, header, hgroup, input, menu,
+nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
 }
 
 html {
-	font-size: 100%; /* 16px browser default */
+  font-size: 100%;
 }
 
 body {
-	background-color: #fff;
-	line-height: 1;
+  background-color: white;
+  font-size: 17px;
+  font-size: 1rem;
+  line-height: 1.6211;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333333;
 }
 
-body,
-input,
-select,
-textarea,
-.footer-widgets .widget-area {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
+p.pages,
+.clear,
+.clear-line {
+  clear: both;
+}
+
+.clear-line {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 26px;
+  margin-bottom: 1.52941rem;
+}
+
+.alignleft {
+  float: left;
+}
+
+.alignright {
+  float: right;
 }
 
 a,
@@ -104,464 +111,65 @@ a:visited,
 button,
 input[type="button"],
 input[type="submit"] {
-	-moz-transition: all 0.1s ease-in-out;
-	-webkit-transition: all 0.1s ease-in-out;
-	transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 ::-moz-selection {
-	background-color: #1e1e1e;
-	color: #fff;
+  background-color: #000d11;
+  color: white;
 }
 
 ::selection {
-	background-color: #1e1e1e;
-	color: #fff;
+  background-color: #000d11;
+  color: white;
+}
+
+a {
+  color: #3e6b85;
+  text-decoration: none;
+}
+a:hover {
+  color: #2b4a5d;
 }
 
 a img {
-	border: none;
+  border: none;
 }
 
-a.btn {
-	text-decoration: none;
-}
-
-
-/*
-03 Typography
--------------------------------------------------------------------------------------------------------
-
-	This section covers font colors, families, size, styles and weight.
-
-	This style sheet uses rem values with a pixel fallback.
-	The rem values are calculated per the examples below:
-
-	12 / 16 =		0.75rem
-	14 / 16 =		0.875rem
-	16 / 16 =		1rem	
-	18 / 16 =		1.125rem
-	20 / 16 =		1.25rem
-	24 / 16 =		1.5rem
-	30 / 16 =		1.875rem
-	36 / 16 =		2.25rem
-	42 / 16 =		2.625rem
-	48 / 16 =		3rem
-	
-	Further reading on the use and compatibility of rems:
-	
-	http://caniuse.com/rem
-	http://snook.ca/archives/html_and_css/font-size-with-rem
-	
-*/
-
-/* 03a - Font Color ----------- */
-
-a:hover,
-body,
-h2 a,
-h2 a:visited,
-h4.widgettitle a,
-input,
-.author,
-.date,
-.genesis-nav-menu a,
-.genesis-nav-menu li li a,
-.genesis-nav-menu li li a:link,
-.genesis-nav-menu li li a:visited,
-.post-comments,
-#title a,
-#title a:hover {
-	color: #1e1e1e;
-}
-
-a,
-h2 a:hover,
-.genesis-nav-menu li a:hover,
-.genesis-nav-menu li:hover a,
-.genesis-nav-menu li li a:hover,
-.genesis-nav-menu .current-menu-item a {
-	color: #ff2a00;
-}
-
-.post-info,
-.post-meta,
-#description {
-	color: #636363;
-}
-
-blockquote::before,
-blockquote p,
-input,
-select,
-textarea {
-	color: #999;
-}
-
-button,
-input[type="button"],
-input[type="submit"],
-.genesis-nav-menu .highlight-menu-item a,
-.genesis-nav-menu .highlight-menu-item a:hover,
-.navigation li a,
-.navigation li a:hover,
-.navigation li.active a,
-.navigation li.disabled {
-	color: #fff;
-}
-
-/* 03b - Font Family ----------- */
-
-body,
-input,
-textarea,
-.author-box h1 {
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.entry-title a,
-#title {
-	font-family: 'Lato', sans-serif;
-}
-
-/* 03c - Font Size ----------- */
-
-#title {
-	font-size: 42px;
-	font-size: 2.625rem;
-}
-
-h1,
-.entry-title,
-.entry-title a {
-	font-size: 36px;
-	font-size: 2.25rem;
-}
-
-blockquote::before {
-	font-size: 32px;
-	font-size: 2rem;
-}
-
-h2 {
-	font-size: 30px;
-	font-size: 1.875rem;
-}
-
-h3 {
-	font-size: 24px;
-	font-size: 1.5rem;
-}
-
-h4,
-.archive-title,
-.taxonomy-description h1,
-.widgettitle {
-	font-size: 20px;
-	font-size: 1.25rem;
-}
-
-h5 {
-	font-size: 18px;
-	font-size: 1.125rem;
-}
-
-h6,
-.author-box h1,
-.sidebar h2 a {
-	font-size: 16px;
-	font-size: 1rem;
-}
-
-input,
-select,
-textarea,
-.genesis-nav-menu,
-.post-info,
-.post-meta,
-.wp-caption,
-#footer p {
-	font-size: 14px;
-	font-size: 0.875rem;
-}
-
-
-/* 03d - Font Miscellaneous ----------- */
-
-blockquote p {
-	font-style: italic;
-}
-
-cite {
-	font-style: normal;
-}
-
-button,
-input[type="button"],
-input[type="submit"],
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.entry-title a,
-.genesis-nav-menu,
-.post-comments,
-.post-info .author,
-.post-info .date,
-.wp-caption,
-#footer p,
-#title {
-	font-weight: 700;
-}
-
-.wp-caption {
-	text-align: center;
-}
-
-h2 a,
-h2 a:visited,
-.genesis-nav-menu a,
-.navigation li a,
-.widgettitle a,
-#title a {
-	text-decoration: none;
-}
-
-
-/*
-04 Layout
----------------------------------------------------------------------------------------------------- */
-
-/* 04a - Structure ----------- */
-
+/* Wraps */
 #wrap {
-	width: 100%;
+  width: 100%;
 }
 
 .wrap {
-	margin: 0 auto;
-	max-width: 1152px;
+  margin: 0 auto;
+  max-width: 1152px;
 }
 
 #inner {
-	clear: both;
-	overflow: hidden;
-	padding-top: 40px;
-	padding-top: 2.5rem;
+  overflow: hidden;
+  *zoom: 1;
+  padding-top: 20px;
+  padding-top: 1.17647rem;
 }
 
-/* 04b - 1152px CSS Grid ----------- */
-
-#sidebar-alt {
-	width: 15.277777777%; /* 176px / 1152px */
-}
-
-.sidebar,
-#header .widget-area {
-	width: 30.555555555%; /* 352px / 1152px */
-}
-
-.content-sidebar-sidebar .sidebar,
-.sidebar-content-sidebar .sidebar,
-.sidebar-sidebar-content .sidebar {
-	width: 37.931034482%; /* 352px / 928px */
-}
-
-.content-sidebar-sidebar #content,
-.sidebar-content-sidebar #content,
-.sidebar-sidebar-content #content {
-	width: 56.896551724%; /* 528px / 928px */
-}
-
-.content-sidebar #content,
-.sidebar-content #content,
-#title-area {
-	width: 65.277777777%; /* 752px / 1152px */
-}
-
-.content-sidebar-sidebar #content-sidebar-wrap,
-.sidebar-content-sidebar #content-sidebar-wrap,
-.sidebar-sidebar-content #content-sidebar-wrap {
-	width: 80.555555555%; /* 928px / 1152px */
-}
-
-.content-sidebar #content-sidebar-wrap,
-.full-width-content #content,
-.full-width-content #content-sidebar-wrap,
-.sidebar-content #content-sidebar-wrap {
-	width: 100%; /* 1152px / 1152px */
-}
-
-.sidebar-content #sidebar,
-.sidebar-sidebar-content #sidebar,
-#content,
-#content-sidebar-wrap,
-#footer .gototop,
-#sidebar-alt,
-#title-area {
-	float: left;
-}
-
+/* Containers and Columns */
 .content-sidebar-sidebar #sidebar-alt,
-.sidebar,
 .sidebar-content #content,
 .sidebar-content-sidebar #content-sidebar-wrap,
 .sidebar-sidebar-content #content,
 .sidebar-sidebar-content #content-sidebar-wrap,
 #footer .creds,
-#header .widget-area {
-	float: right;
+#header .widget-area,
+.sidebar-content-sidebar #sidebar {
+  float: right;
 }
-
-#home-middle {
-	overflow: hidden;
-}
-
-#home-middle,
-#home-top,
-#home-bottom {
-	padding: 1rem 0;
-}
-
-/* 04c - Header ----------- */
-
-#header {
-	border-bottom: 2px solid #1e1e1e;
-	min-height: 120px;
-	overflow: hidden;
-	padding-bottom: 32px;
-	padding-bottom: 2rem;
-}
-
-#title {
-	line-height: 1;
-	margin: 40px 0 8px;
-	margin: 2.5rem 0 0.5rem;
-}
-
-.header-image #title {
-	margin: 0;
-}
-
-#description {
-	line-height: 1.25;
-}
-
-.header-full-width #title,
-.header-full-width #title a,
-.header-full-width #title-area {
-	width: 100%;
-}
-
-.header-image #title,
-.header-image #title a,
-.header-image #title-area {
-	display: block;
-	float: left;
-	min-height: 120px;
-	overflow: hidden;
-	text-indent: -9999px;
-	width: 50%;
-}
-
-.header-image #description {
-	display: block;
-	overflow: hidden;
-}
-
-/* 04d - Main Content ----------- */
-
-#content {
-	padding-bottom: 40px;
-	padding-bottom: 2.5rem;
-}
-
-.entry,
-.page .post.entry {
-	margin-bottom: 80px;
-	margin-bottom: 5rem;
-}
-
-.single .entry {
-	margin-bottom: 48px;
-	margin-bottom: 3rem;
-}
-
-.page .entry {
-	margin: 0;
-}
-
-.entry-content {
-	overflow: hidden;
-}
-
-.entry-content,
-.entry-content p {
-	line-height: 1.625;
-}
-
-.entry-content p {
-	margin-bottom: 26px;
-	margin-bottom: 1.625rem;
-}
-
-blockquote {
-	padding: 24px 64px;
-	padding: 1.5rem 4rem;
-}
-
-blockquote::before {
-	content: "\201C";
-	display: block;
-	height: 0;
-	left: -20px;
-	position: relative;
-	top: -10px;
-}
-
-/* 04e - Post Info & Meta ----------- */
-
-.post-info,
-.post-meta {
-	clear: both;
-	line-height: 1.5;
-}
-
-.post-info {
-	margin-bottom: 24px;
-	margin-bottom: 1.5rem;
-}
-
-.post-comments {
-	background: url(images/post-comments.png) no-repeat center left;
-	margin-left: 16px;
-	margin-left: 1rem;
-	padding-left: 20px;
-	padding-left: 1.25rem;
-}
-
-.post-meta {
-	border-top: 1px solid #ccc;
-	padding-top: 24px;
-	padding-top: 1.5rem;
-}
-
-.categories,
-.tags {
-	display: block;
-}
-
-/* 04f - Column Classes ----------- */
 
 .five-sixths,
+.content-sidebar-sidebar #sidebar,
 .four-fifths,
 .four-sixths,
 .one-fifth,
@@ -575,262 +183,149 @@ blockquote::before {
 .two-fifths,
 .two-fourths,
 .two-sixths,
-.two-thirds {
-	float: left;
-	margin-left: 4.166666666%; /* 48px / 1152px */
+.two-thirds,
+.sidebar-content #sidebar,
+.sidebar-sidebar-content #sidebar,
+.content-sidebar-sidebar #content,
+#footer .gototop,
+#sidebar-alt,
+#title-area,
+.archive-page,
+.content-sidebar #content,
+.content-sidebar #sidebar,
+.sidebar-content-sidebar #sidebar-alt,
+.content-sidebar-sidebar #content,
+.sidebar-content-sidebar #content {
+  float: left;
+  margin-left: 4.16667%;
+  /* 48px / 1152px */
 }
 
 .one-half,
 .three-sixths,
-.two-fourths {
-	width: 47.9166666666%; /* 552px / 1152px */
+.two-fourths,
+.content-sidebar-sidebar #content,
+.archive-page,
+#header .widget-area,
+#title-area {
+  width: 47.91667%;
+  /* 552px / 1152px */
 }
 
 .one-third,
-.two-sixths {
-	width: 30.555555555%; /* 352px / 1152px */
+.two-sixths,
+.content-sidebar #sidebar,
+.sidebar-content #sidebar,
+.content-sidebar-sidebar #sidebar,
+.sidebar-content-sidebar #sidebar,
+.sidebar-sidebar-content #sidebar {
+  width: 30.55556%;
+  /* 352px / 1152px */
 }
 
 .four-sixths,
-.two-thirds {
-	width: 65.277777777%; /* 752px / 1152px */
+.two-thirds,
+.content-sidebar #content,
+.sidebar-content #content,
+.sidebar-content-sidebar #content,
+.sidebar-sidebar-content #content {
+  width: 65.27778%;
+  /* 752px / 1152px */
 }
 
 .one-fourth {
-	width: 21.875%; /* 252px / 1152px */
+  width: 21.875%;
+  /* 252px / 1152px */
 }
 
 .three-fourths {
-	width: 73.958333333%; /* 852px / 1152px */
+  width: 73.95833%;
+  /* 852px / 1152px */
 }
 
 .one-fifth {
-	width: 16.666666666%; /* 192px / 1152px */
+  width: 16.66667%;
+  /* 192px / 1152px */
 }
 
 .two-fifths {
-	width: 37.5%; /* 432px / 1152px */
+  width: 37.5%;
+  /* 432px / 1152px */
 }
 
 .three-fifths {
-	width: 58.333333333%; /* 672px / 1152px */
+  width: 58.33333%;
+  /* 672px / 1152px */
 }
 
 .four-fifths {
-	width: 79.166666666%; /* 912px / 1152px */
+  width: 79.16667%;
+  /* 912px / 1152px */
 }
 
-.one-sixth {
-	width: 13.194444444%; /* 152px / 1152px */
+.one-sixth,
+#sidebar-alt {
+  width: 13.19444%;
+  /* 152px / 1152px */
 }
 
-.five-sixths {
-	width: 82.638888888%; /* 952px / 1152px */
+.five-sixths,
+.sidebar-content-sidebar #content-sidebar-wrap,
+.sidebar-sidebar-content #content-sidebar-wrap {
+  width: 82.63889%;
+  /* 952px / 1152px */
 }
 
-.first {
-	margin-left: 0;
+.first,
+.content-sidebar-sidebar #content,
+.sidebar-content-sidebar #sidebar-alt,
+.sidebar-sidebar-content #sidebar-alt,
+#title-area,
+.content-sidebar #content,
+.sidebar-content #sidebar,
+.sidebar-content-sidebar #content,
+.sidebar-sidebar-content #sidebar {
+  margin-left: 0;
+  clear: both;
 }
 
-/* 04g - Miscellaneous ----------- */
-
-p.subscribe-to-comments {
-	padding: 24px 0 16px;
-	padding: 1.5rem 0 1rem;
-}
-
-p.pages,
-.clear,
-.clear-line,
-.first {
-	clear: both;
-}
-
-.clear-line {
-	border-bottom: 1px solid #ccc;
-	margin-bottom: 26px;
-	margin-bottom: 1.625rem;
-}
-
-.alignleft,
-.archive-page {
-	float: left;
-}
-
-.alignright {
-	float: right;
+.sidebar-content #sidebar,
+.sidebar-content-sidebar #sidebar-alt,
+.sidebar-sidebar-content #sidebar-alt,
+.sidebar-sidebar-content #sidebar {
+  clear: none;
 }
 
 .archive-page {
-	width: 50%;
+  margin-left: 0;
 }
 
-.author-box,
-.sticky {
-	margin-bottom: 80px;
-	margin-bottom: 5rem;
+/* Entry Content Structure */
+#content {
+  padding-bottom: 40px;
+  padding-bottom: 2.35294rem;
 }
 
-.author-box,
-.author-box h1,
-.taxonomy-description {
-	line-height: 1.5;
+.entry,
+.page .post.entry {
+  margin-bottom: 80px;
+  margin-bottom: 4.70588rem;
 }
 
-.author-box,
-.breadcrumb,
-.sticky,
-.taxonomy-description {
-	background-color: #f5f5f5;
-	margin-bottom: 48px;
-	margin-bottom: 3rem;
-	overflow: hidden;
-	padding: 32px;
-	padding: 2rem;
+.single .entry {
+  margin-bottom: 48px;
+  margin-bottom: 2.82353rem;
 }
 
-
-/*
-05 Menus
----------------------------------------------------------------------------------------------------- */
-
-.genesis-nav-menu {
-	clear: both;
-	overflow: hidden;
+.page .entry {
+  margin: 0;
 }
 
-#header .genesis-nav-menu {
-	float: right;
-	margin-top: 48px;
-	margin-top: 3rem;
-	width: auto;
+.entry-content {
+  overflow: hidden;
 }
 
-.genesis-nav-menu.menu-primary,
-.genesis-nav-menu.menu-secondary {
-	border-bottom: 1px solid #ccc;
-}
-
-.genesis-nav-menu ul {
-	float: left;
-	width: 100%;
-}
-
-.genesis-nav-menu li {
-	display: inline-block;
-	float: left;
-	list-style-type: none;
-	text-align: left;
-}
-
-.genesis-nav-menu a {
-	display: block;
-	padding: 24px 20px;
-	padding: 1.5rem 1.25rem;
-	position: relative;
-}
-
-.genesis-nav-menu li.highlight-menu-item {
-	margin-left: 20px;
-	margin-left: 1.25rem;
-}
-
-.genesis-nav-menu .highlight-menu-item a {
-	background-color: #1e1e1e;
-}
-
-.genesis-nav-menu .highlight-menu-item a:hover {
-	background-color: #ff2a00;
-}
-
-.genesis-nav-menu li li a,
-.genesis-nav-menu li li a:link,
-.genesis-nav-menu li li a:visited {
-	background-color: #fff;
-	border: 1px solid #ccc;
-	border-top: none;
-	padding: 20px;
-	padding: 1.25rem;
-	position: relative;
-	width: 170px;
-}
-
-.genesis-nav-menu li ul {
-	left: -9999px;
-	position: absolute;
-	width: 212px;
-	z-index: 99;
-}
-
-.genesis-nav-menu li ul ul {
-	margin: -55px 0 0 211px;
-}
-
-.genesis-nav-menu li:hover ul ul,
-.genesis-nav-menu li.sfHover ul ul {
-	left: -9999px;
-}
-
-.genesis-nav-menu li:hover,
-.genesis-nav-menu li.sfHover {
-	position: static;
-}
-
-ul.genesis-nav-menu li:hover>ul,
-ul.genesis-nav-menu li.sfHover ul,
-#header .genesis-nav-menu li:hover>ul,
-#header .genesis-nav-menu li.sfHover ul {
-	left: auto;
-}
-
-.genesis-nav-menu li a .sf-sub-indicator,
-.genesis-nav-menu li li a .sf-sub-indicator,
-.genesis-nav-menu li li li a .sf-sub-indicator {
-	position: absolute;
-	text-indent: -9999px;
-}
-
-#wpadminbar li:hover ul ul {
-	left: 0;
-}
-
-/* 05a - Primary Navigation Extras ----------- */
-
-.genesis-nav-menu li.right {
-	float: right;
-	padding: 24px 20px;
-	padding: 1.5rem 1.25rem;
-}
-
-.genesis-nav-menu li.right a {
-	display: inline;
-	padding: 0;
-}
-
-.genesis-nav-menu li.search {
-	padding: 6px 0 0;
-	padding: 0.375rem 0 0;
-}
-
-.genesis-nav-menu li.rss a {
-	background: url(images/rss.png) no-repeat center left;
-	margin-left: 20px;
-	margin-left: 1.25rem;
-	padding-left: 20px;
-	padding-left: 1.25rem;
-}
-
-.genesis-nav-menu li.twitter a {
-	background: url(images/twitter-nav.png) no-repeat center left;
-	padding-left: 24px;
-	padding-left: 1.5rem;
-}
-
-
-/*
-06 Headings
----------------------------------------------------------------------------------------------------- */
-
+/* Headings */
 h1,
 h2,
 h3,
@@ -838,431 +333,780 @@ h4,
 h5,
 h6,
 .entry-title a {
-	line-height: 1.2;
-	margin-bottom: 16px;
-	margin-bottom: 1rem;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  margin-bottom: 0.94118rem;
+  font-family: Arimo, Varela, sans-serif;
+  font-weight: 700;
+}
+
+h1,
+.entry-title,
+.entry-title a {
+  font-size: 32px;
+  font-size: 1.88235rem;
+}
+
+/* Title Class for SEO / No Overuse of H Tags */
+.title,
+h2 {
+  font-size: 28px;
+  font-size: 1.64706rem;
+}
+
+h2 a,
+h2 a:visited {
+  color: #3b3d42;
+}
+h2 a:hover,
+h2 a:visited:hover {
+  color: #2b4a5d;
+}
+
+h3 {
+  font-size: 24px;
+  font-size: 1.41176rem;
+}
+
+h4,
+.archive-title,
+.taxonomy-description h1,
+.widgettitle {
+  font-size: 20px;
+  font-size: 1.17647rem;
+}
+
+h4.widgettitle a {
+  color: #3e6b85;
+}
+
+h5 {
+  font-size: 18px;
+  font-size: 1.05882rem;
+}
+
+h6,
+.author-box h1,
+.sidebar h2 a {
+  font-size: 14px;
+  font-size: 0.82353rem;
 }
 
 .author-box h1 {
-	margin: 0
+  margin: 0;
+  line-height: 1.5;
 }
 
 .taxonomy-description h1 {
-	margin-bottom: 4px;
-	margin-bottom: 0.25rem;
+  margin-bottom: 4px;
+  margin-bottom: 0.23529rem;
 }
 
 .archive-title {
-	margin-bottom: 24px;
-	margin-bottom: 1.5rem;
+  margin-bottom: 24px;
+  margin-bottom: 1.41176rem;
 }
 
+/*********************************************************************************************
+
+            LAYOUT
+
+**********************************************************************************************/
+/*
+03 Header
+---------------------------------------------------------------------------------------------------- */
+#header {
+  border-top: 5px solid #3b3d42;
+  min-height: 120px;
+  overflow: hidden;
+  padding-bottom: 32px;
+  padding-bottom: 1.88235rem;
+}
+
+#title {
+  margin: 40px 0 8px;
+  margin: 2.35294rem 0 0.47059rem 0;
+  font-size: 48px;
+  font-size: 2.82353rem;
+}
+#title a {
+  color: #3b3d42;
+}
+#title a:hover {
+  color: #3e6b85;
+}
+
+.header-image #title {
+  margin: 0;
+}
+
+#description {
+  line-height: 1.25;
+  color: #3b3d42;
+}
+
+.header-full-width #title,
+.header-full-width #title a,
+.header-full-width #title-area {
+  width: 100%;
+}
+
+.header-image #title,
+.header-image #title a,
+.header-image #title-area {
+  display: block;
+  float: left;
+  min-height: 120px;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 50%;
+}
+
+.header-image #description {
+  display: none;
+}
+
+#header .search-form {
+  float: right;
+  margin-top: 56px;
+  margin-top: 3.29412rem;
+  width: 100%;
+}
 
 /*
-07 Lists
+04 Navigation
 ---------------------------------------------------------------------------------------------------- */
-
-.entry-content ol,
-.entry-content ul {
-	margin-bottom: 26px;
-	margin-bottom: 1.625rem;
+.genesis-nav-menu {
+  clear: both;
+  overflow: hidden;
 }
 
-.entry-content ol li,
-.entry-content ul li {
-	line-height: 1.625;
+#header .genesis-nav-menu {
+  float: right;
+  margin-top: 48px;
+  margin-top: 2.82353rem;
+  width: auto;
 }
 
-.entry-content ol li,
-.entry-content ul li {
-	margin-left: 40px;
-	margin-left: 2.5rem;
+#nav {
+  background-color: #3b3d42;
 }
 
-.entry-content ol li {
-	list-style-type: decimal;
+.genesis-nav-menu.menu-primary a {
+  color: white;
+}
+.genesis-nav-menu.menu-primary a:hover {
+  color: #3e6b85;
+}
+.genesis-nav-menu.menu-primary li.highlight-menu-item {
+  margin-left: 20px;
+  margin-left: 1.17647rem;
+}
+.genesis-nav-menu.menu-primary .highlight-menu-item a {
+  background-color: #3e6b85;
+  color: white;
+}
+.genesis-nav-menu.menu-primary .highlight-menu-item a:hover {
+  background-color: white;
+  color: #000d11;
+}
+.genesis-nav-menu.menu-primary li ul {
+  background: #3b3d42;
+}
+.genesis-nav-menu.menu-primary li ul a {
+  border: 1px solid #75777a;
+}
+.genesis-nav-menu.menu-primary li ul a {
+  background: none;
+  margin-right: 0;
+  width: 200px;
+}
+.genesis-nav-menu.menu-primary li ul a:first-child {
+  border-top: none;
 }
 
-.entry-content ul li {
-	list-style-type: disc;
+.genesis-nav-menu.menu-secondary a {
+  color: #000d11;
+}
+.genesis-nav-menu.menu-secondary a:hover {
+  color: #3e6b85;
+}
+.genesis-nav-menu.menu-secondary li ul {
+  background: white;
+}
+.genesis-nav-menu.menu-secondary li ul a {
+  border: 1px solid #75777a;
+}
+.genesis-nav-menu.menu-secondary li ul a {
+  background: none;
+  margin-right: 0;
+  width: 200px;
+}
+.genesis-nav-menu.menu-secondary li ul a:first-child {
+  border-top: none;
 }
 
-.entry-content ol ol,
-.entry-content ul ul {
-	margin-bottom: 0;
+.genesis-nav-menu ul {
+  float: left;
+  width: 100%;
+}
+.genesis-nav-menu li {
+  display: inline-block;
+  float: left;
+  list-style-type: none;
+  text-align: left;
+}
+.genesis-nav-menu a {
+  display: block;
+  padding: 24px 20px;
+  padding: 1.41176rem 1.17647rem;
+  position: relative;
+}
+.genesis-nav-menu li ul {
+  left: -999em;
+  margin: -1px 0 0;
+  position: absolute;
+  width: 200px;
+  z-index: 9999;
+}
+.genesis-nav-menu li:hover ul {
+  left: auto;
+}
+.genesis-nav-menu li li ul {
+  margin: -1px 0 0 199px;
+  display: none;
+}
+.genesis-nav-menu li li:hover > ul {
+  display: block;
+  margin-top: -71px;
 }
 
+/*  Primary Navigation Extras */
+.genesis-nav-menu li.right {
+  float: right;
+  padding: 24px 20px;
+  padding: 1.41176rem 1.17647rem;
+}
 
-/*
-08 Post Navigation
----------------------------------------------------------------------------------------------------- */
+.genesis-nav-menu li.right a {
+  display: inline;
+  padding: 0;
+}
 
+.genesis-nav-menu li.search {
+  padding: 6px 0 0;
+  padding: 0.35294rem 0 0;
+}
+
+.genesis-nav-menu li.rss a {
+  background: url(images/rss.png) no-repeat center left;
+  margin-left: 20px;
+  margin-left: 1.17647rem;
+  padding-left: 20px;
+  padding-left: 1.17647rem;
+}
+
+.genesis-nav-menu li.twitter a {
+  background: url(images/twitter-nav.png) no-repeat center left;
+  padding-left: 24px;
+  padding-left: 1.41176rem;
+}
+
+/* Pagination */
 .navigation li {
-	display: inline;
+  display: inline;
 }
 
 .navigation li a,
 .navigation li a:hover,
 .navigation li.active a,
 .navigation li.disabled {
-	background-color: #1e1e1e;
-	border-radius: 3px;
-	cursor: pointer;
-	padding: 12px;
-	padding: 0.75rem;
+  background-color: #4c5558;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 12px;
+  padding: 0.70588rem;
+  color: white;
 }
 
 .navigation li a:hover,
 .navigation li.active a {
-	background-color: #ff2a00;
+  background-color: white;
+  color: #000d11;
 }
 
-
 /*
-09 Comments
+05 Meta and Comments
 ---------------------------------------------------------------------------------------------------- */
+/* Post Info and Meta */
+.post-info,
+.post-meta {
+  clear: both;
+  line-height: 1.5;
+  color: #4c4c4c;
+  font-size: 17px;
+  font-size: 1rem;
+}
 
+.post-info {
+  margin-bottom: 24px;
+  margin-bottom: 1.41176rem;
+}
+
+.post-meta {
+  border-top: 1px solid #ccc;
+  padding-top: 24px;
+  padding-top: 1.41176rem;
+}
+
+.post-comments {
+  background: url(images/post-comments.png) no-repeat center left;
+  margin-left: 16px;
+  margin-left: 0.94118rem;
+  padding-left: 20px;
+  margin-left: 1.17647rem;
+  color: #333333;
+}
+
+.categories,
+.tags {
+  display: block;
+}
+
+.date {
+  color: #000d11;
+}
+
+/* Comments */
 #comments,
 #respond {
-	line-height: 1.5;
-	overflow: hidden;
+  line-height: 1.5;
+  overflow: hidden;
 }
 
 .ping-list,
 #comments {
-	margin-bottom: 48px;
-	margin-bottom: 3rem;
+  margin-bottom: 48px;
+  margin-bottom: 2.82353rem;
 }
 
 #author,
 #email,
 #url {
-	width: 50%;
+  width: 50%;
 }
 
 .commentmetadata,
 #author,
 #email,
 #url {
-	margin-bottom: 12px;
-	margin-bottom: 0.75rem;
+  margin-bottom: 12px;
+  margin-bottom: 0.70588rem;
 }
 
 #comment {
-	margin: 12px 0;
-	margin: 0.75rem 0;
+  margin: 12px 0;
+  margin: 0.70588rem 0;
 }
 
 label {
-	margin-left: 12px;
-	margin-left: 0.75rem;
+  margin-left: 12px;
+  margin-left: 0.70588rem;
 }
 
 .comment-list li,
 .ping-list li {
-	list-style-type: none;
-	margin-top: 24px;
-	margin-top: 1.5rem;
-	padding: 32px;
-	padding: 2rem;
+  list-style-type: none;
+  margin-top: 24px;
+  margin-top: 1.41176rem;
+  padding: 32px;
+  padding: 1.88235rem;
 }
 
 .comment-list li ul li {
-	margin-right: -32px;
-	margin-right: -2rem;
+  margin-right: -32px;
+  margin-right: 1.88235rem;
 }
 
 .comment-header {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 .comment {
-	background-color: #f5f5f5;
-	border: 2px solid #fff;
-	border-right: none;
+  background-color: #cccccc;
+  border: 2px solid white;
+  border-right: none;
 }
 
 .comment-content p {
-	margin-bottom: 24px;
-	margin-bottom: 1.5rem;
-}
-
-.bypostauthor {
+  margin-bottom: 24px;
+  margin-bottom: 1.41176rem;
 }
 
 #comments .navigation {
-	margin-top: 32px;
-	margin-top: 2rem;
+  margin-top: 32px;
+  margin-top: 1.88235rem;
 }
 
+/*
+06 Post Content Styles
+---------------------------------------------------------------------------------------------------- */
+.entry-content p {
+  margin-bottom: 26px;
+  margin-bottom: 1.52941rem;
+}
+
+/* Blockquotes */
+blockquote {
+  padding: 24px 64px;
+  padding: 1.41176rem 3.76471rem;
+}
+
+blockquote::before {
+  content: "“";
+  display: block;
+  height: 0;
+  left: -20px;
+  position: relative;
+  top: -10px;
+}
+
+blockquote::before,
+blockquote p {
+  color: #7f7f7f;
+}
+
+blockquote::before {
+  font-size: 32px;
+  font-size: 1.88235rem;
+  line-height: 1.88812;
+}
+
+/* Lists */
+.entry-content ol,
+.entry-content ul {
+  margin-bottom: 26px;
+  margin-bottom: 1.52941rem;
+}
+
+.entry-content ol li,
+.entry-content ul li {
+  line-height: 1.625;
+  margin-left: 40px;
+  margin-left: 2.35294rem;
+}
+
+.entry-content ol li {
+  list-style-type: decimal;
+}
+
+.entry-content ul li {
+  list-style-type: disc;
+}
+
+.entry-content ol ol,
+.entry-content ul ul {
+  margin-bottom: 0;
+}
 
 /*
-10 Sidebars
+07 Sidebar
 ---------------------------------------------------------------------------------------------------- */
-
 .sidebar {
-	display: inline;
-	line-height: 1.5;
+  display: inline;
+  line-height: 1.5;
 }
 
 .sidebar p {
-	margin-bottom: 16px;
-	margin-bottom: 1rem;
+  margin-bottom: 16px;
+  margin-bottom: 0.94118rem;
 }
 
 .sidebar .widget {
-	border-bottom: 1px solid #ccc;
-	margin-bottom: 32px;
-	margin-bottom: 2rem;
-	padding-bottom: 32px;
-	padding-bottom: 2rem;
-	overflow: hidden;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 32px;
+  margin-bottom: 1.88235rem;
+  padding-bottom: 32px;
+  padding-bottom: 1.88235rem;
+  overflow: hidden;
 }
 
 .sidebar.widget-area ul li {
-	list-style-type: none;
-	margin-bottom: 6px;
-	margin-bottom: 0.375rem;
-	word-wrap: break-word;
+  list-style-type: none;
+  margin-bottom: 6px;
+  margin-bottom: 0.35294rem;
+  word-wrap: break-word;
 }
 
-
 /*
-11 Footer
+08 Sidebar Alt
 ---------------------------------------------------------------------------------------------------- */
-
+/* SideBar Alt Styles */
+/*
+09 Footer
+---------------------------------------------------------------------------------------------------- */
 #footer {
-	clear: both;
+  clear: both;
 }
 
 #footer .wrap {
-	border-top: 2px solid #1e1e1e;
-	overflow: hidden;
-	padding: 48px 0;
-	padding: 3rem 0;
+  border-top: 2px solid #4c5558;
+  overflow: hidden;
+  padding: 48px 0;
+  padding: 2.82353rem 0;
 }
 
 #footer .creds {
-	text-align: right;
+  text-align: right;
 }
 
 #footer .creds,
 #footer .gototop {
-	margin: 8px 0;
-	margin: 0.5rem 0;
+  margin: 8px 0;
+  margin: 0.47059rem 0;
 }
 
-/* 11a - Footer Widgets ----------- */
+#footer p {
+  font-size: 17px;
+  font-size: 1rem;
+}
 
+/* Footer Widgets */
 .footer-widgets {
-	border-top: 2px solid #1e1e1e;
-	clear: both;
-	line-height: 1.5;
-	overflow: hidden;
-	padding: 32px 0 16px;
-	padding: 2rem 0 1rem;
+  border-top: 1px solid #7f8688;
+  clear: both;
+  line-height: 1.5;
+  overflow: hidden;
+  padding: 32px 0 16px;
+  padding: 1.88235rem 0 0.94118rem;
+  background-color: #f2f2f2;
+  margin-bottom: 10px;
 }
-
 .footer-widgets p {
-	margin-bottom: 16px;
-	margin-bottom: 1rem;
+  margin-bottom: 16px;
+  margin-bottom: 0.94118rem;
 }
-
 .footer-widgets .widget {
-	margin-bottom: 24px;
-	margin-bottom: 1.5rem;
+  margin-bottom: 24px;
+  margin-bottom: 1.41176rem;
 }
-
 .footer-widgets .widget-area ul li {
-	list-style-type: none;
-	margin-bottom: 6px;
-	margin-bottom: 0.375rem;
-	word-wrap: break-word;
+  list-style-type: none;
+  margin-bottom: 6px;
+  margin-bottom: 0.35294rem;
+  word-wrap: break-word;
 }
 
+.footer-widgets .wrap > div {
+  display: table-cell;
+}
 
+/* Footer Navigation */
+#footer #footer-nav .wrap {
+  border: none;
+  padding: 0;
+}
+
+#footer ul.menu-footer {
+  font-size: 13px;
+  font-weight: normal;
+}
+
+#footer ul.menu-footer a {
+  padding: 0rem .75rem;
+}
+
+/*********************************************************************************************
+
+            MODULES
+
+**********************************************************************************************/
 /*
-12 Forms & Buttons
+10 Forms and Buttons
 ---------------------------------------------------------------------------------------------------- */
-
 input,
 select,
 textarea {
-	background-color: #fff;
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	box-shadow: 0 0 5px #ddd inset;
-	padding: 16px;
-	padding: 1rem;
-	width: 100%;
-}
-
-#header .search-form {
-	float: right;
-	margin-top: 56px;
-	margin-top: 3.5rem;
-	width: 100%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: 0 0 5px #ddd inset;
+  padding: 16px;
+  padding: 0.94118rem;
+  width: 100%;
+  color: #7f7f7f;
+  font-size: 17px;
+  font-size: 1rem;
 }
 
 button,
 input[type="button"],
-input[type="submit"]
-{
-	background-color: #1e1e1e;
-	border: none;
-	box-shadow: none;
-	cursor: pointer;
-	padding: 16px 24px;
-	padding: 1rem 1.5rem;
-	width: auto;
+input[type="submit"],
+.btn {
+  background-color: #4c5558;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  padding: 16px 24px;
+  padding: 0.94118rem 1.41176rem;
+  width: auto;
+  color: #fff;
 }
 
 button:hover,
 input:hover[type="button"],
-input:hover[type="submit"] {
-	background-color: #ff2a00;
+input:hover[type="submit"],
+.btn:hover {
+  background-color: #2b4a5d;
 }
-
-.enews input[type="submit"],
-.search-form input[type="submit"] {
-	border: 0;
-	clip: rect(0, 0, 0, 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-}
-
-/* 12a - Gravity Forms ----------- */
-
-#content div.gform_wrapper input,
-#content div.gform_wrapper select,
-#content div.gform_wrapper textarea,
-#content div.gform_wrapper .ginput_complex label {
-	font-size: 16px;
-	font-size: 1rem;
-	padding: 16px;
-	padding: 1rem;
-}
-
-#content div.gform_wrapper input[type="submit"] {
-	padding: 16px 24px;
-	padding: 1rem 1.5rem;
-}
-
-#content div.gform_wrapper .ginput_complex label {
-	padding: 0;
-}
-
-div.gform_wrapper li,
-div.gform_wrapper form li {
-	margin: 16px 0 0;
-	margin: 1rem 0 0;
-}
-
 
 /*
-13 Images & Captions
+11 Images and Captions
 ---------------------------------------------------------------------------------------------------- */
-
 embed,
 img,
 object,
 video {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 img {
-	height: auto;
+  height: auto;
 }
 
 .alignleft .avatar {
-	margin-right: 24px;
-	margin-right: 1.5rem;
+  margin-right: 24px;
+  margin-right: 1.41176rem;
 }
 
 .alignright .avatar {
-	margin-left: 24px;
-	margin-left: 1.5rem;
+  margin-left: 24px;
+  margin-left: 1.41176rem;
 }
 
 .author-box .avatar {
-	float: left;
-	margin-right: 24px;
-	margin-right: 1.5rem
+  float: left;
+  margin-right: 24px;
+  margin-right: 1.41176rem;
 }
 
 .comment-list li .avatar {
-	float: left;
-	margin: 0 16px 24px 0;
-	margin: 0 1rem 1.5rem 0;
+  float: left;
+  margin: 0 16px 24px 0;
+  margin: 0 0.94118rem 1.41176rem 0;
 }
 
 img.centered,
 .aligncenter {
-	display: block;
-	margin: 0 auto 24px;
-	margin: 0 auto 1.5rem
+  display: block;
+  margin: 0 auto 24px;
+  margin: 0 auto 1.41176rem;
 }
 
 img.alignnone {
-	display: inline;
-	margin-bottom: 12px;
-	margin-bottom: 0.75rem;
+  display: inline;
+  margin-bottom: 12px;
+  margin-bottom: 0.70588rem;
 }
 
 img.alignleft,
 .post-image,
 .wp-caption.alignleft {
-	display: inline;
-	margin: 0 24px 24px 0;
-	margin: 0 1.5rem 1.5rem 0;
+  display: inline;
+  margin: 0 24px 24px 0;
+  margin: 0 1.41176rem 1.41176rem 0;
 }
 
 img.alignright,
 .wp-caption.alignright {
-	display: inline;
-	margin: 0 0 24px 24px;
-	margin: 0 0 1.5rem 1.5rem;
+  display: inline;
+  margin: 0 0 24px 24px;
+  margin: 0 0 1.41176rem 1.41176rem;
 }
 
 p.wp-caption-text {
-	line-height: 1.2;
-	margin-top: 12px;
-	margin-top: 0.75rem;
+  line-height: 1.2;
+  margin-top: 12px;
+  margin-top: 0.70588rem;
 }
 
-.gallery-caption {
+.wp-caption {
+  font-size: 17px;
+  font-size: 1rem;
+  text-align: center;
 }
 
-/* 14 FOOTER NAV */
-#footer #footer-nav .wrap {
-	border: none;
-	padding: 0;
+/*
+12 Author Box / Bread Crumbs / Sticky
+---------------------------------------------------------------------------------------------------- */
+.author-box,
+.sticky {
+  margin-bottom: 80px;
+  margin-bottom: 4.70588rem;
 }
 
-#footer ul.menu-footer {
-	font-size: 13px;
-	font-weight: normal;
+.author-box,
+.taxonomy-description {
+  line-height: 1.5;
 }
 
-#footer ul.menu-footer a {
-	padding: 0rem .75rem;
+.author-box,
+.sticky,
+.taxonomy-description {
+  background-color: #f5f5f5;
+  margin-bottom: 48px;
+  margin-bottom: 2.82353rem;
+  overflow: hidden;
+  padding: 32px;
+  padding: 1.88235rem;
 }
 
-/* 15 MOBILE STYLES  */
-
-#mobile-nav, #mobile-nav ul {
-	display: none;
+.breadcrumb {
+  background-color: #f5f5f5;
+  margin-bottom: 10px;
+  margin-bottom: 0.58824rem;
+  overflow: hidden;
+  padding: 10px;
 }
 
-#mobile-nav ul {
-	background-color: rgba(78,78,78,1);
+/*
+13 Widgets/Plugins
+---------------------------------------------------------------------------------------------------- */
+/* eNews */
+.enews input[type="submit"],
+.search-form input[type="submit"] {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
-#mobile-nav ul li a {
-	color: #fff;
-	font-weight: normal;
+/* Gravity Forms */
+#content div.gform_wrapper input,
+#content div.gform_wrapper select,
+#content div.gform_wrapper textarea,
+#content div.gform_wrapper .ginput_complex label {
+  font-size: 16px;
+  font-size: 0.94118rem;
+  padding: 16px;
+  padding: 0.94118rem;
+}
+
+#content div.gform_wrapper input[type="submit"] {
+  padding: 16px 24px;
+  padding: 0.94118rem 1.41176rem;
+}
+
+#content div.gform_wrapper .ginput_complex label {
+  padding: 0;
+}
+
+div.gform_wrapper li,
+div.gform_wrapper form li {
+  margin: 16px 0 0;
+  margin: 0.94118rem 0 0;
 }

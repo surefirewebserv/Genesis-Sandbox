@@ -1,0 +1,141 @@
+// Core variables and mixins
+@import "variables"; // Modify this for custom colors, font-sizes, etc
+@import "mixins"; // Modify this for custom functions and actions etc
+@import "golden-ratio"; // Golden Ratio Typography
+@import "google-web-font"; // Google Web Fonts
+@import "compass";
+@import "compass/css3";
+
+/*
+    Theme Name: Genesis Sandbox
+    Description: This is a start kit for to devevelop your own themes for the Genesis Framework
+    Author: Jonathan Perez
+    Author URI: http://www.surefirewebservices.com/
+ 
+    Version: 1.9
+ 
+    Template: genesis
+    Template Version: 1.9
+ 
+    License: GPL-2.0+
+    License URI: http://www.opensource.org/licenses/gpl-license.php 
+*/
+
+
+/* Table of Contents
+
+    01 Import Fonts
+    02 Base Styles 
+        Defaults
+        Wraps
+        Containers and Columns
+        Entry Content Structure
+        Headings and Titles
+  -- Layout --  
+    03 Header
+    04 Navigation
+       Primary Navigation Extras
+       Pagination
+    05 Meta and Comments
+        Post Info and Meta
+        Comments
+    06 Post Content Styles
+        Block Quotes
+        Lists
+    07 SideBar
+    08 SideBar Alt
+    09 Footer
+        Footer Widgets
+        Footer Navigation
+  -- Modules --
+    10 Forms and Buttons
+    11 Images and Captions
+    12 Author Box / Bread Crumbs / Sticky
+    13 Widgets/Plugins
+        eNews
+        Gravity Forms
+*/
+
+
+/*
+01 Import Fonts
+---------------------------------------------------------------------------------------------------- */
+@include web-font((Arimo, Varela), (), (), (), ());
+
+/*
+02 Base Styles
+---------------------------------------------------------------------------------------------------- */
+@import "01defaults";
+@import "02layout-grid";
+@import "03headings";
+
+
+/*********************************************************************************************
+
+            LAYOUT
+
+**********************************************************************************************/
+
+/*
+03 Header
+---------------------------------------------------------------------------------------------------- */
+@import "04header";
+
+/*
+04 Navigation
+---------------------------------------------------------------------------------------------------- */
+@import "05navigation";
+
+/*
+05 Meta and Comments
+---------------------------------------------------------------------------------------------------- */
+@import "06meta-comments";
+
+/*
+06 Post Content Styles
+---------------------------------------------------------------------------------------------------- */
+@import "07entrycontent";
+
+/*
+07 Sidebar
+---------------------------------------------------------------------------------------------------- */
+@import "08sidebar";
+
+/*
+08 Sidebar Alt
+---------------------------------------------------------------------------------------------------- */
+@import "09sidebaralt";
+
+/*
+09 Footer
+---------------------------------------------------------------------------------------------------- */
+@import "10footer";
+
+
+
+/*********************************************************************************************
+
+            MODULES
+
+**********************************************************************************************/
+
+
+/*
+10 Forms and Buttons
+---------------------------------------------------------------------------------------------------- */
+@import "11forms-buttons";
+
+/*
+11 Images and Captions
+---------------------------------------------------------------------------------------------------- */
+@import "12images-captions";
+
+/*
+12 Author Box / Bread Crumbs / Sticky
+---------------------------------------------------------------------------------------------------- */
+@import "13author-sticky-bread";
+
+/*
+13 Widgets/Plugins
+---------------------------------------------------------------------------------------------------- */
+@import "14widgets-plugins";

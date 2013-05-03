@@ -1,0 +1,30 @@
+.author-box,
+.sticky {
+	margin-bottom: 80px;
+	@include rem(margin-bottom, 80);
+}
+
+.author-box,
+.taxonomy-description {
+	line-height: 1.5;
+}
+
+.author-box,
+.sticky,
+.taxonomy-description {
+	background-color: #f5f5f5;
+	margin-bottom: 48px;
+	@include rem(margin-bottom, 48);
+	overflow: hidden;
+	padding: 32px;
+	@include rem(padding, 32);
+}
+
+.breadcrumb {
+	background-color: #f5f5f5;
+	margin-bottom: 10px;
+	@include rem(margin-bottom, 10);
+	overflow: hidden;
+	padding:10px;
+}
+

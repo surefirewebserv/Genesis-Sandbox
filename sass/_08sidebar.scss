@@ -1,0 +1,25 @@
+.sidebar {
+	display: inline;
+	line-height: 1.5;
+}
+
+.sidebar p {
+	margin-bottom: 16px;
+	@include rem(margin-bottom, 16);
+}
+
+.sidebar .widget {
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 32px;
+	@include rem(margin-bottom, 32);
+	padding-bottom: 32px;
+	@include rem(padding-bottom, 32);
+	overflow: hidden;
+}
+
+.sidebar.widget-area ul li {
+	list-style-type: none;
+	margin-bottom: 6px;
+	@include rem(margin-bottom, 6);
+	word-wrap: break-word;
+}

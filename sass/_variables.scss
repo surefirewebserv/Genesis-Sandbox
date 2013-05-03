@@ -1,0 +1,38 @@
+//
+// Variables
+// --------------------------------------------------
+
+// Color Scheme
+$color-base: 			#E5EBE6 !default;
+$color-primary: 		#5B8D96 !default;
+$color-secondary: 		#C45A3F !default;
+$color-cta: 			#3E6B85 !default;
+$color-extra: 			#3B3D42 !default;
+
+// Light and Dark
+// -------------------------
+$dark:                 #000D11 !default;
+$light:                 #fff !default;
+
+
+// Structure
+// -------------------------
+$contentWidth:          752 !default; // The width of your content box (640, 752, 1152, etc...)
+$bodyBackground:        $light !default;
+$baseFontSize:          16 !default; // After setting html {font-size: 100%;} in _reset.scss
+$baseMargin:            24 !default; // Spacing is calculated using either 24px or 48px to maintain vertical rhythm
+
+
+// Typography
+// -------------------------
+$textColor:             #333 !default;
+$googleFont:            Arimo, Varela !default; // Can use multiple fonts with a comma. Cabin, Open Sans, etc...
+$googleFontWeight:      400 !default; // 400 or 700
+$googleFontType:        sans-serif !default; // This should be sans or sans-serif
+$sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$serifFontFamily:       Georgia, "Times New Roman", Times, serif !default;
+$monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace !default;
+$baseFontFamily:        $sansFontFamily !default;
+$headingsFontFamily:    inherit !default; // empty to use BS default, $baseFontFamily
+$headingsFontWeight:    bold !default;    // instead of browser default, bold
+$headingsColor:         inherit !default; // empty to use BS default, $textColor
