@@ -14,6 +14,9 @@
 		color:$color-extra;
 		&:hover { color: $color-cta; }
 	}
+
+	font-family: $googleFont, $googleFontType;
+	font-weight:700;
 }
 
 

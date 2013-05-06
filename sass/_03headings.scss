@@ -6,7 +6,8 @@
 	h4,
 	h5,
 	h6,
-	.entry-title a {
+	.entry-title a,
+	#title {
 		line-height: 1.2;
 		margin-bottom: 16px;
 		@include rem(margin-bottom, 16);
@@ -18,7 +19,8 @@
 
 	h1,
 	.entry-title,
-	.entry-title a {
+	.entry-title a,
+	#title {
 		@include sfFontSize(32);
 	}
 
