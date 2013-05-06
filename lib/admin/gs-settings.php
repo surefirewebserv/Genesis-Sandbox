@@ -58,7 +58,7 @@ class Genesis_Sandbox_Settings extends Genesis_Admin_Boxes {
 		// Set the default values
 		$default_settings = array(
 			'footer_left'  => 'Copyright &copy; ' . date( 'Y' ) . ' All Rights Reserved',
-			'footer_right' => 'Site by <a href="http://www.wpsmith.net/">WP Smith</a>',
+			'footer_right' => 'Site by <a href="http://www.surefirethemes.com/">SureFire Themes</a>',
 		);
 		
 		// Create the Admin Page
