@@ -1,3 +1,4 @@
+@import url(//fonts.googleapis.com/css?family=Arimo|Varela);
 /*
     Theme Name: Genesis Sandbox
     Description: This is a start kit for to devevelop your own themes for the Genesis Framework
@@ -48,8 +49,6 @@
 /*
 01 Import Fonts
 ---------------------------------------------------------------------------------------------------- */
-@import url(//fonts.googleapis.com/css?family=Arimo|Varela);
-
 /*
 02 Base Styles
 ---------------------------------------------------------------------------------------------------- */
@@ -332,7 +331,8 @@ h3,
 h4,
 h5,
 h6,
-.entry-title a {
+.entry-title a,
+#title {
   line-height: 1.2;
   margin-bottom: 16px;
   margin-bottom: 0.94118rem;
@@ -342,7 +342,8 @@ h6,
 
 h1,
 .entry-title,
-.entry-title a {
+.entry-title a,
+#title {
   font-size: 32px;
   font-size: 1.88235rem;
 }
@@ -428,6 +429,8 @@ h6,
   margin: 2.35294rem 0 0.47059rem 0;
   font-size: 48px;
   font-size: 2.82353rem;
+  font-family: Arimo, Varela, sans-serif;
+  font-weight: 700;
 }
 #title a {
   color: #3b3d42;
