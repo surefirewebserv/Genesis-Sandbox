@@ -84,6 +84,7 @@
 		@include rem(margin-top, 24);
 		padding: 32px;
 		@include rem(padding, 32);
+		border-radius:10px;
 	}
 
 	.comment-list li ul li {
@@ -96,9 +97,9 @@
 	}
 
 	.comment {
-		background-color: shade($light,20%);
-		border: 2px solid $light;
-		border-right: none;
+		background-color: shade($light,4%);
+		border: 1px solid shade($light,10%);
+		
 	}
 
 	.comment-content p {
@@ -112,6 +113,13 @@
 	#comments .navigation {
 		margin-top: 32px;
 		@include rem(margin-top, 32);
+	}
+
+	.comment-list li .avatar {
+		float: left;
+		margin: 0 16px 24px 0;
+		margin: 0 cr(16) cr(24) 0;
+		border-radius:8px;
 	}
 
 

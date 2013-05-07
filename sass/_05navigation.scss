@@ -22,27 +22,20 @@
 			&:hover { color: $color-cta; }
 	}
 
-	li.highlight-menu-item {
-		margin-left: 20px;
-		@include rem(margin-left, 20);
-	}
-
-	.highlight-menu-item a {
-		background-color: $color-cta;
-		color: $light;
-	}
-
-	.highlight-menu-item a:hover {
-		background-color: $light;
-		color: $dark;
-	}
-
-	li ul {
+	.sub-menu {
         background:$color-extra; 
-    }
 
-    li ul a {     
-        border:1px solid tint($color-extra, 30%);
+        a {     
+	        border:1px solid tint($color-extra, 30%);
+	        margin-right: 0;
+        	width: 200px; 
+	    }
+
+	    :first-child {
+			border-top: none;
+	    }
+
+
     }
 
     li ul a {
@@ -50,11 +43,6 @@
         margin-right: 0;
         width: 200px;        
     }
-
-    li ul a:first-child {
-		border-top: none;
-    }
-
 
 }
 
@@ -65,39 +53,36 @@
 		&:hover {color: $color-cta; }
 	}
 
-	li ul {
-        background:$light;       	
+	.sub-menu {
+        background:$light;
+
+        a {
+			border:1px solid #ccc;
+			width: 200px;
+        }
+        :first-child {
+			border-top: none;
+	    }
 	}
-
-	li ul a {
-        border:1px solid tint($color-extra, 30%);
-    }
-
-    li ul a {
-        background: none;
-        margin-right: 0;
-        width: 200px;        
-    }
-
-    li ul a:first-child {
-		border-top: none;
-    }
-
-
 }
 
 .genesis-nav-menu {
 	
-	ul {
-		float: left;
-		width: 100%;
-	}
-
-	li {
+	.menu-item {
 		display: inline-block;
-		float: left;
-		list-style-type: none;
+		margin: 0;
+		padding: 0;
 		text-align: left;
+
+		&:hover {
+			position:static;
+
+			> .sub-menu {
+				left: auto;
+				opacity: 1;
+				font-size:14px;
+			}
+		}
 	}
 
 	a {
@@ -107,27 +92,19 @@
 		position: relative;
 	}
 
-	li ul {        
-        left: -999em;
-        margin: -1px 0 0;
-        position: absolute;
-        width: 200px;
-        z-index: 9999;
-       	
-	}
-
-	li:hover ul {
-	   left: auto;
-	}
-
-	li li ul {
-        margin: -1px 0 0 199px;
-        display:none;
-	}
-
-	li li:hover > ul {
-        display:block;
-        margin-top:-71px;        
+	.sub-menu {
+		left: -9999px;
+		margin: 0;
+		opacity: 0;
+		padding: 0;
+		position: absolute;
+		@include transition(opacity 0.4s ease-in-out); 
+		width: 200px;
+		z-index: 99;
+		
+		.sub-menu {
+			margin: -68px 0 0 199px;
+		}
 	}
 
 }
@@ -141,6 +118,7 @@
 		float: right;
 		padding: 24px 20px;
 		padding: cr(24) cr(20);
+		list-style-type: none;
 	}
 
 	.genesis-nav-menu li.right a {

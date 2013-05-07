@@ -25,12 +25,6 @@ img {
 	@include rem(margin-right, 24);
 }
 
-.comment-list li .avatar {
-	float: left;
-	margin: 0 16px 24px 0;
-	margin: 0 cr(16) cr(24) 0;
-}
-
 img.centered,
 .aligncenter {
 	display: block;
