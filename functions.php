@@ -639,7 +639,7 @@ function gs_do_footer() {
 	else
 		printf( $pattern, ' first', 'left', gs_footer_navigation() );
 	
-	if ( ! genesis_get_option( 'footer_right_nav', 'gs-settings' ) )
+	if ( ! genesis_get_option( 'footer_right_nav', CHILD_SETTINGS_FIELD) )
 		printf( $pattern, '', 'right', wpautop( genesis_get_option( 'footer_right', CHILD_SETTINGS_FIELD ) ) );
 	else
 		printf( $pattern, '', 'right', gs_footer_navigation() );
