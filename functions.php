@@ -165,5 +165,5 @@ function gs_footer_navigation() {
 		'depth' => 1,
 	);
 	
-	return gs_navigation( 'footer', $footer_menu_args );
+	gs_navigation( 'footer', $footer_menu_args );
 }
