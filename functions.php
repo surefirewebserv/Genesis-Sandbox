@@ -39,6 +39,17 @@ function gs_theme_setup() {
 	// Enable Custom Header
 	//add_theme_support('genesis-custom-header');
 
+
+	// Add support for structural wraps
+	add_theme_support( 'genesis-structural-wraps', array(
+		'header',
+		'nav',
+		'subnav',
+		'inner',
+		'footer-widgets',
+		'footer'
+	) );
+
 	/**
 	 * 07 Footer Widgets
 	 * Add support for 3-column footer widgets
