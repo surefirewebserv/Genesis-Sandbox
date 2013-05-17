@@ -588,6 +588,7 @@ h6,
 }
 .genesis-nav-menu.menu-mobile .menu-item:hover > .sub-menu {
   font-size: 14px;
+  display: block;
 }
 .genesis-nav-menu.menu-mobile a {
   display: block;
