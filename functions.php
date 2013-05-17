@@ -162,6 +162,7 @@ function gs_mobile_navigation() {
 function gs_footer_navigation() {
 	
 	$footer_menu_args = array(
+		'echo' => true,
 		'depth' => 1,
 	);
 	
