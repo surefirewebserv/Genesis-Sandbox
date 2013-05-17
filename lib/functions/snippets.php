@@ -8,7 +8,7 @@
  * @category   Genesis_Sandbox
  * @package    Functions
  * @subpackage Snippets
- * @author     Travis Smith
+ * @author     Travis Smith and Jonathan Perez
  * @license    http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
  * @link       http://wpsmith.net/
  * @since      1.1.0
@@ -783,4 +783,107 @@ function gs_avatar_default() {
 	if ( ( empty( $default ) ) || ( 'mystery' == $default ) )
 		$default = INCIPIO_ADMIN . '/images/genesis-48x48.png';
 	update_option( 'avatar_default', $default );
+}
+
+//add_action( 'genesis_register_sidebar_defaults', 'gs_register_sidebar_defaults' );
+/**
+ * 02 Customize Genesis Sidebar Defaults
+ *
+ * This function customizes the sidebar defaults. This function must be
+ * placed before the initialization of Genesis since genesis_register_sidebar_defaults
+ * is fired in the genesis_setup hook. Feel free to completely remove this function.
+ *
+ * @since 1.1.0
+ *
+ * @param  array $defaults Genesis sidebar defaults
+ * @return array Modified Genesis sidebar defaults
+ */
+function gs_register_sidebar_defaults( $defaults ) {
+	return array(
+		'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="widget-wrap">',
+		'after_widget'  => "</div></div>\n",
+		'before_title'  => '<h4 class="widgettitle">',
+		'after_title'   => "</h4>\n",
+	);
+}
+
+/** Add post thumbnails to page post type */
+//add_theme_support( 'post-thumbnails', array( 'page', ) );
+
+/** Simple Menu Registration */
+//add_theme_support( 'genesis-menus', array( 'primary' => 'Primary Navigation Menu' ) );
+
+/** Remove Genesis Menus */
+//remove_theme_support( 'genesis-menus' );
+
+/**
+ * 16 Remove Unused Page Layouts
+ */
+/*
+foreach ( array( 'content-sidebar-sidebar', 'sidebar-sidebar-content', 'sidebar-content-sidebar', 'sidebar-content', 'content-sidebar', 'full-width-content', ) as $layout )
+	genesis_unregister_layout( $layout );
+*/
+
+	/**
+	 * 17 Excerpt/Content Limit/Content Read More
+	 */
+	/** Add excerpts to page post type. */
+	add_post_type_support( 'page', 'excerpt' );
+	
+	/** Completely remove excerpt more. */
+	//add_filter( 'excerpt_more', '__return__null' );
+	
+	/** Edit excerpt more link. */		
+	//add_filter( 'excerpt_more', 'gs_remove_excerpt_more' );
+	//add_filter( 'get_the_content_more_link', 'gs_read_more_link' );
+	//add_filter( 'the_content_more_link', 'gs_read_more_link' );
+	
+	/**
+	 * 18 Genesis Admin Menus
+	 */
+	/** Remove Genesis menu link */
+	//remove_theme_support( 'genesis-admin-menu' );
+	 
+	/** Remove Genesis SEO Settings menu link */
+	//remove_theme_support( 'genesis-seo-settings-menu' );
+
+	/** Remove README theme support */
+	//remove_theme_support( 'genesis-readme-menu' );
+	
+	/**
+	 * 19 Remove Edit link
+	 */
+	add_filter( 'genesis_edit_post_link', '__return_false' );
+	
+	/** 
+	 * 20 Remove Unused User Settings 
+	 * Run with high priority to keep any contact methods added via plugins.
+	 */
+	add_filter( 'user_contactmethods', 'gs_contactmethods', 1 );
+	foreach ( array( 'genesis_user_options_fields', 'genesis_user_archive_fields', 'genesis_user_seo_fields', 'genesis_user_layout_fields', ) as $field ) {
+		remove_action( 'show_user_profile', $field );
+		remove_action( 'edit_user_profile', $field );
+	}
+
+	/*
+06 Excerpt/Content Limit/Content Read More
+---------------------------------------------------------------------------------------------------- */
+/** 
+ * Edit excerpt read more link
+ *
+ * @param  string $more Read More Text, , default: ' ' . '[...]'
+ * @return string Modified Read More Text.
+ */
+function gs_remove_excerpt_more( $more ) {
+	return '...';
+}
+
+/** 
+ * Edit read more link.
+ *
+ * @param  string $link HTML Read More Link, default: sprintf( '&#x02026; <a href="%s" class="more-link">%s</a>', get_permalink(), $more_link_text = '(more...)' ).
+ * @return string Modified HTML Read More Link.
+ */
+function gs_read_more_link( $link ) {
+	return '<a class="more-link" href="' .  get_permalink() .  '" rel="nofollow">Read More</a>';
 }
