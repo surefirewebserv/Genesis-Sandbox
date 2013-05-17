@@ -109,6 +109,61 @@
 
 }
 
+/* Mobile Menu */
+
+.genesis-nav-menu.menu-mobile {
+	display:none;
+	
+	.menu-item {
+		display: block;
+		margin: 0;
+		padding: 0;
+		text-align: left;
+		font-size:14px;
+
+		&:hover {
+			position:static;
+			display: block;
+			
+			> .sub-menu {
+				font-size:14px;
+			}
+		}
+	}
+
+	a {
+		display: block;
+		padding: 24px 20px;
+		padding: cr(24) cr(20);
+		position: relative;
+		color: $light;
+		font-size: 14px;
+
+		&:hover{
+			background-color:shade($light, 80);
+		}
+	}
+
+	.sub-menu {
+		left: 0;
+		margin: 0;
+		opacity: 1;
+		padding: 0;
+		position: relative;
+		@include transition(opacity 0.4s ease-in-out); 
+		width: 100%;
+		z-index: 99;
+		display:none;
+		background-color:shade($light, 60);
+		
+		.sub-menu {
+			margin:0 0 0 10px;					
+		}
+	}
+}
+
+
+
 
 
 

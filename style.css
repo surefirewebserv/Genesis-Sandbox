@@ -417,7 +417,6 @@ h6,
 03 Header
 ---------------------------------------------------------------------------------------------------- */
 #header {
-  border-top: 5px solid #3b3d42;
   min-height: 120px;
   overflow: hidden;
   padding-bottom: 32px;
@@ -570,6 +569,54 @@ h6,
 }
 .genesis-nav-menu .sub-menu .sub-menu {
   margin: -68px 0 0 199px;
+}
+
+/* Mobile Menu */
+.genesis-nav-menu.menu-mobile {
+  display: none;
+}
+.genesis-nav-menu.menu-mobile .menu-item {
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-size: 14px;
+}
+.genesis-nav-menu.menu-mobile .menu-item:hover {
+  position: static;
+  display: block;
+}
+.genesis-nav-menu.menu-mobile .menu-item:hover > .sub-menu {
+  font-size: 14px;
+}
+.genesis-nav-menu.menu-mobile a {
+  display: block;
+  padding: 24px 20px;
+  padding: 1.41176rem 1.17647rem;
+  position: relative;
+  color: white;
+  font-size: 14px;
+}
+.genesis-nav-menu.menu-mobile a:hover {
+  background-color: #323232;
+}
+.genesis-nav-menu.menu-mobile .sub-menu {
+  left: 0;
+  margin: 0;
+  opacity: 1;
+  padding: 0;
+  position: relative;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  -moz-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+  width: 100%;
+  z-index: 99;
+  display: none;
+  background-color: #666666;
+}
+.genesis-nav-menu.menu-mobile .sub-menu .sub-menu {
+  margin: 0 0 0 10px;
 }
 
 /*  Primary Navigation Extras */
