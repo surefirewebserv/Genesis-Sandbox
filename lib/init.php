@@ -109,6 +109,9 @@ function gs_init() {
 		
 		/** Inpost Metaboxes */
 		include_once( CHILD_LIB_DIR . '/admin/gs-inpost-functions.php');
+
+		/** Custom Logo Uploader **/
+		include_once( CHILD_LIB_DIR . '/admin/gs-logo-upload.php' );
 		
 		/** Get required plugins */
 	//require_once( CHILD_LIB_DIR . '/plugins/plugins.php' );
