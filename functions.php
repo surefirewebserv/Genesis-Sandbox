@@ -168,3 +168,6 @@ function gs_footer_navigation() {
 	
 	gs_navigation( 'footer', $footer_menu_args );
 }
+
+add_theme_support( 'genesis-html5' );
+add_action( 'genesis_after_entry_content', 'genesis_prev_next_post_nav', 5 );

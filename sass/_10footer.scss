@@ -1,25 +1,25 @@
-#footer {
+.site-footer {
 	clear: both;
 }
 
-#footer .wrap {
+.site-footer .wrap {
 	border-top: 2px solid tint($dark,30%);
 	overflow: hidden;
 	padding: 48px 0;
 	padding: cr(48) 0;
 }
 
-#footer .creds {
+.site-footer .creds {
 	text-align: right;
 }
 
-#footer .creds,
-#footer .gototop {
+.site-footer .creds,
+.site-footer .gototop {
 	margin: 8px 0;
 	margin: cr(8) 0;
 }
 
-#footer p {
+.site-footer p {
 	@include grFontSize();
 }
 
@@ -62,14 +62,14 @@
 
 /* Footer Navigation */
 
-	#footer #footer-nav .wrap {
+	.site-footer #footer-nav .wrap {
 	  border: none;
 	  padding: 0;
 	}
-	#footer ul.menu-footer {
+	.site-footer ul.menu-footer {
 	  font-size: 13px;
 	  font-weight: normal;
 	}
-	#footer ul.menu-footer a {
+	.site-footer ul.menu-footer a {
 	  padding: 0rem .75rem;
 	}

@@ -3,7 +3,7 @@
 	overflow: hidden;
 }
 
-#header .genesis-nav-menu {
+.header .genesis-nav-menu {
 	float: right;
 	margin-top: 48px;
 	@include rem(margin-top, 48);
@@ -11,7 +11,7 @@
 }
 
 
-#nav {
+.nav-primary {
 	background-color: $color-extra;
 }
 
@@ -162,10 +162,6 @@
 		}
 	}
 }
-
-
-
-
 
 
 /*  Primary Navigation Extras */

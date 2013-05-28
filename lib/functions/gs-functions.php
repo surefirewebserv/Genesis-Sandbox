@@ -410,8 +410,6 @@ add_theme_support(
 /**
  * Add Logo to header
  */
-
-
 add_action('genesis_before', 'gs_do_logo');
 function gs_do_logo() {
 	if ( genesis_get_option('blog_title') == 'image' && get_theme_mod( 'gs_logo' ) )

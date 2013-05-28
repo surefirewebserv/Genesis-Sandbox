@@ -7,7 +7,7 @@
 	h5,
 	h6,
 	.entry-title a,
-	#title {
+	.site-title {
 		line-height: 1.2;
 		margin-bottom: 16px;
 		@include rem(margin-bottom, 16);
@@ -20,7 +20,7 @@
 	h1,
 	.entry-title,
 	.entry-title a,
-	#title {
+	.site-title {
 		@include sfFontSize(32);
 	}
 

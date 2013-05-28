@@ -1,6 +1,6 @@
 /* Wraps */
 
-	#wrap {
+	.site-container {
 	  width: 100%;
 
 	}
@@ -10,7 +10,7 @@
 	  max-width: 1152px;
 	}
 
-	#inner {
+	.site-inner {
 		@include clearfix;
 		padding-top:20px;
 		@include rem(padding-top, 20);
@@ -19,19 +19,19 @@
 
 /* Containers and Columns */
 
-	.content-sidebar-sidebar #sidebar-alt,
-	.sidebar-content #content,
-	.sidebar-content-sidebar #content-sidebar-wrap,
-	.sidebar-sidebar-content #content,
-	.sidebar-sidebar-content #content-sidebar-wrap,
-	#footer .creds,
-	#header .widget-area,
-	.sidebar-content-sidebar #sidebar {
+	.content-sidebar-sidebar .sidebar-secondary,
+	.sidebar-content .content,
+	.sidebar-content-sidebar .content-sidebar-wrap,
+	.sidebar-sidebar-content .content,
+	.sidebar-sidebar-content .content-sidebar-wrap,
+	.site-footer .creds,
+	.site-header .widget-area,
+	.sidebar-content-sidebar .sidebar-primary {
 		float: right;
 	}
 
 	.five-sixths,
-	.content-sidebar-sidebar #sidebar,
+	.content-sidebar-sidebar .sidebar-primary,
 	.four-fifths,
 	.four-sixths,
 	.one-fifth,
@@ -46,18 +46,18 @@
 	.two-fourths,
 	.two-sixths,
 	.two-thirds,
-	.sidebar-content #sidebar,
-	.sidebar-sidebar-content #sidebar,
-	.content-sidebar-sidebar #content,
-	#footer .gototop,
-	#sidebar-alt,
-	#title-area,
+	.sidebar-content .sidebar-primary,
+	.sidebar-sidebar-content .sidebar-primary,
+	.content-sidebar-sidebar .content,
+	.site-footer .gototop,
+	.sidebar-secondary,
+	.title-area,
 	.archive-page,
-	.content-sidebar #content,
-	.content-sidebar #sidebar,
-	.sidebar-content-sidebar #sidebar-alt,
-	.content-sidebar-sidebar #content,
-	.sidebar-content-sidebar #content
+	.content-sidebar .content,
+	.content-sidebar .sidebar-primary,
+	.sidebar-content-sidebar .sidebar-secondary,
+	.content-sidebar-sidebar .content,
+	.sidebar-content-sidebar .content
 	{
 		float: left;
 		margin-left: percentage(48px / 1152px); /* 48px / 1152px */
@@ -68,30 +68,30 @@
 	.one-half,
 	.three-sixths,
 	.two-fourths,
-	.content-sidebar-sidebar #content,
+	.content-sidebar-sidebar .content,
 	.archive-page,
-	#header .widget-area,
-	#title-area
+	.site-header .widget-area,
+	.title-area
 	 {
 		width: percentage(552px / 1152px); /* 552px / 1152px */
 	}
 
 	.one-third,
 	.two-sixths,
-	.content-sidebar #sidebar,
-	.sidebar-content #sidebar,
-	.content-sidebar-sidebar #sidebar,
-	.sidebar-content-sidebar #sidebar,
-	.sidebar-sidebar-content #sidebar {
+	.content-sidebar .sidebar-primary,
+	.sidebar-content .sidebar-primary,
+	.content-sidebar-sidebar .sidebar-primary,
+	.sidebar-content-sidebar .sidebar-primary,
+	.sidebar-sidebar-content .sidebar-primary {
 		width: percentage(352px / 1152px); /* 352px / 1152px */
 	}
 
 	.four-sixths,
 	.two-thirds,
-	.content-sidebar #content,
-	.sidebar-content #content,
-	.sidebar-content-sidebar #content,
-	.sidebar-sidebar-content #content {
+	.content-sidebar .content,
+	.sidebar-content .content,
+	.sidebar-content-sidebar .content,
+	.sidebar-sidebar-content .content {
 		width: percentage(752px / 1152px); /* 752px / 1152px */
 	}
 
@@ -120,33 +120,33 @@
 	}
 
 	.one-sixth, 
-	#sidebar-alt {
+	.sidebar-secondary {
 		width: percentage(152px / 1152px); /* 152px / 1152px */
 	}
 
 	.five-sixths,
-	.sidebar-content-sidebar #content-sidebar-wrap,
-	.sidebar-sidebar-content #content-sidebar-wrap {
+	.sidebar-content-sidebar .content-sidebar-wrap,
+	.sidebar-sidebar-content .content-sidebar-wrap {
 		width: percentage(952px / 1152px); /* 952px / 1152px */
 	}
 
 	.first, 
-	.content-sidebar-sidebar #content,
-	.sidebar-content-sidebar #sidebar-alt,
-	.sidebar-sidebar-content #sidebar-alt,
-	#title-area,
-	.content-sidebar #content,
-	.sidebar-content #sidebar,
-	.sidebar-content-sidebar #content,
-	.sidebar-sidebar-content #sidebar {
+	.content-sidebar-sidebar .content,
+	.sidebar-content-sidebar .sidebar-secondary,
+	.sidebar-sidebar-content .sidebar-secondary,
+	.title-area,
+	.content-sidebar .content,
+	.sidebar-content .sidebar-primary,
+	.sidebar-content-sidebar .content,
+	.sidebar-sidebar-content .sidebar-primary {
 		margin-left: 0;
 		clear:both;
 	}
 
-	.sidebar-content #sidebar,
-	.sidebar-content-sidebar #sidebar-alt,
-	.sidebar-sidebar-content #sidebar-alt,
-	.sidebar-sidebar-content #sidebar {
+	.sidebar-content .sidebar-primary,
+	.sidebar-content-sidebar .sidebar-secondary,
+	.sidebar-sidebar-content .sidebar-secondary,
+	.sidebar-sidebar-content .sidebar-primary {
 		clear: none;
 	}
 
@@ -158,7 +158,7 @@
 
 /* Entry Content Structure */
 
-	#content {
+	.content {
 		padding-bottom: 40px;
 		@include rem(padding-bottom, 40);
 	}

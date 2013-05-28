@@ -1,4 +1,4 @@
-#header {
+.site-header {
 	
 	min-height: 120px;
 	overflow: hidden;
@@ -6,7 +6,7 @@
 	@include rem(padding-bottom, 32);
 }
 
-#title {
+.site-title {
 	margin: 40px 0 8px;
 	margin: cr(40) 0 cr(8) 0;
 	@include sfFontSize(48);
@@ -20,25 +20,25 @@
 }
 
 
-.header-image #title {
+.header-image .site-title {
 	margin: 0;
 }
 
-#description {
+.site-description {
 	line-height: 1.25;
 	color: $color-extra;
 }
 
 
-.header-full-width #title,
-.header-full-width #title a,
-.header-full-width #title-area {
+.header-full-width .site-title,
+.header-full-width .site-title a,
+.header-full-width .title-area {
 	width: 100%;
 }
 
-.header-image #title,
-.header-image #title a,
-.header-image #title-area {
+.header-image .site-title,
+.header-image .site-title a,
+.header-image .title-area {
 	display: block;
 	float: left;
 	min-height: 120px;
@@ -46,11 +46,11 @@
 	width: 50%;
 }
 
-.header-image #description {
+.header-image .site-description {
 	display: none;
 }
 
-#header .search-form {
+.site-header .search-form {
 	float: right;
 	margin-top: 56px;
 	@include rem(margin-top, 56);

@@ -1,26 +1,25 @@
 
 /* Post Info and Meta */
 
-	.post-info,
-	.post-meta {
+	.entry-meta {
 		clear: both;
 		line-height: 1.5;
 		color: shade($light,70%);
 		@include grFontSize();
 	}
 
-	.post-info {
+	.entry-header .entry-meta {
 		margin-bottom: 24px;
 		@include rem(margin-bottom, 24);
 	}
 
-	.post-meta {
+	.entry-footer .entry-meta {
 		border-top: 1px solid #ccc;
 		padding-top: 24px;
 		@include rem(padding-top, 24);
 	}
 
-	.post-comments {
+	.entry-meta .entry-comments {
 		background: url(images/post-comments.png) no-repeat center left;
 		margin-left: 16px;
 		@include rem(margin-left, 16);
@@ -29,53 +28,53 @@
 		color: $textColor;
 	}
 
-	.categories,
-	.tags {
+	.entry-categories,
+	.entry-tags {
 		display: block;
 	}
 
-	.date {
+	.entry-time {
 		color: $dark;
 	}
 
 
 /* Comments */
 
-	#comments,
+	.entry-comments,
 	#respond {
 		line-height: 1.5;
 		overflow: hidden;
 	}
 
 	.ping-list,
-	#comments {
+	.entry-comments {
 		margin-bottom: 48px;
 		@include rem(margin-bottom, 48);
 	}
 
-	#author,
-	#email,
-	#url {
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url {
 		width: 50%;
 	}
 
 	.commentmetadata,
-	#author,
-	#email,
-	#url {
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url {
 		margin-bottom: 12px;
 		@include rem(margin-bottom, 12);
 	}
 
-	#comment {
+	.comment-form-comment {
 		margin: 12px 0;
 		margin: cr(12) 0;
 	}
 
-	label {
+	/*label {
 		margin-left: 12px;
 		@include rem(margin-left, 12);
-	}
+	}*/
 
 	.comment-list li,
 	.ping-list li {
@@ -110,7 +109,7 @@
 	.bypostauthor {
 	}
 
-	#comments .navigation {
+	.entry-comments .navigation {
 		margin-top: 32px;
 		@include rem(margin-top, 32);
 	}
