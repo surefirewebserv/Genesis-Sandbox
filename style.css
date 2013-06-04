@@ -72,6 +72,19 @@ nav, output, ruby, section, summary, time, mark, audio, video {
   vertical-align: baseline;
 }
 
+/* Clearfix */
+.site-inner:after,
+.site-header:after,
+.nav-primary:after,
+.nav-secondary:after,
+.wrap:after,
+.footer-widgets:after,
+.clearfix:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
 html {
   font-size: 100%;
 }
