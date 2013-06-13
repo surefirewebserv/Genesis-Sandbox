@@ -86,14 +86,14 @@ nav, output, ruby, section, summary, time, mark, audio, video {
 }
 
 html {
-  font-size: 100%;
+  font-size: 62.5%;
 }
 
 body {
   background-color: white;
-  font-size: 17px;
-  font-size: 1rem;
-  line-height: 1.6211;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.8;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333333;
 }
@@ -107,7 +107,8 @@ p.pages,
 .clear-line {
   border-bottom: 1px solid #ccc;
   margin-bottom: 26px;
-  margin-bottom: 1.52941rem;
+  margin-bottom: 26;
+  margin-bottom: 26;
 }
 
 .alignleft {
@@ -165,7 +166,8 @@ a img {
   overflow: hidden;
   *zoom: 1;
   padding-top: 20px;
-  padding-top: 1.17647rem;
+  padding-top: 20;
+  padding-top: 20;
 }
 
 /* Containers and Columns */
@@ -315,18 +317,18 @@ a img {
 /* Entry Content Structure */
 .content {
   padding-bottom: 40px;
-  padding-bottom: 2.35294rem;
+  padding-bottom: 4rem;
 }
 
 .entry,
 .page .post.entry {
   margin-bottom: 80px;
-  margin-bottom: 4.70588rem;
+  margin-bottom: 8rem;
 }
 
 .single .entry {
   margin-bottom: 48px;
-  margin-bottom: 2.82353rem;
+  margin-bottom: 4.8rem;
 }
 
 .page .entry {
@@ -348,7 +350,7 @@ h6,
 .site-title {
   line-height: 1.2;
   margin-bottom: 16px;
-  margin-bottom: 0.94118rem;
+  margin-bottom: 1.6rem;
   font-family: Arimo, Varela, sans-serif;
   font-weight: 700;
 }
@@ -358,14 +360,14 @@ h1,
 .entry-title a,
 .site-title {
   font-size: 32px;
-  font-size: 1.88235rem;
+  font-size: 3.2rem;
 }
 
 /* Title Class for SEO / No Overuse of H Tags */
 .title,
 h2 {
   font-size: 28px;
-  font-size: 1.64706rem;
+  font-size: 2.8rem;
 }
 
 h2 a,
@@ -379,7 +381,7 @@ h2 a:visited:hover {
 
 h3 {
   font-size: 24px;
-  font-size: 1.41176rem;
+  font-size: 2.4rem;
 }
 
 h4,
@@ -387,7 +389,7 @@ h4,
 .taxonomy-description h1,
 .widgettitle {
   font-size: 20px;
-  font-size: 1.17647rem;
+  font-size: 2rem;
 }
 
 h4.widgettitle a {
@@ -396,14 +398,14 @@ h4.widgettitle a {
 
 h5 {
   font-size: 18px;
-  font-size: 1.05882rem;
+  font-size: 1.8rem;
 }
 
 h6,
 .author-box h1,
 .sidebar h2 a {
   font-size: 14px;
-  font-size: 0.82353rem;
+  font-size: 1.4rem;
 }
 
 .author-box h1 {
@@ -413,12 +415,12 @@ h6,
 
 .taxonomy-description h1 {
   margin-bottom: 4px;
-  margin-bottom: 0.23529rem;
+  margin-bottom: 0.4rem;
 }
 
 .archive-title {
   margin-bottom: 24px;
-  margin-bottom: 1.41176rem;
+  margin-bottom: 2.4rem;
 }
 
 /*********************************************************************************************
@@ -433,14 +435,14 @@ h6,
   min-height: 120px;
   overflow: hidden;
   padding-bottom: 32px;
-  padding-bottom: 1.88235rem;
+  padding-bottom: 3.2rem;
 }
 
 .site-title {
   margin: 40px 0 8px;
-  margin: 2.35294rem 0 0.47059rem 0;
+  margin: 4rem 0 0.8rem;
   font-size: 48px;
-  font-size: 2.82353rem;
+  font-size: 4.8rem;
   font-family: Arimo, Varela, sans-serif;
   font-weight: 700;
 }
@@ -483,7 +485,7 @@ h6,
 .site-header .search-form {
   float: right;
   margin-top: 56px;
-  margin-top: 3.29412rem;
+  margin-top: 5.6rem;
   width: 100%;
 }
 
@@ -498,7 +500,7 @@ h6,
 .header .genesis-nav-menu {
   float: right;
   margin-top: 48px;
-  margin-top: 2.82353rem;
+  margin-top: 4.8rem;
   width: auto;
 }
 
@@ -563,7 +565,7 @@ h6,
 .genesis-nav-menu a {
   display: block;
   padding: 24px 20px;
-  padding: 1.41176rem 1.17647rem;
+  padding: 2.4rem 2rem;
   position: relative;
 }
 .genesis-nav-menu .sub-menu {
@@ -605,7 +607,7 @@ h6,
 .genesis-nav-menu.menu-mobile a {
   display: block;
   padding: 24px 20px;
-  padding: 1.41176rem 1.17647rem;
+  padding: cr(24) cr(20);
   position: relative;
   color: white;
   font-size: 14px;
@@ -636,7 +638,7 @@ h6,
 .genesis-nav-menu li.right {
   float: right;
   padding: 24px 20px;
-  padding: 1.41176rem 1.17647rem;
+  padding: 2.4rem 2rem;
   list-style-type: none;
 }
 
@@ -647,21 +649,21 @@ h6,
 
 .genesis-nav-menu li.search {
   padding: 6px 0 0;
-  padding: 0.35294rem 0 0;
+  padding: 0.6rem 0 0;
 }
 
 .genesis-nav-menu li.rss a {
   background: url(images/rss.png) no-repeat center left;
   margin-left: 20px;
-  margin-left: 1.17647rem;
+  margin-left: 2rem;
   padding-left: 20px;
-  padding-left: 1.17647rem;
+  padding-left: 2rem;
 }
 
 .genesis-nav-menu li.twitter a {
   background: url(images/twitter-nav.png) no-repeat center left;
   padding-left: 24px;
-  padding-left: 1.41176rem;
+  padding-left: 2.4rem;
 }
 
 /* Pagination */
@@ -677,7 +679,7 @@ h6,
   border-radius: 3px;
   cursor: pointer;
   padding: 12px;
-  padding: 0.70588rem;
+  padding: 1.2rem;
   color: white;
 }
 
@@ -695,27 +697,26 @@ h6,
   clear: both;
   line-height: 1.5;
   color: #4c4c4c;
-  font-size: 17px;
-  font-size: 1rem;
+  /*@include rem(font-size, 14px)*/
 }
 
 .entry-header .entry-meta {
   margin-bottom: 24px;
-  margin-bottom: 1.41176rem;
+  margin-bottom: 2.4rem;
 }
 
 .entry-footer .entry-meta {
   border-top: 1px solid #ccc;
   padding-top: 24px;
-  padding-top: 1.41176rem;
+  padding-top: 2.4rem;
 }
 
 .entry-meta .entry-comments {
   background: url(images/post-comments.png) no-repeat center left;
   margin-left: 16px;
-  margin-left: 0.94118rem;
+  margin-left: 1.6rem;
   padding-left: 20px;
-  margin-left: 1.17647rem;
+  padding-left: 2rem;
   color: #333333;
 }
 
@@ -738,7 +739,7 @@ h6,
 .ping-list,
 .entry-comments {
   margin-bottom: 48px;
-  margin-bottom: 2.82353rem;
+  margin-bottom: 4.8rem;
 }
 
 .comment-form-author,
@@ -752,12 +753,12 @@ h6,
 .comment-form-email,
 .comment-form-url {
   margin-bottom: 12px;
-  margin-bottom: 0.70588rem;
+  margin-bottom: 1.2rem;
 }
 
 .comment-form-comment {
   margin: 12px 0;
-  margin: 0.70588rem 0;
+  margin: 1.2rem 0;
 }
 
 /*label {
@@ -768,15 +769,15 @@ h6,
 .ping-list li {
   list-style-type: none;
   margin-top: 24px;
-  margin-top: 1.41176rem;
+  margin-top: 2.4rem;
   padding: 32px;
-  padding: 1.88235rem;
+  padding: 3.2rem;
   border-radius: 10px;
 }
 
 .comment-list li ul li {
   margin-right: -32px;
-  margin-right: 1.88235rem;
+  margin-right: -3.2rem;
 }
 
 .comment-header {
@@ -790,18 +791,18 @@ h6,
 
 .comment-content p {
   margin-bottom: 24px;
-  margin-bottom: 1.41176rem;
+  margin-bottom: 2.4rem;
 }
 
 .entry-comments .navigation {
   margin-top: 32px;
-  margin-top: 1.88235rem;
+  margin-top: 3.2rem;
 }
 
 .comment-list li .avatar {
   float: left;
   margin: 0 16px 24px 0;
-  margin: 0 0.94118rem 1.41176rem 0;
+  margin: 0 1.6rem 2.4rem 0;
   border-radius: 8px;
 }
 
@@ -810,13 +811,13 @@ h6,
 ---------------------------------------------------------------------------------------------------- */
 .entry-content p {
   margin-bottom: 26px;
-  margin-bottom: 1.52941rem;
+  margin-bottom: 2.6rem;
 }
 
 /* Blockquotes */
 blockquote {
   padding: 24px 64px;
-  padding: 1.41176rem 3.76471rem;
+  padding: 2.4rem 6.4rem;
 }
 
 blockquote::before {
@@ -834,23 +835,24 @@ blockquote p {
 }
 
 blockquote::before {
-  font-size: 32px;
-  font-size: 1.88235rem;
-  line-height: 1.88812;
+  font-size: 45px;
+  font-size: 4.5rem;
+  line-height: 58px;
+  line-height: 5.8rem;
 }
 
 /* Lists */
 .entry-content ol,
 .entry-content ul {
   margin-bottom: 26px;
-  margin-bottom: 1.52941rem;
+  margin-bottom: 2.6rem;
 }
 
 .entry-content ol li,
 .entry-content ul li {
   line-height: 1.625;
   margin-left: 40px;
-  margin-left: 2.35294rem;
+  margin-left: 4rem;
 }
 
 .entry-content ol li {
@@ -876,22 +878,22 @@ blockquote::before {
 
 .sidebar p {
   margin-bottom: 16px;
-  margin-bottom: 0.94118rem;
+  margin-bottom: 1.6rem;
 }
 
 .sidebar .widget {
   border-bottom: 1px solid #ccc;
   margin-bottom: 32px;
-  margin-bottom: 1.88235rem;
+  margin-bottom: 3.2rem;
   padding-bottom: 32px;
-  padding-bottom: 1.88235rem;
+  padding-bottom: 3.2rem;
   overflow: hidden;
 }
 
 .sidebar.widget-area ul li {
   list-style-type: none;
   margin-bottom: 6px;
-  margin-bottom: 0.35294rem;
+  margin-bottom: 0.6rem;
   word-wrap: break-word;
 }
 
@@ -910,7 +912,7 @@ blockquote::before {
   border-top: 2px solid #4c5558;
   overflow: hidden;
   padding: 48px 0;
-  padding: 2.82353rem 0;
+  padding: 4.8rem 0;
 }
 
 .site-footer .creds {
@@ -920,12 +922,12 @@ blockquote::before {
 .site-footer .creds,
 .site-footer .gototop {
   margin: 8px 0;
-  margin: 0.47059rem 0;
+  margin: 0.8rem 0;
 }
 
 .site-footer p {
-  font-size: 17px;
-  font-size: 1rem;
+  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 /* Footer Widgets */
@@ -935,22 +937,22 @@ blockquote::before {
   line-height: 1.5;
   overflow: hidden;
   padding: 32px 0 16px;
-  padding: 1.88235rem 0 0.94118rem;
+  padding: 3.2rem 0 1.6rem;
   background-color: #f2f2f2;
   margin-bottom: 10px;
 }
 .footer-widgets p {
   margin-bottom: 16px;
-  margin-bottom: 0.94118rem;
+  margin-bottom: 1.6rem;
 }
 .footer-widgets .widget {
   margin-bottom: 24px;
-  margin-bottom: 1.41176rem;
+  margin-bottom: 2.4rem;
 }
 .footer-widgets .widget-area ul li {
   list-style-type: none;
   margin-bottom: 6px;
-  margin-bottom: 0.35294rem;
+  margin-bottom: 0.6rem;
   word-wrap: break-word;
 }
 
@@ -989,11 +991,9 @@ textarea {
   border-radius: 3px;
   box-shadow: 0 0 5px #ddd inset;
   padding: 16px;
-  padding: 0.94118rem;
+  padding: 1.6rem;
   width: 100%;
   color: #7f7f7f;
-  font-size: 17px;
-  font-size: 1rem;
 }
 
 button,
@@ -1005,9 +1005,10 @@ input[type="submit"],
   box-shadow: none;
   cursor: pointer;
   padding: 16px 24px;
-  padding: 0.94118rem 1.41176rem;
+  padding: 1.6rem 2.4rem;
   width: auto;
   color: #fff;
+  font-size: inherit;
 }
 
 button:hover,
@@ -1033,31 +1034,31 @@ img {
 
 .alignleft .avatar {
   margin-right: 24px;
-  margin-right: 1.41176rem;
+  margin-right: 2.4rem;
 }
 
 .alignright .avatar {
   margin-left: 24px;
-  margin-left: 1.41176rem;
+  margin-left: 2.4rem;
 }
 
 .author-box .avatar {
   float: left;
   margin-right: 24px;
-  margin-right: 1.41176rem;
+  margin-right: 2.4rem;
 }
 
 img.centered,
 .aligncenter {
   display: block;
   margin: 0 auto 24px;
-  margin: 0 auto 1.41176rem;
+  margin: 0 auto 2.4rem;
 }
 
 img.alignnone {
   display: inline;
   margin-bottom: 12px;
-  margin-bottom: 0.70588rem;
+  margin-bottom: 1.2rem;
 }
 
 img.alignleft,
@@ -1065,25 +1066,23 @@ img.alignleft,
 .wp-caption.alignleft {
   display: inline;
   margin: 0 24px 24px 0;
-  margin: 0 1.41176rem 1.41176rem 0;
+  margin: 0 2.4rem 2.4rem 0;
 }
 
 img.alignright,
 .wp-caption.alignright {
   display: inline;
   margin: 0 0 24px 24px;
-  margin: 0 0 1.41176rem 1.41176rem;
+  margin: 0 0 2.4rem 2.4rem;
 }
 
 p.wp-caption-text {
   line-height: 1.2;
   margin-top: 12px;
-  margin-top: 0.70588rem;
+  margin-top: 1.2rem;
 }
 
 .wp-caption {
-  font-size: 17px;
-  font-size: 1rem;
   text-align: center;
 }
 
@@ -1093,7 +1092,7 @@ p.wp-caption-text {
 .author-box,
 .sticky {
   margin-bottom: 80px;
-  margin-bottom: 4.70588rem;
+  margin-bottom: 8rem;
 }
 
 .author-box,
@@ -1106,18 +1105,19 @@ p.wp-caption-text {
 .taxonomy-description {
   background-color: #f5f5f5;
   margin-bottom: 48px;
-  margin-bottom: 2.82353rem;
+  margin-bottom: 4.8rem;
   overflow: hidden;
   padding: 32px;
-  padding: 1.88235rem;
+  padding: 3.2rem;
 }
 
 .breadcrumb {
   background-color: #f5f5f5;
   margin-bottom: 10px;
-  margin-bottom: 0.58824rem;
+  margin-bottom: 1rem;
   overflow: hidden;
   padding: 10px;
+  padding: 1rem;
 }
 
 /*
@@ -1142,14 +1142,14 @@ p.wp-caption-text {
 .content div.gform_wrapper textarea,
 .content div.gform_wrapper .ginput_complex label {
   font-size: 16px;
-  font-size: 0.94118rem;
+  font-size: 1.6rem;
   padding: 16px;
-  padding: 0.94118rem;
+  padding: 1.6rem;
 }
 
 .content div.gform_wrapper input[type="submit"] {
   padding: 16px 24px;
-  padding: 0.94118rem 1.41176rem;
+  padding: 1.6rem 2.4rem;
 }
 
 .content div.gform_wrapper .ginput_complex label {
@@ -1159,5 +1159,5 @@ p.wp-caption-text {
 div.gform_wrapper li,
 div.gform_wrapper form li {
   margin: 16px 0 0;
-  margin: 0.94118rem 0 0;
+  margin: 1.6rem 0 0;
 }

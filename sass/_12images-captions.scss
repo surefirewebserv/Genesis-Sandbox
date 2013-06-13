@@ -10,57 +10,48 @@ img {
 }
 
 .alignleft .avatar {
-	margin-right: 24px;
-	@include rem(margin-right, 24);
+	@include rem(margin-right, 24px);
 }
 
 .alignright .avatar {
-	margin-left: 24px;
-	@include rem(margin-left, 24);
+	@include rem(margin-left, 24px);
 }
 
 .author-box .avatar {
 	float: left;
-	margin-right: 24px;
-	@include rem(margin-right, 24);
+	@include rem(margin-right, 24px);
 }
 
 img.centered,
 .aligncenter {
 	display: block;
-	margin: 0 auto 24px;
-	margin: 0 auto cr(24);
+	@include rem(margin, 0 auto 24px);
 }
 
 img.alignnone {
 	display: inline;
-	margin-bottom: 12px;
-	@include rem(margin-bottom, 12);
+	@include rem(margin-bottom, 12px);
 }
 
 img.alignleft,
 .post-image,
 .wp-caption.alignleft {
 	display: inline;
-	margin: 0 24px 24px 0;
-	margin: 0 cr(24) cr(24) 0;
+	@include rem(margin, 0 24px 24px 0);
 }
 
 img.alignright,
 .wp-caption.alignright {
 	display: inline;
-	margin: 0 0 24px 24px;
-	margin: 0 0 cr(24) cr(24);
+	@include rem(margin, 0 0 24px 24px);
 }
 
 p.wp-caption-text {
 	line-height: 1.2;
-	margin-top: 12px;
-	@include rem(margin-top, 12);
+	@include rem(margin-top, 12px);
 }
 
 .wp-caption {
-	@include grFontSize();
 	text-align:center;
 }
 

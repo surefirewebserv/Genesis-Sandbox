@@ -125,7 +125,9 @@ function gs_navigation( $location, $args ) {
 
 	$defaults = array(
 		'theme_location' => $location,
+		'container'       => 'nav',
 		'container_id'   => $location . '-nav',
+		'container_class' => $location . '-nav',
 		'menu_class'     => 'genesis-nav-menu menu menu-' . $location,
 		'echo'           => false,
 	);
@@ -134,8 +136,9 @@ function gs_navigation( $location, $args ) {
 	$nav = wp_nav_menu( $args );
 	
 	$nav_output = sprintf(
-		'<div id="%1$s">%3$s%2$s%4$s</div>', 
+		'<nav id="%1$s" class="%2$s">%4$s%3$s%5$s</nav>', 
 		$location . '-nav', 
+		'genesis-nav-menu menu menu-' . $location,
 		$nav, 
 		genesis_structural_wrap( 'nav', 'open', 0 ), 
 		genesis_structural_wrap( 'nav', 'close', 0 ) 
@@ -374,7 +377,7 @@ Add Custom Footer Output
  * @uses gs_footer_navigation()
  */
 function gs_do_footer() {
-	$pattern = '<div class="one-half%1$s" id="footer-%2$s">%3$s</div>';
+	$pattern = '<div class="one-half%1$s footer-%2$s">%3$s</div>';
 	if ( ! genesis_get_option( 'footer_left_nav', CHILD_SETTINGS_FIELD ) )
 		printf( $pattern, ' first', 'left', wpautop( genesis_get_option( 'footer_left', CHILD_SETTINGS_FIELD ) ) );
 	else

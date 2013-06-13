@@ -5,11 +5,9 @@ textarea {
 	border: 1px solid #ddd;
 	border-radius: 3px;
 	box-shadow: 0 0 5px #ddd inset;
-	padding: 16px;
-	@include rem(padding, 16);
+	@include rem(padding, 16px);
 	width: 100%;
 	color: shade($light,50%);
-	@include grFontSize();
 }
 
 button,
@@ -20,10 +18,10 @@ input[type="submit"],
 	border: none;
 	box-shadow: none;
 	cursor: pointer;
-	padding: 16px 24px;
-	padding: cr(16) cr(24);
+	@include rem(padding, 16px 24px);
 	width: auto;
 	color: #fff;
+	font-size:inherit;
 }
 
 button:hover,

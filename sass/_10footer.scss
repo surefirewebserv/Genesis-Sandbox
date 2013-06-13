@@ -5,8 +5,7 @@
 .site-footer .wrap {
 	border-top: 2px solid tint($dark,30%);
 	overflow: hidden;
-	padding: 48px 0;
-	padding: cr(48) 0;
+	@include rem(padding, 48px 0);
 }
 
 .site-footer .creds {
@@ -15,12 +14,11 @@
 
 .site-footer .creds,
 .site-footer .gototop {
-	margin: 8px 0;
-	margin: cr(8) 0;
+	@include rem(margin, 8px 0);
 }
 
 .site-footer p {
-	@include grFontSize();
+	@include rem(font-size, 16px);
 }
 
 /* Footer Widgets */
@@ -30,26 +28,22 @@
 		clear: both;
 		line-height: 1.5;
 		overflow: hidden;
-		padding: 32px 0 16px;
-		padding: cr(32) 0 cr(16);
+		@include rem(padding, 32px 0 16px);
 		background-color: shade($light,5%);
 		margin-bottom: 10px;
 	
 
 		p {
-			margin-bottom: 16px;
-			@include rem(margin-bottom, 16);
+			@include rem(margin-bottom, 16px);
 		}
 
 		.widget {
-			margin-bottom: 24px;
-			@include rem(margin-bottom, 24);
+			@include rem(margin-bottom, 24px);
 		}
 
 		.widget-area ul li {
 			list-style-type: none;
-			margin-bottom: 6px;
-			@include rem(margin-bottom, 6);
+			@include rem(margin-bottom, 6px);
 			word-wrap: break-word;
 		}
 

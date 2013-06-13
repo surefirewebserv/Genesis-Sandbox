@@ -36,13 +36,13 @@
 }
 
   html {
-    font-size: 100%;
+    font-size: 62.5%;
 
   }
   body {
     background-color: $light;
-    @include grFontSize();
-    @include grBaseLineHeight();
+    @include rem(font-size, 16px);
+    line-height: 1.8;
     font-family: $baseFontFamily;
     color: $textColor;
 

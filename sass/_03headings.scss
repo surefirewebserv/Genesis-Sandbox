@@ -9,9 +9,8 @@
 	.entry-title a,
 	.site-title {
 		line-height: 1.2;
-		margin-bottom: 16px;
-		@include rem(margin-bottom, 16);
-		font-family: $googleFont, $googleFontType;
+		@include rem(margin-bottom, 16px);
+		font-family: $googleFont;
 		font-weight: 700;
 	}
 
@@ -21,13 +20,13 @@
 	.entry-title,
 	.entry-title a,
 	.site-title {
-		@include sfFontSize(32);
+		@include rem(font-size, 32px);
 	}
 
 	/* Title Class for SEO / No Overuse of H Tags */
 	.title,
 	h2 {
-		@include sfFontSize(28);
+		@include rem(font-size, 28px);
 	}
 
 	h2 a,
@@ -38,14 +37,14 @@
 
 
 	h3 {
-		@include sfFontSize(24);
+		@include rem(font-size, 24px);
 	}
 
 	h4,
 	.archive-title,
 	.taxonomy-description h1,
 	.widgettitle {
-		@include sfFontSize(20);
+		@include rem(font-size, 20px);
 	}
 
 	h4.widgettitle a {
@@ -53,13 +52,13 @@
 	}
 
 	h5 {
-		@include sfFontSize(18);
+		@include rem(font-size, 18px);
 	}
 
 	h6,
 	.author-box h1,
 	.sidebar h2 a {
-		@include sfFontSize(14);
+		@include rem(font-size, 14px);
 	}
 
 	.author-box h1 {
@@ -68,11 +67,11 @@
 	}
 
 	.taxonomy-description h1 {
-		margin-bottom: 4px;
-		@include rem(margin-bottom, 4);
+		
+		@include rem(margin-bottom, 4px);
 	}
 
 	.archive-title {
-		margin-bottom: 24px;
-		@include rem(margin-bottom, 24);
+		
+		@include rem(margin-bottom, 24px);
 	}

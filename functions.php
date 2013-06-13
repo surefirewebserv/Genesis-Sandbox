@@ -93,13 +93,6 @@ function gs_theme_setup() {
 	// Register Sidebars
 	gs_register_sidebars();
 	
-	// Unregister SuperFish - Won't be needed in 2.0	
-	add_action( 'wp_enqueue_scripts', 'gs_unregister_superfish' );
-	function gs_unregister_superfish() {
-		wp_deregister_script( 'superfish' );
-		wp_deregister_script( 'superfish-args' );
-	}
-
 } // End of Set Up Function
 
 // Register Sidebars

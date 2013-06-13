@@ -159,19 +159,16 @@
 /* Entry Content Structure */
 
 	.content {
-		padding-bottom: 40px;
-		@include rem(padding-bottom, 40);
+		@include rem(padding-bottom, 40px);
 	}
 
 	.entry,
 	.page .post.entry {
-		margin-bottom: 80px;
-		@include rem(margin-bottom, 80);
+		@include rem(margin-bottom, 80px);
 	}
 
 	.single .entry {
-		margin-bottom: 48px;
-		@include rem(margin-bottom, 48);
+		@include rem(margin-bottom, 48px);
 	}
 
 	.page .entry {

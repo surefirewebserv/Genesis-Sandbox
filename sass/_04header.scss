@@ -2,20 +2,18 @@
 	
 	min-height: 120px;
 	overflow: hidden;
-	padding-bottom: 32px;
-	@include rem(padding-bottom, 32);
+	@include rem(padding-bottom, 32px);
 }
 
 .site-title {
-	margin: 40px 0 8px;
-	margin: cr(40) 0 cr(8) 0;
-	@include sfFontSize(48);
+	@include rem(margin, 40px 0 8px);
+	@include rem(font-size, 48px);
 	a {
 		color:$color-extra;
 		&:hover { color: $color-cta; }
 	}
 
-	font-family: $googleFont, $googleFontType;
+	font-family: $googleFont;
 	font-weight:700;
 }
 
@@ -52,7 +50,6 @@
 
 .site-header .search-form {
 	float: right;
-	margin-top: 56px;
-	@include rem(margin-top, 56);
+	@include rem(margin-top, 56px);
 	width: 100%;
 }
