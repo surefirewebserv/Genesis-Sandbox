@@ -12,8 +12,7 @@
 
 	.site-inner {
 		@include clearfix;
-		padding-top:20px;
-		@include rem(padding-top, 20);
+		@include rem(padding-top, 20px);
 	}
 	
 

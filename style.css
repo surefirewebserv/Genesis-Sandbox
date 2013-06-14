@@ -165,8 +165,7 @@ a img {
   overflow: hidden;
   *zoom: 1;
   padding-top: 20px;
-  padding-top: 20;
-  padding-top: 20;
+  padding-top: 2rem;
 }
 
 /* Containers and Columns */
