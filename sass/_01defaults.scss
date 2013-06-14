@@ -45,7 +45,6 @@
     line-height: 1.8;
     font-family: $baseFontFamily;
     color: $textColor;
-
   }
 
   p.pages,
@@ -56,8 +55,7 @@
 
   .clear-line {
     border-bottom: 1px solid #ccc;
-    margin-bottom: 26px;
-    @include rem(margin-bottom, 26);
+    @include rem(margin-bottom, 26px);
   }
 
   .alignleft,

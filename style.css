@@ -107,8 +107,7 @@ p.pages,
 .clear-line {
   border-bottom: 1px solid #ccc;
   margin-bottom: 26px;
-  margin-bottom: 26;
-  margin-bottom: 26;
+  margin-bottom: 2.6rem;
 }
 
 .alignleft {
