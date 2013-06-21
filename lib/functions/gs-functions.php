@@ -410,20 +410,5 @@ add_theme_support(
 	)
 );
 
-/**
- * Add Logo to header
- */
-add_action('genesis_before', 'gs_do_logo');
-function gs_do_logo() {
-	if ( genesis_get_option('blog_title') == 'image' && get_theme_mod( 'gs_logo' ) )
-		remove_action( 'genesis_site_title', 'genesis_seo_site_title' );
-		add_action( 'genesis_site_title', 'gs_replace_logo' );
-}
 
-
-function gs_replace_logo() {
-	$gs_get_logo = get_theme_mod( 'gs_logo' );
- 	if ( genesis_get_option('blog_title') == 'image' && get_theme_mod( 'gs_logo' ) )
- 		echo '<div class="site-logo"><a href="/"><img src="' . $gs_get_logo .'"></a></div>';
-}
 
