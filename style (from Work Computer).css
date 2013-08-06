@@ -2,7 +2,7 @@
 /*
     Theme Name: Genesis Sandbox
     Description: This is a start kit for to devevelop your own themes for the Genesis Framework
-    Author: Jonathan Perez and Travis Smith (wpsmith.net)
+    Author: Jonathan Perez
     Author URI: http://www.surefirewebservices.com/
  
     Version: 1.9
@@ -107,7 +107,8 @@ p.pages,
 .clear-line {
   border-bottom: 1px solid #ccc;
   margin-bottom: 26px;
-  margin-bottom: 2.6rem;
+  margin-bottom: 26;
+  margin-bottom: 26;
 }
 
 .alignleft {
@@ -165,7 +166,8 @@ a img {
   overflow: hidden;
   *zoom: 1;
   padding-top: 20px;
-  padding-top: 2rem;
+  padding-top: 20;
+  padding-top: 20;
 }
 
 /* Containers and Columns */
