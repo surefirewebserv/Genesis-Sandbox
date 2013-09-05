@@ -19,6 +19,13 @@ add_action( 'genesis_setup', 'gs_theme_setup', 15 );
 
 //Theme Set Up Function
 function gs_theme_setup() {
+	
+	//Enable HTML5 Support
+	add_theme_support( 'html5' );
+
+	//Enable Post Navigation
+	add_action( 'genesis_after_entry_content', 'genesis_prev_next_post_nav', 5 );
+
 	/** 
 	 * 01 Set width of oEmbed
 	 * genesis_content_width() will be applied; Filters the content width based on the user selected layout.
@@ -75,10 +82,6 @@ function gs_theme_setup() {
 	// Add Mobile Navigation
 	add_action( 'genesis_before', 'gs_mobile_navigation', 5 );
 	
-	// Enable Custom Footer
-	remove_action( 'genesis_footer', 'genesis_do_footer' );
-	add_action( 'genesis_footer', 'gs_do_footer' );
-	
 	//Enqueue Sandbox Scripts
 	add_action( 'wp_enqueue_scripts', 'gs_enqueue_scripts' );
 	
@@ -104,13 +107,18 @@ function gs_register_sidebars() {
 			'description'	=> __( 'This is the top homepage section.', CHILD_DOMAIN ),
 		),
 		array(
-			'id'			=> 'home-left',
-			'name'			=> __( 'Home Left', CHILD_DOMAIN ),
+			'id'			=> 'home-middle-01',
+			'name'			=> __( 'Home Left Middle', CHILD_DOMAIN ),
 			'description'	=> __( 'This is the homepage left section.', CHILD_DOMAIN ),
 		),
 		array(
-			'id'			=> 'home-right',
-			'name'			=> __( 'Home Right', CHILD_DOMAIN ),
+			'id'			=> 'home-middle-02',
+			'name'			=> __( 'Home Middle Middle', CHILD_DOMAIN ),
+			'description'	=> __( 'This is the homepage middle section.', CHILD_DOMAIN ),
+		),
+		array(
+			'id'			=> 'home-middle-03',
+			'name'			=> __( 'Home Right Middle', CHILD_DOMAIN ),
 			'description'	=> __( 'This is the homepage right section.', CHILD_DOMAIN ),
 		),
 		array(
@@ -121,7 +129,12 @@ function gs_register_sidebars() {
 		array(
 			'id'			=> 'portfolio',
 			'name'			=> __( 'Portfolio', CHILD_DOMAIN ),
-			'description'	=> __( 'This is the portfolio page template', CHILD_DOMAIN ),
+			'description'	=> __( 'Use featured posts to showcase your portfolio.', CHILD_DOMAIN ),
+		),
+		array(
+			'id'			=> 'after-post',
+			'name'			=> __( 'After Post', CHILD_DOMAIN ),
+			'description'	=> __( 'This will show up after every post.', CHILD_DOMAIN ),
 		),
 	);
 	
@@ -151,16 +164,16 @@ function gs_mobile_navigation() {
 	gs_navigation( 'mobile', $mobile_menu_args );
 }
 
-//Add Footer Menu
-function gs_footer_navigation() {
-	
-	$footer_menu_args = array(
-		'echo' => true,
-		'depth' => 1,
-	);
-	
-	gs_navigation( 'footer', $footer_menu_args );
-}
-
-add_theme_support( 'genesis-html5' );
-add_action( 'genesis_after_entry_content', 'genesis_prev_next_post_nav', 5 );
+// Add Widget Area After Post
+add_action('genesis_after_entry', 'gs_do_after_entry');
+function gs_do_after_entry() {
+ 	if ( is_single() ) {
+ 	genesis_widget_area( 
+                'after-post', 
+                array(
+                        'before' => '<aside id="after-post" class="after-post"><div class="home-widget widget-area">', 
+                        'after' => '</div></aside><!-- end #home-left -->',
+                ) 
+        );
+ }
+ }
