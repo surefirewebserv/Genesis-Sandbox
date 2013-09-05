@@ -1,111 +1,145 @@
 .genesis-nav-menu {
 	clear: both;
-	overflow: hidden;
+	color: $light;
+	font-family: $baseFontFamily;
+	letter-spacing: 1px;
+	letter-spacing: 0.1rem;
+	line-height: 1.5;
+	width: 100%;
+		
+	.menu-item {
+		display: inline-block;
+		text-align: left;
+	}
+
+	a {
+		border: none;
+		color: $light;
+		display: block;
+		@include rem(padding, 28px 24px);
+		position: relative;
+
+		&:hover {
+			color: $dark;
+		}
+	}
+
+	.sub-menu {
+		left: -9999px;
+		opacity: 0;
+		position: absolute;
+		@include transition(opacity .4s ease-in-out);
+		width: 200px;
+		z-index: 99;
+
+		a {
+			background-color: #fff;
+			border: 1px solid #eee;
+			border-top: none;
+			@include rem(font-size, 14px);				
+			letter-spacing: 0;
+			@include rem(padding, 16px 20px);
+			position: relative;
+			width: 200px;
+		}
+
+		.sub-menu {
+			margin: -54px 0 0 199px;
+		}
+	}
+
+	.menu-item:hover {
+		position: static;
+
+		> .sub-menu {
+			left: auto;
+			opacity: 1;
+		}
+	}
+
+	> .first > a {
+		padding-left: 0;
+	}
+
+	> .last > a {
+		padding-right: 0;
+	}
+
+	> .right {
+		display: inline-block;
+		float: right;
+		list-style-type: none;
+		@include rem(padding, 28px 0);
+		text-transform: uppercase;
+
+		> a {
+			display: inline;
+			padding: 0;
+		}
+	}
+
+	> .rss > a {
+		@include rem(margin-left, 48px);		
+	}
+
+	> .search {
+		@include rem(padding, 14px 0 0)
+	}
+		
 }
 
-.header .genesis-nav-menu {
-	float: right;
-	@include rem(margin-top, 48px);
-	width: auto;
+/* Site Header Navigation
+--------------------------------------------- */
+
+.site-header .genesis-nav-menu a {
+	color: $dark;
 }
 
+.site-header .sub-menu {
+	border-top: 1px solid #eee;
+	
+	.sub-menu {
+		margin-top: -55px;
+	}
+}
+
+/* Primary Navigation
+--------------------------------------------- */
 
 .nav-primary {
 	background-color: $color-extra;
 }
 
-.genesis-nav-menu.menu-primary {
+.nav-primary a:hover,
+.nav-primary .current-menu-item > a {
+	color: #fff;
+}
 
-	a {
+.nav-primary .sub-menu a {
+	border:1px solid #333;
+}
+
+.nav-primary .sub-menu a {
+	background-color:$color-extra;
+
+	&:hover {
 		color: $light;
-			&:hover { color: $color-cta; }
-	}
-
-	.sub-menu {
-        background:$color-extra; 
-
-        a {     
-	        border:1px solid tint($color-extra, 30%);
-	        margin-right: 0;
-        	width: 200px; 
-	    }
-
-	    :first-child {
-			border-top: none;
-	    }
-
-
-    }
-
-    li ul a {
-        background: none;
-        margin-right: 0;
-        width: 200px;        
-    }
-
-}
-
-.genesis-nav-menu.menu-secondary {
-
-	a {
-	color:$dark;
-		&:hover {color: $color-cta; }
-	}
-
-	.sub-menu {
-        background:$light;
-
-        a {
-			border:1px solid #ccc;
-			width: 200px;
-        }
-        :first-child {
-			border-top: none;
-	    }
 	}
 }
 
-.genesis-nav-menu {
+/* Secondary Navigation
+--------------------------------------------- */
+
+.nav-secondary a {
+	color: $dark;
+}
+
+.nav-secondary .sub-menu {
+	border-top: 1px solid #eee;
 	
-	.menu-item {
-		display: inline-block;
-		margin: 0;
-		padding: 0;
-		text-align: left;
-
-		&:hover {
-			position:static;
-
-			> .sub-menu {
-				left: auto;
-				opacity: 1;
-				font-size:14px;
-			}
-		}
-	}
-
-	a {
-		display: block;
-		
-		@include rem(padding, 24px 20px);
-		position: relative;
-	}
-
 	.sub-menu {
-		left: -9999px;
-		margin: 0;
-		opacity: 0;
-		padding: 0;
-		position: absolute;
-		@include transition(opacity 0.4s ease-in-out); 
-		width: 200px;
-		z-index: 99;
-		
-		.sub-menu {
-			margin: -68px 0 0 199px;
-		}
+		margin-top: -55px;
 	}
-
 }
 
 /* Mobile Menu */
@@ -194,14 +228,14 @@
 
 /* Pagination */ 
 
-	.navigation li {
+	.archive-pagination li {
 		display: inline;
 	}
 
-	.navigation li a,
-	.navigation li a:hover,
-	.navigation li.active a,
-	.navigation li.disabled {
+	.archive-pagination li a,
+	.archive-pagination li a:hover,
+	.archive-pagination li.active a,
+	.archive-pagination li.disabled {
 		background-color: tint($dark, 30%);
 		border-radius: 3px;
 		cursor: pointer;		
@@ -209,9 +243,13 @@
 		color:$light;
 	}
 
-	.navigation li a:hover,
-	.navigation li.active a {
+	.archive-pagination li a:hover,
+	.archive-pagination li.active a {
 		background-color: $light;
 		color:$dark;
+	}
+
+	.portfolio-widgetized .archive-pagination {
+		clear: both;
 	}
 

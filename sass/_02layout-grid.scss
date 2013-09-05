@@ -68,9 +68,7 @@
 	.three-sixths,
 	.two-fourths,
 	.content-sidebar-sidebar .content,
-	.archive-page,
-	.site-header .widget-area,
-	.title-area
+	.archive-page
 	 {
 		width: percentage(552px / 1152px); /* 552px / 1152px */
 	}
@@ -81,7 +79,8 @@
 	.sidebar-content .sidebar-primary,
 	.content-sidebar-sidebar .sidebar-primary,
 	.sidebar-content-sidebar .sidebar-primary,
-	.sidebar-sidebar-content .sidebar-primary {
+	.sidebar-sidebar-content .sidebar-primary,
+	.title-area {
 		width: percentage(352px / 1152px); /* 352px / 1152px */
 	}
 
@@ -90,7 +89,8 @@
 	.content-sidebar .content,
 	.sidebar-content .content,
 	.sidebar-content-sidebar .content,
-	.sidebar-sidebar-content .content {
+	.sidebar-sidebar-content .content,
+	.site-header .widget-area, {
 		width: percentage(752px / 1152px); /* 752px / 1152px */
 	}
 
