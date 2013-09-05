@@ -18,8 +18,8 @@
 if ( ! defined( 'ABSPATH' ) ) exit( 'Cheatin&#8217; uh?' );
 
 /** Remove Post Info / Meta */
-remove_action( 'genesis_before_post_content', 'genesis_post_info' );
-remove_action( 'genesis_after_post_content', 'genesis_post_meta' );  
+remove_action( 'genesis_entry_header', 'genesis_post_info' );
+remove_action( 'genesis_entry_footer', 'genesis_post_meta' );  
 
 // Force Layout (allows user over-ride)
 add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
@@ -39,20 +39,29 @@ function gs_add_portfolio_body_class( $classes ) {
    return $classes;
 }
 
-add_filter( 'post_class' , 'gs_portfolio_post_class' );
+add_filter('post_class', 'sf_post_class');
 /**
- * Add .portfolio-posts class to every post, except first 2
+ * Add post class filter
  *
- * @param  array $classes Array of Post Classes.
- * @return array $classes Modified Array of Post Classes.
+ * Uses the column classes to make a grid.
+ *
+ * @category   Grid Loop
+ * @author     Jonathan Perez, SureFireWebServices <jperez@surefirewebservices.com>
+ * @version    1.0
+ * @link       http://surefirewebservices.com
  */
-function gs_portfolio_post_class( $classes ) {
-	global $loop_counter;
-	$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-		
-	$classes[] = 'portfolio-posts';
-		
-	return $classes;
+function sf_post_class($classes) {    
+	global $wp_query;
+	$loop_counter = $wp_query->current_post;// Post Counter
+     
+    if ($loop_counter >= 0) { // Everything after the first 2 posts.
+    $classes[] = 'one-third';
+    }
+    if ($loop_counter % 3 == 0) {
+       
+    $classes[] .= 'first '; //Add Last class to every 3rd post.
+    }
+    return $classes;
 }
 
 // Remove default content / loop

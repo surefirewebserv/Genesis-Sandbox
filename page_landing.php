@@ -18,14 +18,14 @@
 /** Exit if accessed directly */
 if ( ! defined( 'ABSPATH' ) ) exit( 'Cheatin&#8217; uh?' );
 
-add_filter( 'body_class', 'gs_add_portfolio_body_class' );
+add_filter( 'body_class', 'gs_add_landing_body_class' );
 /**
  * Add page specific body class
  *
  * @param $classes array Body Classes
  * @return $classes array Modified Body Classes
  */
-function gs_add_portfolio_body_class( $classes ) {
+function gs_add_landing_body_class( $classes ) {
    $classes[] = 'landing';
    return $classes;
 }
