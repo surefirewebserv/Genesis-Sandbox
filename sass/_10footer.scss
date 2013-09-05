@@ -1,5 +1,9 @@
+/*
+Site Footer
+---------------------------------------------------------------------------------------------------- */
 .site-footer {
 	clear: both;
+	@include rem(margin, 8px 0);
 }
 
 .site-footer .wrap {
@@ -8,17 +12,9 @@
 	@include rem(padding, 48px 0);
 }
 
-.site-footer .creds {
-	text-align: right;
-}
-
-.site-footer .creds,
-.site-footer .gototop {
-	@include rem(margin, 8px 0);
-}
-
 .site-footer p {
 	@include rem(font-size, 16px);
+	text-align:center;
 }
 
 /* Footer Widgets */

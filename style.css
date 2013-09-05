@@ -1,13 +1,14 @@
+
 /*
     Theme Name: Genesis Sandbox
     Description: This is a start kit for to devevelop your own themes for the Genesis Framework
-    Author: Jonathan Perez and Travis Smith (wpsmith.net)
+    Author: Jonathan Perez
     Author URI: http://www.surefirewebservices.com/
  
-    Version: 1.9
+    Version: 2.0
  
     Template: genesis
-    Template Version: 1.9
+    Template Version: 2.0
  
     License: GPL-2.0+
     License URI: http://www.opensource.org/licenses/gpl-license.php 
@@ -75,6 +76,7 @@ nav, output, ruby, section, summary, time, mark, audio, video {
 
 /* Clearfix */
 .site-inner:after,
+.home-middle:after,
 .site-header:after,
 .nav-primary:after,
 .nav-secondary:after,
@@ -218,9 +220,7 @@ a img {
 .three-sixths,
 .two-fourths,
 .content-sidebar-sidebar .content,
-.archive-page,
-.site-header .widget-area,
-.title-area {
+.archive-page {
   width: 47.91667%;
   /* 552px / 1152px */
 }
@@ -231,7 +231,8 @@ a img {
 .sidebar-content .sidebar-primary,
 .content-sidebar-sidebar .sidebar-primary,
 .sidebar-content-sidebar .sidebar-primary,
-.sidebar-sidebar-content .sidebar-primary {
+.sidebar-sidebar-content .sidebar-primary,
+.title-area {
   width: 30.55556%;
   /* 352px / 1152px */
 }
@@ -241,7 +242,8 @@ a img {
 .content-sidebar .content,
 .sidebar-content .content,
 .sidebar-content-sidebar .content,
-.sidebar-sidebar-content .content {
+.sidebar-sidebar-content .content,
+.site-header .widget-area {
   width: 65.27778%;
   /* 752px / 1152px */
 }
@@ -493,85 +495,31 @@ h6,
 ---------------------------------------------------------------------------------------------------- */
 .genesis-nav-menu {
   clear: both;
-  overflow: hidden;
-}
-
-.header .genesis-nav-menu {
-  float: right;
-  margin-top: 48px;
-  margin-top: 4.8rem;
-  width: auto;
-}
-
-.nav-primary {
-  background-color: #3b3d42;
-}
-
-.genesis-nav-menu.menu-primary a {
   color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 1px;
+  letter-spacing: 0.1rem;
+  line-height: 1.5;
+  width: 100%;
 }
-.genesis-nav-menu.menu-primary a:hover {
-  color: #3e6b85;
-}
-.genesis-nav-menu.menu-primary .sub-menu {
-  background: #3b3d42;
-}
-.genesis-nav-menu.menu-primary .sub-menu a {
-  border: 1px solid #75777a;
-  margin-right: 0;
-  width: 200px;
-}
-.genesis-nav-menu.menu-primary .sub-menu :first-child {
-  border-top: none;
-}
-.genesis-nav-menu.menu-primary li ul a {
-  background: none;
-  margin-right: 0;
-  width: 200px;
-}
-
-.genesis-nav-menu.menu-secondary a {
-  color: #000d11;
-}
-.genesis-nav-menu.menu-secondary a:hover {
-  color: #3e6b85;
-}
-.genesis-nav-menu.menu-secondary .sub-menu {
-  background: white;
-}
-.genesis-nav-menu.menu-secondary .sub-menu a {
-  border: 1px solid #ccc;
-  width: 200px;
-}
-.genesis-nav-menu.menu-secondary .sub-menu :first-child {
-  border-top: none;
-}
-
 .genesis-nav-menu .menu-item {
   display: inline-block;
-  margin: 0;
-  padding: 0;
   text-align: left;
 }
-.genesis-nav-menu .menu-item:hover {
-  position: static;
-}
-.genesis-nav-menu .menu-item:hover > .sub-menu {
-  left: auto;
-  opacity: 1;
-  font-size: 14px;
-}
 .genesis-nav-menu a {
+  border: none;
+  color: white;
   display: block;
-  padding: 24px 20px;
-  padding: 2.4rem 2rem;
+  padding: 28px 24px;
+  padding: 2.8rem 2.4rem;
   position: relative;
+}
+.genesis-nav-menu a:hover {
+  color: #000d11;
 }
 .genesis-nav-menu .sub-menu {
   left: -9999px;
-  margin: 0;
   opacity: 0;
-  padding: 0;
   position: absolute;
   -webkit-transition: opacity 0.4s ease-in-out;
   -moz-transition: opacity 0.4s ease-in-out;
@@ -580,8 +528,101 @@ h6,
   width: 200px;
   z-index: 99;
 }
+.genesis-nav-menu .sub-menu a {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-top: none;
+  font-size: 14px;
+  font-size: 1.4rem;
+  letter-spacing: 0;
+  padding: 16px 20px;
+  padding: 1.6rem 2rem;
+  position: relative;
+  width: 200px;
+}
 .genesis-nav-menu .sub-menu .sub-menu {
-  margin: -68px 0 0 199px;
+  margin: -54px 0 0 199px;
+}
+.genesis-nav-menu .menu-item:hover {
+  position: static;
+}
+.genesis-nav-menu .menu-item:hover > .sub-menu {
+  left: auto;
+  opacity: 1;
+}
+.genesis-nav-menu > .first > a {
+  padding-left: 0;
+}
+.genesis-nav-menu > .last > a {
+  padding-right: 0;
+}
+.genesis-nav-menu > .right {
+  display: inline-block;
+  float: right;
+  list-style-type: none;
+  padding: 28px 0;
+  padding: 2.8rem 0;
+  text-transform: uppercase;
+}
+.genesis-nav-menu > .right > a {
+  display: inline;
+  padding: 0;
+}
+.genesis-nav-menu > .rss > a {
+  margin-left: 48px;
+  margin-left: 4.8rem;
+}
+.genesis-nav-menu > .search {
+  padding: 14px 0 0;
+  padding: 1.4rem 0 0;
+}
+
+/* Site Header Navigation
+--------------------------------------------- */
+.site-header .genesis-nav-menu a {
+  color: #000d11;
+}
+
+.site-header .sub-menu {
+  border-top: 1px solid #eee;
+}
+.site-header .sub-menu .sub-menu {
+  margin-top: -55px;
+}
+
+/* Primary Navigation
+--------------------------------------------- */
+.nav-primary {
+  background-color: #3b3d42;
+}
+
+.nav-primary a:hover,
+.nav-primary .current-menu-item > a {
+  color: #fff;
+}
+
+.nav-primary .sub-menu a {
+  border: 1px solid #333;
+}
+
+.nav-primary .sub-menu a {
+  background-color: #3b3d42;
+}
+.nav-primary .sub-menu a:hover {
+  color: white;
+}
+
+/* Secondary Navigation
+--------------------------------------------- */
+.nav-secondary a {
+  color: #000d11;
+}
+
+.nav-secondary .sub-menu {
+  border-top: 1px solid #eee;
+}
+.nav-secondary .sub-menu .sub-menu {
+  margin-top: -55px;
 }
 
 /* Mobile Menu */
@@ -666,14 +707,14 @@ h6,
 }
 
 /* Pagination */
-.navigation li {
+.archive-pagination li {
   display: inline;
 }
 
-.navigation li a,
-.navigation li a:hover,
-.navigation li.active a,
-.navigation li.disabled {
+.archive-pagination li a,
+.archive-pagination li a:hover,
+.archive-pagination li.active a,
+.archive-pagination li.disabled {
   background-color: #4c5558;
   border-radius: 3px;
   cursor: pointer;
@@ -682,10 +723,14 @@ h6,
   color: white;
 }
 
-.navigation li a:hover,
-.navigation li.active a {
+.archive-pagination li a:hover,
+.archive-pagination li.active a {
   background-color: white;
   color: #000d11;
+}
+
+.portfolio-widgetized .archive-pagination {
+  clear: both;
 }
 
 /*
@@ -813,6 +858,16 @@ h6,
   margin-bottom: 2.6rem;
 }
 
+/* After Post */
+.after-post {
+  background: #f2f2f2;
+  border: 1px solid #d8d8d8;
+  padding: 10px;
+  padding: 1rem;
+  margin-bottom: 50px;
+  margin-bottom: 5rem;
+}
+
 /* Blockquotes */
 blockquote {
   padding: 24px 64px;
@@ -903,8 +958,13 @@ blockquote::before {
 /*
 09 Footer
 ---------------------------------------------------------------------------------------------------- */
+/*
+Site Footer
+---------------------------------------------------------------------------------------------------- */
 .site-footer {
   clear: both;
+  margin: 8px 0;
+  margin: 0.8rem 0;
 }
 
 .site-footer .wrap {
@@ -914,19 +974,10 @@ blockquote::before {
   padding: 4.8rem 0;
 }
 
-.site-footer .creds {
-  text-align: right;
-}
-
-.site-footer .creds,
-.site-footer .gototop {
-  margin: 8px 0;
-  margin: 0.8rem 0;
-}
-
 .site-footer p {
   font-size: 16px;
   font-size: 1.6rem;
+  text-align: center;
 }
 
 /* Footer Widgets */

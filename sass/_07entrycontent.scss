@@ -2,6 +2,15 @@
 	@include rem(margin-bottom, 26px);
 }
 
+/* After Post */
+.after-post {
+	background:shade($light, 5%);
+	border:1px solid shade($light, 15%);
+	@include rem(padding, 10px);
+	@include rem(margin-bottom, 50px);
+
+}
+
 /* Blockquotes */
 
 	blockquote {
