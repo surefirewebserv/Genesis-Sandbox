@@ -19,7 +19,7 @@ add_action( 'get_header', 'gs_home_helper' );
  */
 function gs_home_helper() {
 
-        if ( is_active_sidebar( 'home-top' ) || is_active_sidebar( 'home-left' ) || is_active_sidebar( 'home-right' ) || is_active_sidebar( 'home-bottom' ) ) {
+        if ( is_active_sidebar( 'home-top' ) || is_active_sidebar( 'home-middle-01' ) || is_active_sidebar( 'home-middle-02' ) || is_active_sidebar( 'home-middle-03' ) || is_active_sidebar( 'home-bottom' ) ) {
 
                 remove_action( 'genesis_loop', 'genesis_do_loop' );
                 add_action( 'genesis_loop', 'gs_home_widgets' );
@@ -41,23 +41,31 @@ function gs_home_widgets() {
 
         genesis_widget_area(
                 'home-top', 
-                array( 'before' => '<div id="home-top" class="home-widget widget-area">', ) 
+                array( 'before' => '<aside id="home-top" class="home-widget widget-area">', ) 
         );
         
-        echo '<div id="home-middle">';
+        echo '<div id="home-middle" class="home-middle">';
         genesis_widget_area( 
-                'home-left', 
+                'home-middle-01', 
                 array(
-                        'before' => '<div id="home-left" class="first one-half"><div class="home-widget widget-area">', 
-                        'after' => '</div></div><!-- end #home-left -->',
+                        'before' => '<aside id="home-middle-01" class="first one-third"><div class="home-widget widget-area">', 
+                        'after' => '</div></aside><!-- end #home-left -->',
                 ) 
         );
-        
+
         genesis_widget_area( 
-                'home-right', 
+                'home-middle-02', 
                 array(
-                        'before' => '<div id="home-right" class="one-half"><div class="home-widget widget-area">', 
-                        'after' => '</div></div><!-- end #home-right -->',
+                        'before' => '<aside id="home-middle-01" class="one-third"><div class="home-widget widget-area">', 
+                        'after' => '</div></aside><!-- end #home-middle -->',
+                ) 
+        );
+
+        genesis_widget_area( 
+                'home-middle-03', 
+                array(
+                        'before' => '<aside id="home-right" class="one-third"><div class="home-widget widget-area">', 
+                        'after' => '</div></aside><!-- end #home-right -->',
                 ) 
         );
         echo '</div>';
@@ -66,8 +74,8 @@ function gs_home_widgets() {
         genesis_widget_area( 
                 'home-bottom', 
                 array(
-                        'before' => '<div id="home-bottom"><div class="home-widget widget-area">', 
-                        'after' => '</div></div><!-- end #home-left -->',
+                        'before' => '<aside id="home-bottom"><div class="home-widget widget-area">', 
+                        'after' => '</div></aside><!-- end #home-bottom -->',
                 ) 
         );                              
 }
