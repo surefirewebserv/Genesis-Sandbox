@@ -35,7 +35,7 @@ function gs_register_scripts() {
 	//wp_register_style( 'gs-twitter-bootstrap-cdn', '//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css', array(), '2.2.2' );
 	
 	// Twitter Bootstrap CSS (Font Awesome version)
-	//wp_register_style( 'gs-twitter-bootstrap-font-awesome', '//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.no-icons.min.css', array(), '2.1.1' );
+	//wp_register_style( 'gs-twitter-bootstrap-font-awesome', '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css', array(), '2.3.2' );
 	
 	/**
 	 * Twitter Bootstrap JS
@@ -50,10 +50,9 @@ function gs_register_scripts() {
 	 * @link http://www.bootstrapcdn.com/?v=10292012225705
 	 * @link http://fortawesome.github.com/Font-Awesome/
 	 */
-	wp_register_style( 'gs-font-awesome', CHILD_CSS . '/' . gs_script_suffix( 'font-awesome', 'css' ), array(), '1.0.0' );
-	//wp_register_style( 'gs-font-awesome-cdn', '//netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css', array(), '2.2.2' );
-	wp_register_style( 'gs-font-awesome-ie7', CHILD_CSS . '/' . gs_script_suffix( 'font-awesome-ie7', 'css' ), array(), '1.0.0' );
-	//wp_register_style( 'gs-font-awesome-ie7-cdn', '//netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome-ie7.css', array(), '2.2.2' );
+	//wp_register_style( 'gs-font-awesome', CHILD_CSS . '/' . gs_script_suffix( 'font-awesome', 'css' ), array(), '1.0.0' );
+	wp_register_style( 'gs-font-awesome-cdn', '//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css', array(), '3.2.1' );
+	
 	
 	/**
 	 * Pretty Photo
@@ -85,7 +84,7 @@ function gs_enqueue_scripts() {
 	 *   Only activate it if you wish to purely use all of the Bootstrap Styles and Font Awesome Together */
 	//wp_enqueue_style( 'gs-twitter-bootstrap-font-awesome' );
 	
-	wp_enqueue_style( 'gs-font-awesome' );
+	wp_enqueue_style( 'gs-font-awesome-cdn' );
 	//wp_enqueue_style( 'gs-pretty-photo' );
 	
 	// Scripts
