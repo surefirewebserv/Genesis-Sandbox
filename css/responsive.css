@@ -73,7 +73,9 @@
 	.site-container .content-sidebar-wrap,
 	.site-container .sidebar-secondary,
 	.header-image .site-title,
-	.header-image .title-area
+	.header-image .title-area,
+	.genesis-nav-menu.menu-mobile .sub-menu .sub-menu,
+	.genesis-nav-menu.menu-mobile .sub-menu a
  	{
 		width: 100%;
 		margin-left: 0;
@@ -109,6 +111,15 @@
 
 	.genesis-nav-menu a {
 		padding: 1.25rem 1rem;
+	}
+
+	.genesis-nav-menu .sub-menu a {
+		background-color: #5b5d64;
+		border: none;
+	}
+
+	.genesis-nav-menu .sub-menu a:hover {
+		background-color: #7f838e;
 	}
 
 	.site-title {
