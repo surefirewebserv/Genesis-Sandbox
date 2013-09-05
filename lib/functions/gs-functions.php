@@ -365,31 +365,6 @@ function gs_init_pretty_photo( $args = array() ) { ?>
 <?php
 }
 
-/*
-Add Custom Footer Output
----------------------------------------------------------------------------------------------------- */
-/**
- * Custom Footer based on options
- *
- * @uses CHILD_SETTINGS_FIELD
- * @uses genesis_get_option()
- * @uses wpautop()
- * @uses gs_footer_navigation()
- */
-function gs_do_footer() {
-	$pattern = '<div class="one-half%1$s footer-%2$s">%3$s</div>';
-	if ( ! genesis_get_option( 'footer_left_nav', CHILD_SETTINGS_FIELD ) )
-		printf( $pattern, ' first', 'left', wpautop( genesis_get_option( 'footer_left', CHILD_SETTINGS_FIELD ) ) );
-	else
-		printf( $pattern, ' first', 'left', gs_footer_navigation() );
-	
-	if ( ! genesis_get_option( 'footer_right_nav', CHILD_SETTINGS_FIELD) )
-		printf( $pattern, '', 'right', wpautop( genesis_get_option( 'footer_right', CHILD_SETTINGS_FIELD ) ) );
-	else
-		printf( $pattern, '', 'right', gs_footer_navigation() );
-}
-
-
 /**
  * Add Genesis Sandbox Responsive Styles
  * Roll own responsive functions

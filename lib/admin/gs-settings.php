@@ -68,7 +68,7 @@ class Genesis_Sandbox_Settings extends Genesis_Admin_Boxes {
 		add_action( 'genesis_settings_sanitizer_init', array( $this, 'sanitization_filters' ) );
 		
 		// Add admin script
-		//add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
 	}
 
 	/** 
@@ -90,8 +90,7 @@ class Genesis_Sandbox_Settings extends Genesis_Admin_Boxes {
 			'safe_html', 
 			$this->settings_field,
 			array( // Enter options here as an array
-				'footer_left',
-				'footer_right',
+				
 			)
 		);
 		
@@ -100,9 +99,7 @@ class Genesis_Sandbox_Settings extends Genesis_Admin_Boxes {
 			$this->settings_field,
 			array( // Enter options here as an array
 				'move_nav',
-				'move_subnav',
-				'footer_left_nav',
-				'footer_right_nav',
+				'move_subnav'
 			)
 		);
 		
@@ -120,9 +117,10 @@ class Genesis_Sandbox_Settings extends Genesis_Admin_Boxes {
 	 *
 	 * @since 1.1.0
 	 */	
-	function gs_scripts() {
+	function admin_scripts() {
 		if ( genesis_is_menu_page( $this->page_id ) ) {
-			wp_register_script( 'sandbox-admin', CHILD_LIB . '/js/' . gs_script_suffix( 'admin' ), array( 'jquery' ) , CHILD_THEME_VERSION );
+			wp_enqueue_script( 'sandbox-admin', CHILD_LIB . '/js/' . gs_script_suffix( 'admin' ), array( 'jquery' ) , CHILD_THEME_VERSION );
+			//wp_enqueue_script( 'sandbox-admin', CHILD_LIB . '/js/admin.js', array( 'jquery' ) , CHILD_THEME_VERSION );
 		}
 	}
 	
@@ -146,6 +144,8 @@ class Genesis_Sandbox_Settings extends Genesis_Admin_Boxes {
 	 * @since 1.1.0
 	 *
 	 */
+	
+	/*
 	function help() {	
 		global $my_admin_page;
 		$screen = get_current_screen();
@@ -210,7 +210,7 @@ class Genesis_Sandbox_Settings extends Genesis_Admin_Boxes {
 			'<p><a href="' . __( 'http://wpsmith.net/genesis-plugins', CHILD_DOMAIN ) . '" target="_blank" title="' . __( 'Genesis Plugins', CHILD_DOMAIN ) . '">' . __( 'Genesis Plugins', CHILD_DOMAIN ) . '</a></p>'.
 			'<p><a href="' . __( 'http://wpsmith.net/category/genesis/', CHILD_DOMAIN ) . '" target="_blank" title="' . __( 'Genesis Tutorials by WPSmith', CHILD_DOMAIN ) . '">' . __( 'Genesis Tutorials by WPSmith', CHILD_DOMAIN ) . '</a></p>'
         );
-	}
+	}*/
 		
 	
 	/**
@@ -220,26 +220,30 @@ class Genesis_Sandbox_Settings extends Genesis_Admin_Boxes {
 	 *
 	 * @see Genesis_Sandbox_Settings::metaboxes()
 	 */
-	function gs_footer_settings() { 
-		/**
+	/*function gs_footer_settings() { 
+		
 		 * Add HTML
 		 * For name, use echo $this->get_field_name( 'option' );
 		 * For id, use echo $this->get_field_id( 'option' );
 		 * For value, use echo $this->get_field_value( 'option' );
-		 */
 		 
+		 
+		
+		<p><input type="checkbox" name="<?php echo $this->get_field_name( 'footer_center' ); ?>" id="one_footer" value="1" <?php checked( 1, $this->get_field_value( 'footer_center' ) ); ?> /> <label for="one_footer"><?php _e( 'Use only 1 centered footer box?', CHILD_DOMAIN ); ?> <br /><small><em>(when selected, "Footer Left" will be used as main footer box.)</em></small></label></p>
+		<?php
 		echo '<h4>Footer Left:</h4>';
 		?>
-		<p><input type="checkbox" name="<?php echo $this->get_field_name( 'footer_left_nav' ); ?>" id="<?php echo $this->get_field_id( 'footer_left_nav' ); ?>" value="1" <?php checked( 1, $this->get_field_value( 'footer_left_nav' ) ); ?> /> <label for="<?php echo $this->get_field_name( 'footer_left_nav' ); ?>"><?php _e( 'Use footer navigation here?', CHILD_DOMAIN ); ?></label></p>
+		<p><input type="checkbox" name="<?php echo $this->get_field_name( 'footer_left_nav' ); ?>" id="footer_left_nav" value="1" <?php checked( 1, $this->get_field_value( 'footer_left_nav' ) ); ?> /> <label for="footer_left_nav"><?php _e( 'Use footer navigation here?', CHILD_DOMAIN ); ?></label></p>
 		<?php
 		wp_editor( $this->get_field_value( 'footer_left' ), $this->get_field_id( 'footer_left' ), array( 'textarea_rows' => 5 ) );	
 
-		echo '<h4>Footer Right:</h4>';
+		echo '<div id="footer-right-box"><h4>Footer Right:</h4>';
 		?>
-		<p><input type="checkbox" name="<?php echo $this->get_field_name( 'footer_right_nav' ); ?>" id="<?php echo $this->get_field_id( 'footer_right_nav' ); ?>" value="1" <?php checked( 1, $this->get_field_value( 'footer_right_nav' ) ); ?> /> <label for="<?php echo $this->get_field_name( 'footer_right_nav' ); ?>"><?php _e( 'Use footer navigation here?', CHILD_DOMAIN ); ?></label></p>
+		<p><input type="checkbox" name="<?php echo $this->get_field_name( 'footer_right_nav' ); ?>" id="footer_right_nav" value="1" <?php checked( 1, $this->get_field_value( 'footer_right_nav' ) ); ?> /> <label for="footer_right_nav"><?php _e( 'Use footer navigation here?', CHILD_DOMAIN ); ?></label></p>
 		<?php
 		wp_editor( $this->get_field_value( 'footer_right' ), $this->get_field_id( 'footer_right' ), array( 'textarea_rows' => 5 ) ); 
+		echo '</div>';
 		 
-	}
+	}*/
 	
 }

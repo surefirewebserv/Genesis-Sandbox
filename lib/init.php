@@ -33,7 +33,7 @@ function gs_constants() {
 	
 	// Child theme (Change but do not remove)
 		/** @type constant Child Theme Options/Settings. */
-		define( 'CHILD_SETTINGS_FIELD', $theme->get('TextDomain') . '-settings' );
+		define( 'CHILD_SETTINGS_FIELD', $theme->get('TextDomain') . 'settings' );
 		
 		/** @type constant Text Domain. */
 		define( 'CHILD_DOMAIN', $theme->get('TextDomain') );
@@ -141,15 +141,16 @@ function gs_prevent_theme_update( $r, $url ) {
 
 /*
 Add Theme Settings Page
----------------------------------------------------------------------------------------------------- */
+---------------------------------------------------------------------------------------------------- 
 add_action( 'genesis_admin_menu', 'gs_add_settings', 5 );
 /**
  * Add the Theme Settings Page
  *
  * @since 1.1.0
- */
+ 
 function gs_add_settings() {
 	global $_gs_settings;
 	
 	$_gs_settings = new Genesis_Sandbox_Settings;	 	
 }
+*/
