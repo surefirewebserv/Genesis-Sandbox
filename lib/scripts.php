@@ -51,7 +51,16 @@ function gs_register_scripts() {
 	 * @link http://fortawesome.github.com/Font-Awesome/
 	 */
 	//wp_register_style( 'gs-font-awesome', CHILD_CSS . '/' . gs_script_suffix( 'font-awesome', 'css' ), array(), '4.0.3' );
-	wp_register_style( 'gs-font-awesome-cdn', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', array(), '4.0.3' );
+	wp_register_style( 'gs-font-awesome-cdn', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', array(), '1.0.0' );
+	
+
+	/**
+	 * Animate.css
+	 * @link https://daneden.me/animate/
+	 * @link https://github.com/daneden/animate.css
+	 */
+	//wp_register_style( 'gs-animate', CHILD_CSS . '/' . gs_script_suffix( 'animate', 'css' ), array(), '4.0.3' );
+	
 	
 	
 	/**
@@ -91,6 +100,7 @@ function gs_enqueue_scripts() {
 	//wp_enqueue_script( 'gs-twitter-bootstrap' );
 	//wp_enqueue_script( 'gs-pretty-photo' );
 	//add_action( 'wp_footer', 'gs_init_pretty_photo' );
+	//wp_enqueue_script( 'gs-animate' );
 	wp_enqueue_script( 'gs-common' );
 	
 	// Localize Script
