@@ -31,27 +31,27 @@ function gs_register_scripts() {
 	 * @link http://www.bootstrapcdn.com/?v=10292012225705
 	 * @link http://twitter.github.com/bootstrap/
 	 */
-	wp_register_style( 'gs-twitter-bootstrap', CHILD_CSS . '/' . gs_script_suffix( 'bootstrap', 'css' ), array(), '1.0.0' );
-	//wp_register_style( 'gs-twitter-bootstrap-cdn', '//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css', array(), '2.2.2' );
+	wp_register_style( 'gs-twitter-bootstrap', CHILD_CSS . '/' . gs_script_suffix( 'bootstrap', 'css' ), array(), '3.0.3' );
+	//wp_register_style( 'gs-twitter-bootstrap-cdn', '//netdna.bootstrapcdn.com/twitter-bootstrap/3.0.3/css/bootstrap-combined.min.css', array(), '3.0.3' );
 	
 	// Twitter Bootstrap CSS (Font Awesome version)
-	//wp_register_style( 'gs-twitter-bootstrap-font-awesome', '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css', array(), '2.3.2' );
+	//wp_register_style( 'gs-twitter-bootstrap-font-awesome', '//netdna.bootstrapcdn.com/twitter-bootstrap/4.0.3/css/bootstrap-combined.no-icons.min.css', array(), '4.0.3' );
 	
 	/**
 	 * Twitter Bootstrap JS
 	 * @link http://www.bootstrapcdn.com/?v=10292012225705
 	 * @link http://twitter.github.com/bootstrap/
 	 */
-	//wp_register_script( 'gs-twitter-bootstrap', CHILD_JS . '/' . gs_script_suffix( 'bootstrap', 'js' ), array( 'jquery' ), '2.2.2' );
-	wp_register_script( 'gs-twitter-bootstrap-cdn', '//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js', array( 'jquery' ), '2.2.2' );
+	//wp_register_script( 'gs-twitter-bootstrap', CHILD_JS . '/' . gs_script_suffix( 'bootstrap', 'js' ), array( 'jquery' ), '3.0.3' );
+	wp_register_script( 'gs-twitter-bootstrap-cdn', '//netdna.bootstrapcdn.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js', array( 'jquery' ), '3.0.3' );
 	
 	/**
 	 * Font Awesome
 	 * @link http://www.bootstrapcdn.com/?v=10292012225705
 	 * @link http://fortawesome.github.com/Font-Awesome/
 	 */
-	//wp_register_style( 'gs-font-awesome', CHILD_CSS . '/' . gs_script_suffix( 'font-awesome', 'css' ), array(), '1.0.0' );
-	wp_register_style( 'gs-font-awesome-cdn', '//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css', array(), '3.2.1' );
+	//wp_register_style( 'gs-font-awesome', CHILD_CSS . '/' . gs_script_suffix( 'font-awesome', 'css' ), array(), '4.0.3' );
+	wp_register_style( 'gs-font-awesome-cdn', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', array(), '4.0.3' );
 	
 	
 	/**
