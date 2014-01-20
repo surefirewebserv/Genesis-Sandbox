@@ -1,59 +1,55 @@
-#header {
-	border-top: 5px solid $color-extra;
+.site-header {
+	
 	min-height: 120px;
 	overflow: hidden;
-	padding-bottom: 32px;
-	@include rem(padding-bottom, 32);
+	@include rem(padding-bottom, 32px);
 }
 
-#title {
-	margin: 40px 0 8px;
-	margin: cr(40) 0 cr(8) 0;
-	@include sfFontSize(48);
+.site-title {
+	@include rem(margin, 40px 0 8px);
+	@include rem(font-size, 48px);
 	a {
 		color:$color-extra;
 		&:hover { color: $color-cta; }
 	}
 
-	font-family: $googleFont, $googleFontType;
+	font-family: $googleFont;
 	font-weight:700;
 }
 
 
-.header-image #title {
+.header-image .site-title {
 	margin: 0;
 }
 
-#description {
+.site-description {
 	line-height: 1.25;
 	color: $color-extra;
 }
 
 
-.header-full-width #title,
-.header-full-width #title a,
-.header-full-width #title-area {
+.header-full-width .site-title,
+.header-full-width .site-title a,
+.header-full-width .title-area {
 	width: 100%;
 }
 
-.header-image #title,
-.header-image #title a,
-.header-image #title-area {
+.header-image .site-title,
+.header-image .site-title a,
+.header-image .title-area {
 	display: block;
 	float: left;
 	min-height: 120px;
 	overflow: hidden;
-	text-indent: -9999px;
 	width: 50%;
 }
 
-.header-image #description {
+.header-image .site-description {
 	display: none;
 }
 
-#header .search-form {
+.site-header .search-form {
 	float: right;
-	margin-top: 56px;
-	@include rem(margin-top, 56);
+	@include rem(margin-top, 56px);
 	width: 100%;
 }

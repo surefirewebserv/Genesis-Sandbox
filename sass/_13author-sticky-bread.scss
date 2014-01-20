@@ -1,7 +1,6 @@
 .author-box,
 .sticky {
-	margin-bottom: 80px;
-	@include rem(margin-bottom, 80);
+	@include rem(margin-bottom, 80px);
 }
 
 .author-box,
@@ -13,18 +12,15 @@
 .sticky,
 .taxonomy-description {
 	background-color: #f5f5f5;
-	margin-bottom: 48px;
-	@include rem(margin-bottom, 48);
+	@include rem(margin-bottom, 48px);
 	overflow: hidden;
-	padding: 32px;
-	@include rem(padding, 32);
+	@include rem(padding, 32px);
 }
 
 .breadcrumb {
 	background-color: #f5f5f5;
-	margin-bottom: 10px;
-	@include rem(margin-bottom, 10);
+	@include rem(margin-bottom, 10px);
 	overflow: hidden;
-	padding:10px;
+	@include rem(padding, 10px);
 }
 

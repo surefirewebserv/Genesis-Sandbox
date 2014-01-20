@@ -1,95 +1,84 @@
 
 /* Post Info and Meta */
 
-	.post-info,
-	.post-meta {
+	.entry-meta {
 		clear: both;
 		line-height: 1.5;
 		color: shade($light,70%);
-		@include grFontSize();
+		/*@include rem(font-size, 14px)*/
 	}
 
-	.post-info {
-		margin-bottom: 24px;
-		@include rem(margin-bottom, 24);
+	.entry-header .entry-meta {
+		@include rem(margin-bottom, 24px);
 	}
 
-	.post-meta {
+	.entry-footer .entry-meta {
 		border-top: 1px solid #ccc;
-		padding-top: 24px;
-		@include rem(padding-top, 24);
+		@include rem(padding-top, 24px);
 	}
 
-	.post-comments {
-		background: url(images/post-comments.png) no-repeat center left;
-		margin-left: 16px;
-		@include rem(margin-left, 16);
-		padding-left: 20px;
-		@include rem(margin-left, 20);
+	.entry-meta .entry-comments {
+		background: url(images/post-comments.png) no-repeat center left;		
+		@include rem(margin-left, 16px);
+		@include rem(padding-left, 20px);
 		color: $textColor;
 	}
 
-	.categories,
-	.tags {
+	.entry-categories,
+	.entry-tags {
 		display: block;
 	}
 
-	.date {
+	.entry-time {
 		color: $dark;
 	}
 
 
 /* Comments */
 
-	#comments,
+	.entry-comments,
 	#respond {
 		line-height: 1.5;
 		overflow: hidden;
 	}
 
 	.ping-list,
-	#comments {
-		margin-bottom: 48px;
-		@include rem(margin-bottom, 48);
+	.entry-comments {
+		@include rem(margin-bottom, 48px);
 	}
 
-	#author,
-	#email,
-	#url {
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url {
 		width: 50%;
 	}
 
 	.commentmetadata,
-	#author,
-	#email,
-	#url {
-		margin-bottom: 12px;
-		@include rem(margin-bottom, 12);
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url {
+		@include rem(margin-bottom, 12px);
 	}
 
-	#comment {
-		margin: 12px 0;
-		margin: cr(12) 0;
+	.comment-form-comment {
+		@include rem(margin, 12px 0);
 	}
 
-	label {
+	/*label {
 		margin-left: 12px;
 		@include rem(margin-left, 12);
-	}
+	}*/
 
 	.comment-list li,
 	.ping-list li {
 		list-style-type: none;
-		margin-top: 24px;
-		@include rem(margin-top, 24);
-		padding: 32px;
-		@include rem(padding, 32);
+		@include rem(margin-top, 24px);
+		@include rem(padding, 32px);
 		border-radius:10px;
 	}
 
 	.comment-list li ul li {
-		margin-right: -32px;
-		@include rem(margin-right, 32);
+		@include rem(margin-right, -32px);
 	}
 
 	.comment-header {
@@ -103,22 +92,19 @@
 	}
 
 	.comment-content p {
-		margin-bottom: 24px;
-		@include rem(margin-bottom, 24);
+		@include rem(margin-bottom, 24px);
 	}
 
 	.bypostauthor {
 	}
 
-	#comments .navigation {
-		margin-top: 32px;
-		@include rem(margin-top, 32);
+	.entry-comments .navigation {
+		@include rem(margin-top, 32px);
 	}
 
 	.comment-list li .avatar {
 		float: left;
-		margin: 0 16px 24px 0;
-		margin: 0 cr(16) cr(24) 0;
+		@include rem(margin, 0 16px 24px 0);
 		border-radius:8px;
 	}
 

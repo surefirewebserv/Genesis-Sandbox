@@ -1,21 +1,20 @@
 // Core variables and mixins
 @import "variables"; // Modify this for custom colors, font-sizes, etc
 @import "mixins"; // Modify this for custom functions and actions etc
-@import "golden-ratio"; // Golden Ratio Typography
 @import "google-web-font"; // Google Web Fonts
 @import "compass";
 @import "compass/css3";
 
-/*
+/*!
     Theme Name: Genesis Sandbox
     Description: This is a start kit for to devevelop your own themes for the Genesis Framework
-    Author: Jonathan Perez
+    Author: Jonathan Perez and Travis Smith (wpsmith.net)
     Author URI: http://www.surefirewebservices.com/
  
-    Version: 1.9
+    Version: 2.0
  
     Template: genesis
-    Template Version: 1.9
+    Template Version: 2.0
  
     License: GPL-2.0+
     License URI: http://www.opensource.org/licenses/gpl-license.php 

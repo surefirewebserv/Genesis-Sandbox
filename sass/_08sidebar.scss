@@ -4,22 +4,18 @@
 }
 
 .sidebar p {
-	margin-bottom: 16px;
-	@include rem(margin-bottom, 16);
+	@include rem(margin-bottom, 16px);
 }
 
 .sidebar .widget {
 	border-bottom: 1px solid #ccc;
-	margin-bottom: 32px;
-	@include rem(margin-bottom, 32);
-	padding-bottom: 32px;
-	@include rem(padding-bottom, 32);
+	@include rem(margin-bottom, 32px);
+	@include rem(padding-bottom, 32px);
 	overflow: hidden;
 }
 
 .sidebar.widget-area ul li {
 	list-style-type: none;
-	margin-bottom: 6px;
-	@include rem(margin-bottom, 6);
+	@include rem(margin-bottom, 6px);
 	word-wrap: break-word;
 }

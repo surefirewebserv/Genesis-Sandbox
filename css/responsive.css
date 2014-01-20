@@ -1,8 +1,9 @@
 /*
 12 Media Queries
 ---------------------------------------------------------------------------------------------------- */
-#mobile-nav {
+.mobile-nav {
 	display:none;
+	background-color:#3b3d42;
 }
 
 .toggle-switch span {
@@ -32,7 +33,8 @@
 .primary .toggle-switch,
 .secondary .toggle-switch {
 	/*background: -webkit-linear-gradient(#4d4c4c 0%, #ffffff 100%);*/
-	background: -webkit-linear-gradient(rgba(22,22,22,1) 0%, rgba(78,78,78,1) 100%)
+	/*background: -webkit-linear-gradient(rgba(22,22,22,1) 0%, rgba(78,78,78,1) 100%)*/
+	background-color:#3b3d42;
 }	   
 
 
@@ -44,8 +46,8 @@
 
 @media only screen and (max-width: 1024px) {
 
-	#wrap {
-		max-width: 960px;
+	.wrap {
+		padding: 0 10px;
 	}	
 
 }
@@ -54,40 +56,56 @@
 
 @media only screen and (max-width: 768px) {
 
-	#wrap {
-		padding: 0 5%;
+	.wrap {
+		padding: 0 2%;	
 	}
 
 	.archive-page,
 	.footer-widgets .widget-area,
 	.wrap,
-	#footer .creds,
-	#footer .gototop,
-	#header .widget-area,
-	#inner,
-	#title-area,
-	#wrap .sidebar,
-	#wrap #content,
-	#wrap #content-sidebar-wrap,
-	#wrap #sidebar-alt {
+	.site-footer .creds,
+	.site-footer .gototop,
+	.site-header .widget-area,
+	.site-inner,
+	.title-area,
+	.site-container .sidebar,
+	.site-container .content,
+	.site-container .content-sidebar-wrap,
+	.site-container .sidebar-secondary,
+	.header-image .site-title,
+	.header-image .title-area,
+	.genesis-nav-menu.menu-mobile .sub-menu .sub-menu,
+	.genesis-nav-menu.menu-mobile .sub-menu a
+ 	{
 		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.header-image .site-title, 
+	.header-image .title-area {
+		min-height: 50px;
+	}
+
+	.header-image .site-title a {
+		margin:auto;
 	}
 
 	.genesis-nav-menu li,
-	#footer .creds,
-	#footer .gototop,
-	#header ul.genesis-nav-menu,
-	#header .search-form {
+	.site-footer .creds,
+	.site-footer .gototop,
+	.site-header ul.genesis-nav-menu,
+	.site-header .search-form {
 		float: none;
 	}
 
 	.genesis-nav-menu,
-	#description,
-	#footer .creds,
-	#footer .gototop,
-	#header .search-form,
-	#title,
-	#title-area {
+	.site-description,
+	.site-footer .creds,
+	.site-footer .gototop,
+	.site-header .search-form,
+	.site-title,
+	.title-area {
 		text-align: center;
 	}
 
@@ -95,11 +113,20 @@
 		padding: 1.25rem 1rem;
 	}
 
-	#title {
+	.genesis-nav-menu .sub-menu a {
+		background-color: #5b5d64;
+		border: none;
+	}
+
+	.genesis-nav-menu .sub-menu a:hover {
+		background-color: #7f838e;
+	}
+
+	.site-title {
 		margin: 1rem 0;
 	}
 
-	#header .search-form {
+	.site-header .search-form {
 		margin: 2rem auto 0;
 		width: 50%;
 	}
@@ -108,16 +135,16 @@
 		display: none;
 	}
 
-	#footer .wrap {
+	.site-footer .wrap {
 		padding: 1.5rem 0;
 	}
 
-	#footer-widgets .widget-area {
+	.site-footer-widgets .widget-area {
 		margin: 0;
 	}
 	
-	#footer #footer-left,
-	#footer #footer-right {
+	.site-footer .footer-left,
+	.site-footer .footer-right {
 		text-align: center;
 		width: 100%;
 		float: none;
@@ -128,22 +155,47 @@
 		float: none;
 	}
 	
-	#nav,
-	#subnav {
+	.nav-primary,
+	.nav-secondary {
 		display: none;
 	}
 	
-	#mobile-nav {
+	.mobile-nav {
 		display: block;
 	}
 	
-	#mobile-nav ul {
-		display: none;
-	}
 	
-	#footer .one-half {
+	.site-footer .one-half {
 		margin-left: 0;
 	}
+
+	/* Align everything center */
+	.alignright,
+	img.alignright,
+	.aligncenter,
+	img.aligncenter,
+	.alignleft,
+	img.alignleft {
+		display: block;
+		margin: 0 auto 24px;
+		float:none;
+	}
+
+/* Align Simple Social Icons Centered */
+	.simple-social-icons ul.alignright,
+	.simple-social-icon ul.alignleft {
+		text-align: center;
+	}
+
+	.simple-social-icons ul.alignright li,
+	.simple-social-icons ul.alignleft li {
+		display: inline-block;
+		float: none;
+	}
+
+	/*.site-header .widget_text {
+		display:none;
+	}*/
 
 }
 
@@ -152,10 +204,10 @@
 @media only screen and (max-width: 480px) {
 
 	html {
-		font-size: 87.5%; /* 14px base */
+		font-size: 57.5%; 
 	}
 
-	#header .search-form {
+	.site-header .search-form {
 		width: 100%;
 	}
 
@@ -178,28 +230,4 @@
 		width: 100%;
 	}
 
-}
-/* Responsive Design Custom Styles
------------------------------------------------------------- */
-
-/* Smaller screens */
-
-@media only screen and (max-width: 1023px) {
-	/* Enter Your Custom Styles Here */	
-}
-
-
-/* Mobile */
-
-@media handheld, only screen and (max-width: 767px) {
-	/* Enter Your Custom Styles Here */	
-}
-
-
-@media only screen and (max-width : 480px) {  
-	/* Enter Your Custom Styles Here */	  
-} 
-
-@media only screen and (max-width : 320px) {  
-	/* Enter Your Custom Styles Here */	
 }

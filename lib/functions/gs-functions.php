@@ -125,7 +125,9 @@ function gs_navigation( $location, $args ) {
 
 	$defaults = array(
 		'theme_location' => $location,
+		'container'       => 'nav',
 		'container_id'   => $location . '-nav',
+		'container_class' => $location . '-nav',
 		'menu_class'     => 'genesis-nav-menu menu menu-' . $location,
 		'echo'           => false,
 	);
@@ -134,8 +136,9 @@ function gs_navigation( $location, $args ) {
 	$nav = wp_nav_menu( $args );
 	
 	$nav_output = sprintf(
-		'<div id="%1$s">%3$s%2$s%4$s</div>', 
+		'<nav id="%1$s" class="%2$s">%4$s%3$s%5$s</nav>', 
 		$location . '-nav', 
+		'genesis-nav-menu menu menu-' . $location,
 		$nav, 
 		genesis_structural_wrap( 'nav', 'open', 0 ), 
 		genesis_structural_wrap( 'nav', 'close', 0 ) 
@@ -356,8 +359,35 @@ function gs_column_class( $i ) {
 function gs_init_pretty_photo( $args = array() ) { ?>
 <script type="text/javascript" charset="utf-8">
   jQuery(document).ready(function($){
+<<<<<<< HEAD
     $("a[href$='.jpg'], a[href$='.gif'], a[href$='.png']").prettyPhoto();
+=======
+    $("a[href$='.jpg'], a[href$='.gif'], a[href$='.png'], .prettyPhoto").prettyPhoto();
+>>>>>>> origin/HTML5
   });
 </script>
 <?php
 }
+
+/**
+ * Add Genesis Sandbox Responsive Styles
+ * Roll own responsive functions
+ * @uses gs_script_suffix() Adds proper CSS/JS suffix based on WP_DEBUG or WP_SCRIPT_DEBUG.
+ */
+add_theme_support(
+	'gs-responsive', 
+	array(
+		'css'      => array(
+			'src' => CHILD_CSS . '/' . gs_script_suffix( 'responsive', 'css' ), 
+			'dir' => CHILD_CSS_DIR . '/' . gs_script_suffix( 'responsive', 'css' ), 
+		),
+		/** 
+		 * Default: <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+		 * To over-ride just enter your meta tag instead of true.
+		 */
+		'viewport' => true,
+	)
+);
+
+
+

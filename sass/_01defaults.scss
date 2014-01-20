@@ -21,17 +21,31 @@
     vertical-align: baseline;
   }
 
+/* Clearfix */
+.site-inner:after,
+.home-middle:after,
+.site-header:after,
+.nav-primary:after,
+.nav-secondary:after,
+.wrap:after,
+.footer-widgets:after,
+.clearfix:after
+{
+  content: " ";
+  display: table;
+  clear:both;
+}
+
   html {
-    font-size: 100%;
+    font-size: 62.5%;
 
   }
   body {
     background-color: $light;
-    @include grFontSize();
-    @include grBaseLineHeight();
+    @include rem(font-size, 16px);
+    line-height: 1.8;
     font-family: $baseFontFamily;
     color: $textColor;
-
   }
 
   p.pages,
@@ -42,8 +56,7 @@
 
   .clear-line {
     border-bottom: 1px solid #ccc;
-    margin-bottom: 26px;
-    @include rem(margin-bottom, 26);
+    @include rem(margin-bottom, 26px);
   }
 
   .alignleft,
